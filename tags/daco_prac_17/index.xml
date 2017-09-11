@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Adrian Galdran - Research Site</title>
-    <link>https://agaldran.github.io/post/</link>
-    <description>Recent content in Posts on Adrian Galdran - Research Site</description>
+    <title>Daco_prac_17 on Adrian Galdran - Research Site</title>
+    <link>https://agaldran.github.io/tags/daco_prac_17/</link>
+    <description>Recent content in Daco_prac_17 on Adrian Galdran - Research Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adrian Galdran</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/daco_prac_17/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing</title>
@@ -56,16 +56,6 @@
       <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_5/</guid>
-      <description>&lt;p&gt;Under construction.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>DACO - Theoretical Lecture 1 - Linear Regression</title>
-      <link>https://agaldran.github.io/post/17_daco_theory_lec_1/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
-      
-      <guid>https://agaldran.github.io/post/17_daco_theory_lec_1/</guid>
       <description>&lt;p&gt;Under construction.&lt;/p&gt;
 </description>
     </item>
