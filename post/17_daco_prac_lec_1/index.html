@@ -231,8 +231,412 @@
 </div>
 
     <div class="article-style" itemprop="articleBody">
-      <p>Where we learn the basics of how set up a Python-based system to develop Machine Learning,
-Computer Vision, and Image Processing projects.</p>
+      
+
+<p>This year we have decided to move from Matlab to Python for the practical sessions.
+Some of you maybe will not have worked with this programming language.
+This first lecture is intended to make you aware of the (super-rich) Python ecosystem for scientific computing.</p>
+
+<p>I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
+This is an overview of what you will be learning today:</p>
+
+<ol>
+<li><p><strong>Motivation and Goals. What is Python?</strong></p></li>
+
+<li><p><strong>Python Installation. Accompanying Tools</strong></p></li>
+
+<li><p><strong>A Quick Introduction to the Python Programming Language</strong></p>
+
+<ol>
+<li>Data Types</li>
+<li>Python Operators</li>
+<li>Flow Control in Python</li>
+<li>Python Variables and Functions</li>
+<li>Python Objects and Classes</li>
+<li>Modules and Packages</li>
+</ol></li>
+
+<li><p><strong>Complementary Python Scientific Computing Tools</strong></p></li>
+
+<li><p><strong>Homework 😱</strong></p></li>
+
+<li><p><strong>Sources and References</strong></p></li>
+</ol>
+
+<p>So&hellip; let&rsquo;s move on.</p>
+
+<h2 id="1-motivation-and-goals-what-is-python">1.- <strong>Motivation and Goals. What is Python?</strong></h2>
+
+<p>First thing, Python is <strong>free</strong>. Second, it is <strong>simple</strong>.
+Third, it is increasingly becoming the tool of choice for data science projects.
+And last, there is a <strong>huge</strong> community of contributors to lots of open-source projects that complement it.
+This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.</p>
+
+<p>However, to add all this to your toolbelt, the first step is to familiarize yourself with the Python language itself.
+Today we will quickly traverse the main notions to get started on that.</p>
+
+<p>But first, let us install Python!</p>
+
+<h2 id="2-python-installation-accompanying-tools">2. <strong>Python Installation. Accompanying Tools.</strong></h2>
+
+<p>Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.</p>
+
+<h2 id="3-introduction-to-the-python-programming-language">3. <strong>Introduction to the Python Programming Language</strong></h2>
+
+<h3 id="3-1-data-types">3.1 - Data Types:</h3>
+
+<p>The same as in any language, Python also has different types of data.
+The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
+Python determines data type of variables by how they are used.
+For instance, to create an integer (<code>int</code>) variable you simply type:</p>
+
+<pre><code class="language-python"># An integer variable a
+a = 5
+print(type(a))
+</code></pre>
+
+<p><code>print</code> and <code>type</code> are a built-in Python functions that behave as you would expect.
+More on functions later.
+Note that in Python 2 you would not use parentheses with <code>print</code>
+Other basic/common python types are for instance<code>float</code>, <code>string</code>, or <code>boolean</code>, exemplified below:</p>
+
+<pre><code class="language-python"># A float variable f
+f = 5.0
+# A boolean
+b = True
+# A string
+c = 'bom dia'
+</code></pre>
+
+<p>In order to create a collection of data, the most basic python objects are <code>list</code> and <code>tuple</code>:</p>
+
+<pre><code class="language-python"># A tuple
+t = (0,True)
+# A list l
+l = [0,True]
+</code></pre>
+
+<p>Note that there is a relevant difference between tuples and lists: tuples are <strong>immutable</strong>, while lists aren&rsquo;t.
+This means that you won&rsquo;t be able to modify the content stored at <code>t</code>. We will see that in a second.
+Note also that both allow you to mix different data types.
+In order to access the elements that a tuple/list holds, you use <strong>square brackets, not parenthesis</strong>:</p>
+
+<pre><code class="language-python"># the first element of t
+t_first = t[0]
+</code></pre>
+
+<p>Also note that, the same as e.g. C (and different from e.g. Matlab), <strong>in Python indexing starts at 0</strong>.
+Be careful with this, because it can be a common source of confusion in the beginning.</p>
+
+<p>Lists and tuples can be accessed by indexing and can be sliced in several ways:</p>
+
+<pre><code class="language-python">t = (0,1,'hola',3,4.0)
+l = [0,1,'hola',3,4.0]
+print(t[0])
+print(t[-1]) # note the behavior of negative indexes
+print(t[0:2]) # slicing first two elements, third is excluded
+print(l[2:5]) # slicing last three elements
+print(l[2:]) # empty spot after : means up to length-of-list index
+print(l[:2]) # empty spot before : means from first index
+print(l[0:5:2]) # every element, but use a step size of 2
+</code></pre>
+
+<p><div class="alert alert-note">
+  <p>What does mutable/immutable mean?</p>
+
+</div>
+
+[<em>Try accessing and modifying the second element of <code>t</code> and <code>l</code> to discover this.</em>]</p>
+
+<p>Actually, <code>list</code> and <code>tuple</code> are examples of Python <em>containers</em>.
+These are data types that can, well, contain other data.
+A list is an example of a container, and it can contain integers, floats, or other containers, such as more lists:</p>
+
+<pre><code class="language-python"># A list of lists
+l = [[0],[1],[2,3]]
+</code></pre>
+
+<p><div class="alert alert-note">
+  <p>Which is the type of the first element of <code>l</code>? And of <code>t</code>?</p>
+
+</div>
+
+[<em>Find out, using <code>type</code> and print</em>]</p>
+
+<p>Apart from <code>list</code> and <code>tuple</code>, a very useful container are dictionaries.
+You can find information on them for instance in <a href="https://www.tutorialspoint.com/python/python_dictionary.htm" target="_blank">this page</a>.
+You will get to practice with them in the homework.</p>
+
+<h3 id="3-2-python-operators">3.2 - Python Operators:</h3>
+
+<p>Operators are symbols that allow you to use logic and arithmetic in your computations.
+Python has several operators, the most prominent ones being <strong>arithmetic</strong>, <strong>comparison</strong>, and <strong>logical</strong>.</p>
+
+<h4 id="arithmetic-operators">Arithmetic operators:</h4>
+
+<p>They will take two variables and perform simple mathematical operations on them.
+They are addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, modulus <code>%</code>, floor division <code>//</code>, and exponentiation <code>**</code></p>
+
+<pre><code class="language-python">print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
+</code></pre>
+
+<h4 id="comparison-operators">Comparison operators:</h4>
+
+<p>They observe two variables and return a boolean value.
+They are the usual greater than (<code>&gt;</code>,<code>&gt;=</code>), equal (<code>=</code>), different (<code>!=</code>), and lower than (<code>&lt;</code>,<code>&lt;=</code>) mathematical operators.</p>
+
+<pre><code class="language-python">print(3&gt;2, 3&lt;2, 3==2, 3!=2, 3&gt;=2, 3&lt;=2)
+</code></pre>
+
+<h4 id="logical-operators">Logical operators:</h4>
+
+<p>These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
+They are <code>and</code>, <code>or</code>, <code>not</code>.</p>
+
+<pre><code class="language-python">print(True and True, False or False, not True)
+</code></pre>
+
+<h4 id="other-operators">Other operators</h4>
+
+<p>There are other operators in Python, such as identity (<code>is</code>, <code>is not</code>) or membership (<code>in</code>, <code>not in</code>).
+I am 100% sure you will be able to guess what is their effect on variables/containers!</p>
+
+<h3 id="3-3-flow-control-in-python">3.3 - Flow Control in Python</h3>
+
+<p>Typical flow control structures are implemented as usual in Python.
+<div class="alert alert-note">
+  <p>Be careful with Python code <strong>indentation</strong>:
+space left to the left of the code is an implicit encloser of code blocks.</p>
+
+</div>
+</p>
+
+<h4 id="if-else-statements"><code>if</code>-<code>else</code> statements</h4>
+
+<p>Observe the following code:</p>
+
+<pre><code class="language-python">if 3&gt;2:
+    print('success')
+elif 3==2:
+    print('failure')
+else:
+    print('I do not know')
+print('do you know?')
+</code></pre>
+
+<h4 id="for-loops"><code>for</code> loops</h4>
+
+<p>Observe the following code:</p>
+
+<pre><code class="language-python">for i in [0,1,2,3]:
+    print(i)
+</code></pre>
+
+<h4 id="while-loops"><code>while</code> loops</h4>
+
+<p>Observe the following code:</p>
+
+<pre><code class="language-python">i=0
+while i &lt; 4:
+    print(i)
+    i = i+1
+</code></pre>
+
+<div class="alert alert-note">
+  <p>Do not forget about the semicolon in the end of control statements!</p>
+
+</div>
+
+
+<h4 id="break-and-continue"><code>break</code> and <code>continue</code></h4>
+
+<p>Observe the following code:</p>
+
+<pre><code class="language-python">for i in [0,1,2,3,4]:
+    if i % 3 == 0:
+        continue
+    print(i)
+</code></pre>
+
+<pre><code class="language-python">for i in [0,1,2,3,4]:
+    if i % 3 == 0:
+        break
+    print(i)
+</code></pre>
+
+<div class="alert alert-note">
+  <p>Can you give a definition of both statements?</p>
+
+</div>
+
+
+<h3 id="3-4-python-variables-and-functions">3.4 - Python Variables and Functions:</h3>
+
+<p>Variables are simply reserved memory locations to store values.
+The moment you create a variable you reserve some space in memory.
+Based on the data type of a variable, the interpreter allocates a certain amount of memory depending on it.</p>
+
+<p>As we have seen above, in Python, there is no need of declaring variables before using them.
+This is because actually what you are doing is not creating a spot in memory and filling it with an object.
+Rather, you are creating a pointer (that occupies a first memory spot), and then making that pointer point to an object in a second memory spot.
+For this reason, you can for instance reassign a variable to a different type of object without errors:</p>
+
+<pre><code class="language-python">a = [0,1,2]
+a = True
+a = (-1,3)
+</code></pre>
+
+<p>Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.</p>
+
+<pre><code class="language-python">a = [0,1,2]
+b = a
+b[2] = 0
+print(a)
+</code></pre>
+
+<div class="alert alert-note">
+  <p>What would have happened above, if <code>a</code> would  have been a tuple instead of a list? Think and then try!</p>
+
+</div>
+
+
+<p>Being only able to ``interactively&rdquo; play with variables is boring.
+To build more complex code, we need functions.
+A function in Python is defined as follows:</p>
+
+<pre><code class="language-python">def compute_sum(a,b)
+    c = a+b
+    return c
+</code></pre>
+
+<p>The function <code>compute_sum</code> will receive two arguments (of unspecified type), compute its sum, and return the result.
+Note that function does not necessarily have input and/or output parameters.</p>
+
+<p>It is simple to specify a default value for some argument:</p>
+
+<pre><code class="language-python">def compute_sum(a,b=2)
+    c = a+b
+    return c
+</code></pre>
+
+<p>You can also have keyword arguments, specified by name:</p>
+
+<pre><code class="language-python">print(1,2, sep=';')
+</code></pre>
+
+<p>Keyword arguments must always go behind non-keyword arguments.</p>
+
+<p>When you want to have a function with an undetermined number of arguments, you can use <code>*args</code> and <code>**kwargs</code>.</p>
+
+<pre><code class="language-python">def print_all(*args, **kwargs):
+    print(&quot;arguments = &quot;, args)
+    print(&quot;keyword arguments = &quot;, kwargs)
+</code></pre>
+
+<p>This is useful to pass lists and dictionaries to a function. More in the homework.
+<div class="alert alert-warning">
+  <p>Need to explain this</p>
+
+</div>
+</p>
+
+<h3 id="3-5-python-objects">3.5- Python Objects</h3>
+
+<p>Python is an Object Oriented programming language.
+In this paradigm, an object is an entity that contains data along with some metadata and/or functionality.
+Objects are the main tool to operate with data, store and reference it.
+In Python everything is an object, which means every entity has some metadata (<strong>attributes</strong>) and associated functionality (<strong>methods</strong>).
+These attributes and methods are accessed via the dot syntax.</p>
+
+<p>For example, lists have several methods that you can use with them:</p>
+
+<pre><code class="language-python">a = [4,3,2,1]
+a.append(5)
+print(a)
+a.sort()
+print(a)
+</code></pre>
+
+<p>For a complete list of these, see <a href="http://faculty.salina.k-state.edu/tim/NPstudy_guide/python/containers.html#list-methods" target="_blank">here</a>.</p>
+
+<p>Note that even basic types have attributes and methods:</p>
+
+<pre><code class="language-python">a = 5.0
+print(a.is_integer())
+</code></pre>
+
+<p>In Python, even methods themselves are objects of a given type:</p>
+
+<pre><code class="language-python">print(type(compute_sum))
+print(type(compute_sum(1.0,2))
+</code></pre>
+
+<h3 id="3-6-python-classes">3.6 - Python Classes</h3>
+
+<p>How can you go beyond built-in data types and create new types, with their associated methods and attributes defined by you?
+Python allows you to create new classes, and then instantiate new objects of that class and interact with them.</p>
+
+<h3 id="3-7-modules-and-packages">3.7 - Modules and Packages</h3>
+
+<p>In Python, you have modules and packages.</p>
+
+<h2 id="4-complementary-python-scientific-computing-tools">4. <strong>Complementary Python Scientific Computing Tools</strong></h2>
+
+<p>Numpy, Matplotlib. Spyder.</p>
+
+<h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
+
+<p>Here is what I want you to do for next week.</p>
+
+<h3 id="review-exercises-mandatory">Review exercises (mandatory)</h3>
+
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
+
+<h3 id="numpy-mandatory">Numpy (mandatory)</h3>
+
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
+
+<h3 id="dictionaries-mandatory">Dictionaries (mandatory)</h3>
+
+<p>Explanation of what a dictionary is.</p>
+
+<p>Here you can find some exercises for dictionaries.</p>
+
+<h3 id="classes-mandatory">Classes (mandatory)</h3>
+
+<p>Explanation of how classes work in Python.</p>
+
+<p>Here you can find some exercises for classes.</p>
+
+<h3 id="debugging-in-python-recommended">Debugging in Python (recommended)</h3>
+
+<p>Explanation of how to handle exceptions. Look into page 45 of JvdP.</p>
+
+<p>Here you can find some exercises for exceptions.</p>
+
+<h3 id="iterators-recommended">Iterators (recommended)</h3>
+
+<p>When we saw the example of a for loop, the looping variable traversed a list:</p>
+
+<pre><code class="language-python">for i in [0,1,2,3]:
+    print(i)
+</code></pre>
+
+<p>Actually, the object to the right of <code>in</code> needs to be an <code>iterator</code>.
+A <code>list</code> is a special type of <code>iterator</code>.
+These can be understood as generalized sequences, and will be important in following lectures.
+See page 52 of VdP.</p>
+
+<p>Here you can find some exercises for iterators.</p>
+
+<h3 id="generators-recommended">Generators (recommended)</h3>
+
+<p>Here you can find some exercises for generators.</p>
+
+<h2 id="6-sources-and-references">6. <strong>Sources and References</strong></h2>
+
+<p>Of course, there are tons of wonderful Python resources in the internet.
+The main sources I used to build this lecture were:</p>
 
     </div>
   </div>
