@@ -22,7 +22,8 @@
 
 &lt;p&gt;This year we have decided to move from Matlab to Python for the practical sessions.
 Some of you maybe will not have worked with this programming language.
-This first lecture is intended to make you aware of the (super-rich) Python ecosystem for scientific computing.&lt;/p&gt;
+This first lecture is intended to guide you through your first steps in this programming language,
+and make you aware of the (super-rich) Python ecosystem for scientific computing.&lt;/p&gt;
 
 &lt;p&gt;I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
 This is an overview of what you will be learning today:&lt;/p&gt;
@@ -56,36 +57,90 @@ This is an overview of what you will be learning today:&lt;/p&gt;
 
 &lt;p&gt;First thing, Python is &lt;strong&gt;free&lt;/strong&gt;. Second, it is &lt;strong&gt;simple&lt;/strong&gt;.
 Third, it is increasingly becoming the tool of choice for data science projects.
+Fourth, it&amp;rsquo;s multi-platform, it can run in Windows, Linux, Mac, your mobile phone&amp;hellip;
 And last, there is a &lt;strong&gt;huge&lt;/strong&gt; community of contributors to lots of open-source projects that complement it.
 This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.&lt;/p&gt;
 
-&lt;p&gt;However, to add all this to your toolbelt, the first step is to familiarize yourself with the Python language itself.
-Today we will quickly traverse the main notions to get started on that.&lt;/p&gt;
+&lt;p&gt;However, to add all this to your tool-belt, the first step is to familiarize yourself with the Python language itself.
+Today we will quickly review the main notions to get started on it.&lt;/p&gt;
 
 &lt;p&gt;But first, let us install Python!&lt;/p&gt;
 
-&lt;h2 id=&#34;2-python-installation-accompanying-tools&#34;&gt;2. &lt;strong&gt;Python Installation. Accompanying Tools.&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;2-python-installation-accompanying-tools&#34;&gt;2. &lt;strong&gt;Python Installation. Accompanying tools&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.&lt;/p&gt;
+&lt;h3 id=&#34;2-1-anaconda-python-distribution&#34;&gt;2.1 Anaconda Python Distribution&lt;/h3&gt;
+
+&lt;p&gt;In this course we will use the Python language programming.
+However, as mentioned above, one of the main strengths of Python is the large amount of available scientific libraries.
+This means that, together with the core Python language, we&amp;rsquo;ll be using several Python packages to perform scientific computations.
+But instead of installing all these packages manually one at a time, we will be using a &lt;strong&gt;Python distribution&lt;/strong&gt;.
+A distribution consists of the core Python package and several hundred modules, and available through a single download and installation.
+In this course, we will use the Anaconda Python distribution.
+Apart of Python itself and several hundred libraries, Anaconda also includes two very useful development environments: &lt;strong&gt;Jupyter&lt;/strong&gt; and &lt;strong&gt;Spyder&lt;/strong&gt;.
+More on this below.&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;The Anaconda Python distribution can be found &lt;a href=&#34;https://www.continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. Please install the Python 3.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Questions for the slide/quizzes:
+a) Python has two operating modes. Which are they?
+Interactive mode
+Standard mode
+Both of the above - correct
+None of the above&lt;/p&gt;
+
+&lt;p&gt;b) Which version of Python will we focus on in this course?
+Python 2
+Python 3 - correct
+Spyder
+Jupyter&lt;/p&gt;
+
+&lt;h3 id=&#34;2-2-executing-python-code&#34;&gt;2.2  Executing Python code&lt;/h3&gt;
+
+&lt;p&gt;Python has two different modes: &lt;strong&gt;interactive&lt;/strong&gt; and &lt;strong&gt;standard&lt;/strong&gt;.
+The interactive mode is meant for experimenting your code one line or one expression at a time.
+The standard mode is useful for running programs from start to finish.
+You will probably find yourself alternating between both modes.&lt;/p&gt;
+
+&lt;h4 id=&#34;2-2-1-python-interactive-mode&#34;&gt;2.2.1 Python Interactive Mode&lt;/h4&gt;
+
+&lt;p&gt;For a first example on interactive mode, open a command console, type &lt;code&gt;python&lt;/code&gt;, and you will start using Python. Experiment a bit.&lt;/p&gt;
+
+&lt;p&gt;A more convenient way of building code interactively is through &lt;strong&gt;iPython notebooks - Jupyter&lt;/strong&gt;.
+This also allows us to mix text, code, and maths, which is really cool.
+To start an iPython notebook, open a console, type jupyter notebook, and navigate in your browser to localhost/whatever.
+Explanations on ipython.&lt;/p&gt;
+
+&lt;h4 id=&#34;2-2-2-python-standard-mode&#34;&gt;2.2.2 Python Standard Mode&lt;/h4&gt;
+
+&lt;p&gt;In this case, we write a text file with Python instructions, and run it. &lt;code&gt;hello_world.py&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Again, there is a more convenient way for building code in standard mode, which is using an &lt;strong&gt;IDE&lt;/strong&gt; (Integrated Development Environment).
+This programming tool will allow you to more easily debug, inspect variables, and quickly modify your code.
+They typically also include an embedded interactive system. An example of an IDE is &lt;strong&gt;Spyder&lt;/strong&gt;, already contained in the Anaconda distribution.&lt;/p&gt;
+
+&lt;p&gt;Questions for the slide/quizzes:
+For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available here. Open it!&lt;/p&gt;
 
 &lt;h2 id=&#34;3-introduction-to-the-python-programming-language&#34;&gt;3. &lt;strong&gt;Introduction to the Python Programming Language&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;h3 id=&#34;3-1-data-types&#34;&gt;3.1 - Data Types:&lt;/h3&gt;
+&lt;h3 id=&#34;3-1-fundamental-python-data-types&#34;&gt;3.1 - Fundamental Python data types&lt;/h3&gt;
 
-&lt;p&gt;The same as in any language, Python also has different types of data.
+&lt;p&gt;Python contains several typical built-in data types as part of the core language.
 The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
-Python determines data type of variables by how they are used.
-For instance, to create an integer (&lt;code&gt;int&lt;/code&gt;) variable you simply type:&lt;/p&gt;
+Python determines data type of variables by how they are used.&lt;/p&gt;
+
+&lt;p&gt;For instance, to create an integer (&lt;code&gt;int&lt;/code&gt;) variable you simply type:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# An integer variable a
 a = 5
 print(type(a))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;code&gt;print&lt;/code&gt; and &lt;code&gt;type&lt;/code&gt; are a built-in Python functions that behave as you would expect.
-More on functions later.
-Note that in Python 2 you would not use parentheses with &lt;code&gt;print&lt;/code&gt;
-Other basic/common python types are for instance&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, or &lt;code&gt;boolean&lt;/code&gt;, exemplified below:&lt;/p&gt;
+&lt;p&gt;Other basic/common python types are for instance&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, or &lt;code&gt;boolean&lt;/code&gt;, exemplified below:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A float variable f
 f = 5.0
@@ -95,7 +150,116 @@ b = True
 c = &#39;bom dia&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In order to create a collection of data, the most basic python objects are &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt;:&lt;/p&gt;
+&lt;h3 id=&#34;3-2-everything-is-an-object&#34;&gt;3.2 - Everything is an object&lt;/h3&gt;
+
+&lt;p&gt;It is important that you start thinking of the above examples &lt;code&gt;a,f,b,c&lt;/code&gt; as &lt;strong&gt;objects&lt;/strong&gt;.
+Each object in Python has three characteristics: object &lt;strong&gt;type&lt;/strong&gt;, object &lt;strong&gt;value&lt;/strong&gt;, and object &lt;strong&gt;identity&lt;/strong&gt;.
+Object type tells Python what kind of an object it&amp;rsquo;s dealing with.
+A type could be a number, or a string, or a list, or something else.
+Object value is the data value is contained by the object.
+This could be a specific number, for example.
+Finally, you can think of object identity as an identity number for the object.
+Each distinct object in the computer&amp;rsquo;s memory will have its own identity number.&lt;/p&gt;
+
+&lt;p&gt;Questions for the slide/quizzes:
+Consider the following line of code:
+x = 4
+In this assignment, what does the number 4 represent?
+The object type.
+The object value. correct
+The object identity.&lt;/p&gt;
+
+&lt;p&gt;Most Python objects have either data or functions or both associated with them.
+These are known as attributes.
+The name of the attribute follows the name of the object.
+And these two are separated by a dot in between them.
+The two types of attributes are called either data attributes or methods.
+A data attribute is a value that is attached to a specific object.
+In contrast, a method is a function that is attached to an object.
+And typically a method performs some function
+or some operation on that object.
+Object type always determines the kind of operations that it supports.
+In other words, depending on the type of the object,
+different methods may be available to you as a programmer.
+Finally, an instance is one occurrence of an object.
+For example, you could have two strings.
+They may have different values stored in them,
+but they nevertheless support the same set of methods.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-3-python-modules&#34;&gt;3.3 - Python Modules&lt;/h3&gt;
+
+&lt;p&gt;Python contains builtin functions, such as &lt;code&gt;print&lt;/code&gt; that can be used by all Python programs.
+However, while the Python library consists of all core elements, such as data types and built-in functions,
+the bulk of the Python library consists of modules.
+In order for you to be able to make use of modules in your own code,
+you first need to import those modules using the import statement.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example of modules, attributes, methods, in numpy.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The numpy example above made available some specific data types and methods for us.
+This is an example of a &lt;strong&gt;Python module&lt;/strong&gt;.
+In general, Python modules are libraries of code that you import and use through &lt;code&gt;import&lt;/code&gt; statements.
+Let&amp;rsquo;s go through a simple example. Import the &lt;code&gt;math&lt;/code&gt; module.
+This module gives you access to the pi constant. Print its value.
+This module also gives you access to several mathematical operations. Find out (print) the value of the sine of pi.&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;If you only need, e.g., the value of pi from the entire &lt;code&gt;math&lt;/code&gt; module, you can import it selectively:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from math import pi
+print(pi)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;3-4-python-basic-operators&#34;&gt;3.4 - Python Basic Operators:&lt;/h3&gt;
+
+&lt;p&gt;Operators are symbols that allow you to use logic and arithmetic in your computations.
+Python has several operators, the most prominent ones being &lt;strong&gt;arithmetic&lt;/strong&gt;, &lt;strong&gt;comparison&lt;/strong&gt;, and &lt;strong&gt;logical&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;3-4-1-arithmetic-operators&#34;&gt;3.4.1 - Arithmetic operators:&lt;/h4&gt;
+
+&lt;p&gt;They will take two variables and perform simple mathematical operations on them.
+They are addition &lt;code&gt;+&lt;/code&gt;, subtraction &lt;code&gt;-&lt;/code&gt;, multiplication &lt;code&gt;*&lt;/code&gt;, division &lt;code&gt;/&lt;/code&gt;, modulus &lt;code&gt;%&lt;/code&gt;, floor division &lt;code&gt;//&lt;/code&gt;, and exponentiation &lt;code&gt;**&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-4-2-comparison-operators&#34;&gt;3.4.2 - Comparison operators:&lt;/h4&gt;
+
+&lt;p&gt;They observe two variables and return a boolean value.
+They are the usual greater than (&lt;code&gt;&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;gt;=&lt;/code&gt;), equal (&lt;code&gt;=&lt;/code&gt;), different (&lt;code&gt;!=&lt;/code&gt;), and lower than (&lt;code&gt;&amp;lt;&lt;/code&gt;,&lt;code&gt;&amp;lt;=&lt;/code&gt;) mathematical operators.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3&amp;gt;2, 3&amp;lt;2, 3==2, 3!=2, 3&amp;gt;=2, 3&amp;lt;=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-4-3-logical-operators&#34;&gt;3.4.3 - Logical operators:&lt;/h4&gt;
+
+&lt;p&gt;These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
+They are &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(True and True, False or False, not True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;3-4-5-other-operators&#34;&gt;3.4.5 - Other operators&lt;/h4&gt;
+
+&lt;p&gt;There are other operators in Python, such as identity (&lt;code&gt;is&lt;/code&gt;, &lt;code&gt;is not&lt;/code&gt;) or membership (&lt;code&gt;in&lt;/code&gt;, &lt;code&gt;not in&lt;/code&gt;).
+I am 100% sure you will be able to guess what is their effect on variables/containers!
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Note this subtle difference between &lt;code&gt;==&lt;/code&gt; and &lt;code&gt;is&lt;/code&gt;: &lt;code&gt;==&lt;/code&gt; tests whether objects have the same value, whereas &lt;code&gt;is&lt;/code&gt;
+tests whether objects have the same identity. Try it with &lt;code&gt;a=[1,2]&lt;/code&gt; and &lt;code&gt;b=[1,2]&lt;/code&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;3-5-sequences-and-object-containers&#34;&gt;3.5 - Sequences and Object Containers&lt;/h3&gt;
+
+&lt;h4 id=&#34;3-5-1-python-sequences&#34;&gt;3.5.1 - Python Sequences&lt;/h4&gt;
+
+&lt;p&gt;A sequence is an &lt;strong&gt;ordered&lt;/strong&gt; collection of objects. In Python, you can find three types of sequences: Lists, Tuples, and Range Objects.&lt;/p&gt;
+
+&lt;p&gt;Let us focus on the first two of them. Lists and tuples can be accessed by indexing and can be sliced in several ways:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A tuple
 t = (0,True)
@@ -103,19 +267,39 @@ t = (0,True)
 l = [0,True]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note that there is a relevant difference between tuples and lists: tuples are &lt;strong&gt;immutable&lt;/strong&gt;, while lists aren&amp;rsquo;t.
-This means that you won&amp;rsquo;t be able to modify the content stored at &lt;code&gt;t&lt;/code&gt;. We will see that in a second.
-Note also that both allow you to mix different data types.
-In order to access the elements that a tuple/list holds, you use &lt;strong&gt;square brackets, not parenthesis&lt;/strong&gt;:&lt;/p&gt;
+&lt;p&gt;Note that there is a relevant difference between tuples and lists: tuples are &lt;strong&gt;immutable&lt;/strong&gt;, while lists are not.
+This means that you won&amp;rsquo;t be able to modify the content stored at &lt;code&gt;t&lt;/code&gt;. We will explain this in a second.
+Note also that both lists and tuples allow you to mix different data types.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# the first element of t
+&lt;h4 id=&#34;note-mutable-and-immutable-objects&#34;&gt;Note: Mutable and immutable objects&lt;/h4&gt;
+
+&lt;p&gt;The value of some objects can change in the course of program execution.
+Objects whose value can change are said to be mutable objects,
+whereas objects whose value is unchangeable after they&amp;rsquo;ve been created
+are called immutable.&lt;/p&gt;
+
+&lt;p&gt;Questions for the slide/quizzes:
+What does it mean for an object to be immutable?
+Its contents cannot be modified by the programmer.
+Its contents cannot be modified by the programmer after the object has been created. correct&lt;/p&gt;
+
+&lt;p&gt;Continuing with sequences, in order to access the elements that a tuple/list holds, you use &lt;strong&gt;square brackets, not parenthesis&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# the first element of the tuple t
 t_first = t[0]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Also note that, the same as e.g. C (and different from e.g. Matlab), &lt;strong&gt;in Python indexing starts at 0&lt;/strong&gt;.
-Be careful with this, because it can be a common source of confusion in the beginning.&lt;/p&gt;
+Be careful with this, because it is a common source of confusion in the beginning.&lt;/p&gt;
 
-&lt;p&gt;Lists and tuples can be accessed by indexing and can be sliced in several ways:&lt;/p&gt;
+&lt;p&gt;Questions for the slide/quizzes:
+Consider the following tuple and index (1,2,3)[0]. What will this return?
+0
+1
+3
+This code contains an error.&lt;/p&gt;
+
+&lt;p&gt;Sequences can be accessed by indexing, which supports negatives indexes:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;t = (0,1,&#39;hola&#39;,3,4.0)
 l = [0,1,&#39;hola&#39;,3,4.0]
@@ -128,75 +312,119 @@ print(l[:2]) # empty spot before : means from first index
 print(l[0:5:2]) # every element, but use a step size of 2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;What does mutable/immutable mean?&lt;/p&gt;
+&lt;p&gt;Questions for the slide/quizzes:
+Consider the following tuple and index (1,2,3)[0:-1]. What will this return?
+(1,2) correct
+(2)
+()
+This code contains an error.
+Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice&lt;/p&gt;
 
-&lt;/div&gt;
+&lt;p&gt;Sequences also support a very handy operation called &lt;strong&gt;slicing&lt;/strong&gt;, that enables access to multiple objects at the same time:&lt;/p&gt;
 
-[&lt;em&gt;Try accessing and modifying the second element of &lt;code&gt;t&lt;/code&gt; and &lt;code&gt;l&lt;/code&gt; to discover this.&lt;/em&gt;]&lt;/p&gt;
-
-&lt;p&gt;Actually, &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt; are examples of Python &lt;em&gt;containers&lt;/em&gt;.
-These are data types that can, well, contain other data.
-A list is an example of a container, and it can contain integers, floats, or other containers, such as more lists:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A list of lists
-l = [[0],[1],[2,3]]
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(t[0:2]) # slicing first two elements, third is excluded
+print(l[2:5]) # slicing last three elements
+print(l[2:]) # empty spot after : means up to length-of-list index
+print(l[:2]) # empty spot before : means from first index
+print(l[0:5:2]) # every element, but use a step size of 2
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Which is the type of the first element of &lt;code&gt;l&lt;/code&gt;? And of &lt;code&gt;t&lt;/code&gt;?&lt;/p&gt;
+&lt;p&gt;Questions for the slide/quizzes:
+Consider the following tuple and index (1,2,3)[1:1]. What will this return?
+(0)
+(1)
+() correct
+This code contains an error.
+Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice&lt;/p&gt;
 
-&lt;/div&gt;
+&lt;p&gt;Tuples and lists, as every python object, have several methods that you can use with them.
+However, since lists are mutable, they have methods that can modify their content:&lt;/p&gt;
 
-[&lt;em&gt;Find out, using &lt;code&gt;type&lt;/code&gt; and print&lt;/em&gt;]&lt;/p&gt;
-
-&lt;p&gt;Apart from &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt;, a very useful container are dictionaries.
-You can find information on them for instance in &lt;a href=&#34;https://www.tutorialspoint.com/python/python_dictionary.htm&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt;.
-You will get to practice with them in the homework.&lt;/p&gt;
-
-&lt;h3 id=&#34;3-2-python-operators&#34;&gt;3.2 - Python Operators:&lt;/h3&gt;
-
-&lt;p&gt;Operators are symbols that allow you to use logic and arithmetic in your computations.
-Python has several operators, the most prominent ones being &lt;strong&gt;arithmetic&lt;/strong&gt;, &lt;strong&gt;comparison&lt;/strong&gt;, and &lt;strong&gt;logical&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;arithmetic-operators&#34;&gt;Arithmetic operators:&lt;/h4&gt;
-
-&lt;p&gt;They will take two variables and perform simple mathematical operations on them.
-They are addition &lt;code&gt;+&lt;/code&gt;, subtraction &lt;code&gt;-&lt;/code&gt;, multiplication &lt;code&gt;*&lt;/code&gt;, division &lt;code&gt;/&lt;/code&gt;, modulus &lt;code&gt;%&lt;/code&gt;, floor division &lt;code&gt;//&lt;/code&gt;, and exponentiation &lt;code&gt;**&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [4,3,2,1]
+a.append(5)
+print(a)
+a.sort()
+print(a)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;comparison-operators&#34;&gt;Comparison operators:&lt;/h4&gt;
+&lt;p&gt;Note that list methods are &lt;strong&gt;in-place methods&lt;/strong&gt;, they modify the original object that called them and return nothing.
+For a complete list of these, see &lt;a href=&#34;http://faculty.salina.k-state.edu/tim/NPstudy_guide/python/containers.html#list-methods&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;They observe two variables and return a boolean value.
-They are the usual greater than (&lt;code&gt;&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;gt;=&lt;/code&gt;), equal (&lt;code&gt;=&lt;/code&gt;), different (&lt;code&gt;!=&lt;/code&gt;), and lower than (&lt;code&gt;&amp;lt;&lt;/code&gt;,&lt;code&gt;&amp;lt;=&lt;/code&gt;) mathematical operators.&lt;/p&gt;
+&lt;p&gt;There are other generic Python functions that work with sequences and provide useful operations:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3&amp;gt;2, 3&amp;lt;2, 3==2, 3!=2, 3&amp;gt;=2, 3&amp;lt;=2)
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [4,3,2,1]
+b = sorted(a)
+n = len(b)
+s = sum(a)
+print(b, n, s)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;logical-operators&#34;&gt;Logical operators:&lt;/h4&gt;
+&lt;h4 id=&#34;3-5-2-object-containers-dictionaries&#34;&gt;3.5.2 - Object Containers: Dictionaries&lt;/h4&gt;
 
-&lt;p&gt;These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
-They are &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Sequences are a particularly simple example of Object Containers.
+More generally, Python offers several more advanced object containers. A really useful one are dictionaries.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(True and True, False or False, not True)
+&lt;p&gt;Dictionaries are &lt;strong&gt;unordered sequences&lt;/strong&gt; that associate key objects to value objects.
+This means that a dictionary consists of &lt;strong&gt;Key:Value&lt;/strong&gt; pairs, and the keys must be immutable while the values can be anything.
+Note that dictionaries themselves are mutable objects.&lt;/p&gt;
+
+&lt;p&gt;A dictionary is built with curly braces as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ages = {&amp;quot;Me&amp;quot;: 33, &amp;quot;You&amp;quot;: 22, &amp;quot;Him&amp;quot;:24}
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;other-operators&#34;&gt;Other operators&lt;/h4&gt;
+&lt;p&gt;If now I want to know your age, and then increase it, I would type:&lt;/p&gt;
 
-&lt;p&gt;There are other operators in Python, such as identity (&lt;code&gt;is&lt;/code&gt;, &lt;code&gt;is not&lt;/code&gt;) or membership (&lt;code&gt;in&lt;/code&gt;, &lt;code&gt;not in&lt;/code&gt;).
-I am 100% sure you will be able to guess what is their effect on variables/containers!&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(ages[&amp;quot;You&amp;quot;])
+ages[&amp;quot;You&amp;quot;] += 1
+print(ages[&amp;quot;You&amp;quot;])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can add new items to your dictionary as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;ages[&amp;quot;Her&amp;quot;] = 20
+print(ages)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Dictionary objects have also their own methods.
+For instance, you can use &lt;code&gt;keys&lt;/code&gt; to find out what are all the keys in the dictionary, or the &lt;code&gt;values&lt;/code&gt; method
+to retrieve are all of the values in the dictionary:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;names = ages.keys()
+years = ages.values()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Questions for the slide/quizzes:
+Which of the following data structures may be used as keys in a dict?
+Strings
+Lists
+Tuples&lt;/p&gt;
+
+&lt;h3 id=&#34;3-6-statements&#34;&gt;3.6 Statements&lt;/h3&gt;
+
+&lt;h3 id=&#34;3-7-flow-control&#34;&gt;3.7 Flow Control&lt;/h3&gt;
+
+&lt;h3 id=&#34;3-7-python-functions&#34;&gt;3.7 Python Functions&lt;/h3&gt;
+
+&lt;h3 id=&#34;classes-and-scope-rules&#34;&gt;Classes and Scope Rules&lt;/h3&gt;
+
+&lt;h2 id=&#34;4-complementary-python-scientific-computing-tools&#34;&gt;4. &lt;strong&gt;Complementary Python Scientific Computing Tools&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Numpy, Matplotlib.&lt;/p&gt;
+
+&lt;hr /&gt;
 
 &lt;h3 id=&#34;3-3-flow-control-in-python&#34;&gt;3.3 - Flow Control in Python&lt;/h3&gt;
 
 &lt;p&gt;Typical flow control structures are implemented as usual in Python.
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;Be careful with Python code &lt;strong&gt;indentation&lt;/strong&gt;:
-space left to the left of the code is an implicit encloser of code blocks.&lt;/p&gt;
+the space you leave to the left of your piece of code implicitly delimits code blocks.&lt;/p&gt;
 
 &lt;/div&gt;
-&lt;/p&gt;
+
+We will learn the behavior of flow control statements in Python by example,
+to reinforce the idea of how intuitive Python is.&lt;/p&gt;
 
 &lt;h4 id=&#34;if-else-statements&#34;&gt;&lt;code&gt;if&lt;/code&gt;-&lt;code&gt;else&lt;/code&gt; statements&lt;/h4&gt;
 
@@ -261,7 +489,7 @@ while i &amp;lt; 4:
 
 &lt;p&gt;Variables are simply reserved memory locations to store values.
 The moment you create a variable you reserve some space in memory.
-Based on the data type of a variable, the interpreter allocates a certain amount of memory depending on it.&lt;/p&gt;
+Depending on the data type of a variable, the interpreter allocates a certain amount of memory..&lt;/p&gt;
 
 &lt;p&gt;As we have seen above, in Python, there is no need of declaring variables before using them.
 This is because actually what you are doing is not creating a spot in memory and filling it with an object.
@@ -269,8 +497,8 @@ Rather, you are creating a pointer (that occupies a first memory spot), and then
 For this reason, you can for instance reassign a variable to a different type of object without errors:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [0,1,2]
-a = True
 a = (-1,3)
+a = True
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.&lt;/p&gt;
@@ -297,7 +525,609 @@ A function in Python is defined as follows:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The function &lt;code&gt;compute_sum&lt;/code&gt; will receive two arguments (of unspecified type), compute its sum, and return the result.
-Note that function does not necessarily have input and/or output parameters.&lt;/p&gt;
+Note that functions do not necessarily have input and/or output parameters.&lt;/p&gt;
+
+&lt;p&gt;It is simple to specify a default value for some argument:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def compute_sum(a,b=2)
+    c = a+b
+    return c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also have keyword arguments, specified by name:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(1,2, sep=&#39;;&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Keyword arguments must always go behind non-keyword arguments.&lt;/p&gt;
+
+&lt;p&gt;When you want to have a function with an undetermined number of arguments, you can use &lt;code&gt;*args&lt;/code&gt; and &lt;code&gt;**kwargs&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def print_all(*args, **kwargs):
+    print(&amp;quot;arguments = &amp;quot;, args)
+    print(&amp;quot;keyword arguments = &amp;quot;, kwargs)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is useful to pass lists and dictionaries to a function. More in the homework.
+&lt;div class=&#34;alert alert-warning&#34;&gt;
+  &lt;p&gt;Need to explain this&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;h3 id=&#34;3-6-python-classes&#34;&gt;3.6 - Python Classes&lt;/h3&gt;
+
+&lt;p&gt;How can you go beyond built-in data types and create new types, with their
+associated methods and attributes defined by you?
+Python allows you to create new classes, and then define (&lt;em&gt;instantiate&lt;/em&gt;)
+new objects of that class and interact with them. This way, you can
+group data and functions operating on it in a more abstract way, and
+then instantiate concrete samples and use them.
+Classes allow for a simplified modeling of our problems, and enables the
+creation of cleaner code that can be more easily extended in the future.&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;When dealing with classes, data is usually called &lt;em&gt;attributes&lt;/em&gt;, and functions &lt;em&gt;methods&lt;/em&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Every class needs to have a special method, called &lt;code&gt;constructor&lt;/code&gt;, that initializes its attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will note the presence of the &lt;code&gt;self&lt;/code&gt; parameter: this is a special inner
+reference to the object state. It may take some time to understand the use
+of &lt;code&gt;self&lt;/code&gt;, but do not be afraid, we will see some examples afterwards.&lt;/p&gt;
+
+&lt;p&gt;As it stands, an object of the &lt;code&gt;Y&lt;/code&gt; class has very limited value, as it contains only data (attributes).
+Let us add some spice by giving our class a function (method):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+    def value(self, t):
+        return self.v0 * t - 0.5*self.g*t**2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The utility of &lt;code&gt;self&lt;/code&gt; starts to become clear now. At this point, you have
+created a useful class, and you can instantiate an object of this new type easily:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;y = Y(3)
+print(type(y))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we call our class as if it was a normal Python function, and Python
+automatically invokes the constructor method. &lt;code&gt;__init__&lt;/code&gt; requires a parameter to be specified
+at instantiation time, in this case &lt;code&gt;3&lt;/code&gt;. If you do not specify it, you will get an error.&lt;/p&gt;
+
+&lt;p&gt;Now, attributes and methods are exposed to the user:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(y.v0)
+print(y.g)
+print(y.value(t=0.1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How can you add new methods to your class? Let us add a &lt;code&gt;formula&lt;/code&gt; method
+that print the mathematical function used to compute &lt;code&gt;value&lt;/code&gt;. This method
+does not need input parameters, and outputs a string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+    def value(self, t):
+        return self.v0 * t - 0.5*self.g*t**2
+    def print_formula(self):
+        return ’v0*t - 0.5*g*t**2; v0=%g’ % self.v0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that even if the formula method does not need any arguments, we still
+must add the &lt;code&gt;self&lt;/code&gt; argument so that it can access the &lt;code&gt;v0&lt;/code&gt; attribute.
+This is omitted in the method call.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Homework&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Protect data from the user (i.e. you!).&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Person(object):
+    def __init__(self, name, mobile_phone=None, office_phone=None, private_phone=None, email=None):
+        self.name = name
+        self.mobile = mobile_phone
+        self.office = office_phone
+        self.private = private_phone
+        self.email = email
+
+    def add_mobile_phone(self, number):
+        self.mobile = number
+    def add_office_phone(self, number):
+        self.office = number
+    def add_private_phone(self, number):
+        self.private = number
+    def add_email(self, address):
+        self.email = address
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the use of None as default value for various data attributes: the object None
+is commonly used to indicate that a variable or attribute is defined, but yet not with
+a sensible value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Class Inheritance:&lt;/em&gt;&lt;/strong&gt;
+Instead of starting from scratch, you can create a class by deriving it
+from a preexisting class by listing the parent class in parentheses after the new class name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Parent:        # define parent class
+   parentAttr = 100
+   def __init__(self):
+      print &amp;quot;Calling parent constructor&amp;quot;
+
+   def parentMethod(self):
+      print &#39;Calling parent method&#39;
+
+   def setAttr(self, attr):
+      Parent.parentAttr = attr
+
+   def getAttr(self):
+      print &amp;quot;Parent attribute :&amp;quot;, Parent.parentAttr
+
+class Child(Parent): # define child class
+   def __init__(self):
+      print &amp;quot;Calling child constructor&amp;quot;
+
+   def childMethod(self):
+      print &#39;Calling child method&#39;
+
+c = Child()          # instance of child
+c.childMethod()      # child calls its method
+c.parentMethod()     # calls parent&#39;s method
+c.setAttr(200)       # again call parent&#39;s method
+c.getAttr()          # again call parent&#39;s method
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;5-homework&#34;&gt;5. &lt;strong&gt;Homework 😱&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Here is what I want you to do for next week.&lt;/p&gt;
+
+&lt;h3 id=&#34;review-exercises-mandatory&#34;&gt;Review exercises (mandatory)&lt;/h3&gt;
+
+&lt;p&gt;Here you can find some exercises to review the concepts explained up to now.&lt;/p&gt;
+
+&lt;h3 id=&#34;numpy-mandatory&#34;&gt;Numpy (mandatory)&lt;/h3&gt;
+
+&lt;p&gt;Here you can find some exercises to review the concepts explained up to now.&lt;/p&gt;
+
+&lt;h3 id=&#34;dictionaries-mandatory&#34;&gt;Dictionaries (mandatory)&lt;/h3&gt;
+
+&lt;p&gt;Explanation of what a dictionary is.&lt;/p&gt;
+
+&lt;p&gt;Here you can find some exercises for dictionaries.&lt;/p&gt;
+
+&lt;h3 id=&#34;classes-mandatory&#34;&gt;Classes (mandatory)&lt;/h3&gt;
+
+&lt;p&gt;Explanation of how classes work in Python.&lt;/p&gt;
+
+&lt;p&gt;Here you can find some exercises for classes.&lt;/p&gt;
+
+&lt;h3 id=&#34;debugging-in-python-recommended&#34;&gt;Debugging in Python (recommended)&lt;/h3&gt;
+
+&lt;p&gt;Explanation of how to handle exceptions. Look into page 45 of JvdP.&lt;/p&gt;
+
+&lt;p&gt;Here you can find some exercises for exceptions.&lt;/p&gt;
+
+&lt;h3 id=&#34;iterators-recommended&#34;&gt;Iterators (recommended)&lt;/h3&gt;
+
+&lt;p&gt;When we saw the example of a for loop, the looping variable traversed a list:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in [0,1,2,3]:
+    print(i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Actually, the object to the right of &lt;code&gt;in&lt;/code&gt; needs to be an &lt;code&gt;iterator&lt;/code&gt;.
+A &lt;code&gt;list&lt;/code&gt; is a special type of &lt;code&gt;iterator&lt;/code&gt;.
+These can be understood as generalized sequences, and will be important in following lectures.
+See page 52 of VdP.&lt;/p&gt;
+
+&lt;p&gt;Here you can find some exercises for iterators.&lt;/p&gt;
+
+&lt;h3 id=&#34;generators-recommended&#34;&gt;Generators (recommended)&lt;/h3&gt;
+
+&lt;p&gt;Here you can find some exercises for generators.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-sources-and-references&#34;&gt;6. &lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Of course, there are tons of wonderful Python resources in the internet.
+The main sources I used to build this lecture were:&lt;/p&gt;
+
+&lt;p&gt;EXERCISES:&lt;/p&gt;
+
+&lt;h3 id=&#34;1&#34;&gt;1&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a=[1,2,3]
+a[1]=4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is a?
+1.- This code contains an error 2.- [1,2,3] 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;2&#34;&gt;2&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a=(1,2,3)
+a[1]=4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is a?
+1.- This code contains an error 2.- [1,2,3] 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;3&#34;&gt;3&lt;/h3&gt;
+
+&lt;p&gt;Consider the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = &amp;quot;Hello, world!&amp;quot;
+y = x[5:]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is the value of y?
+1.- This code contains an error 2.- &amp;lsquo;Hello&amp;rsquo; 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;4&#34;&gt;4&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code and output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
+def my_function():
+  x = 2
+  print(x)
+print(x)
+my_function()
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What will be printed?
+1.- 1;2;1
+2.- 2;2;2
+3.- 1;2;2&lt;/p&gt;
+
+&lt;p&gt;Explanation: x is first defined globally, with value 1. Then, my_function
+creates a variable x with local scope. Therefore, its value does not extend beyond its use in the function.&lt;/p&gt;
+
+&lt;h3 id=&#34;5&#34;&gt;5&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import math
+print(math.cos(math.pi))
+-1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What type of object is math.pi? And math.cos?
+int, float, function, string&lt;/p&gt;
+
+&lt;h3 id=&#34;6&#34;&gt;6&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin until you get 10 heads. Should you use
+a for loop or while loop?&lt;/p&gt;
+
+&lt;h3 id=&#34;7&#34;&gt;7&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin 10 times and count the number of heads.
+Should you use a for loop or a while loop?&lt;/p&gt;
+
+&lt;h3 id=&#34;8&#34;&gt;8&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code and output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
+while x &amp;lt; 5:
+  x *= 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is the final value of x?
+8&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing</title>
+      <link>https://agaldran.github.io/post/17_daco_prac_lec_1_old/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://agaldran.github.io/post/17_daco_prac_lec_1_old/</guid>
+      <description>
+
+&lt;p&gt;&lt;strong&gt;NOTE: This tutorial is under construction&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This year we have decided to move from Matlab to Python for the practical sessions.
+Some of you maybe will not have worked with this programming language.
+This first lecture is intended to guide you through your first steps in this programming language,
+and make you aware of the (super-rich) Python ecosystem for scientific computing.&lt;/p&gt;
+
+&lt;p&gt;I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
+This is an overview of what you will be learning today:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Motivation and Goals. What is Python?&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Python Installation. Accompanying Tools&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;A Quick Introduction to the Python Programming Language&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Data Types&lt;/li&gt;
+&lt;li&gt;Python Operators&lt;/li&gt;
+&lt;li&gt;Flow Control in Python&lt;/li&gt;
+&lt;li&gt;Python Variables and Functions&lt;/li&gt;
+&lt;li&gt;Python Objects and Classes&lt;/li&gt;
+&lt;li&gt;Modules and Packages&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Complementary Python Scientific Computing Tools&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Homework 😱&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;So&amp;hellip; let&amp;rsquo;s move on.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-motivation-and-goals-what-is-python&#34;&gt;1.- &lt;strong&gt;Motivation and Goals. What is Python?&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;First thing, Python is &lt;strong&gt;free&lt;/strong&gt;. Second, it is &lt;strong&gt;simple&lt;/strong&gt;.
+Third, it is increasingly becoming the tool of choice for data science projects.
+Fourth, it&amp;rsquo;s multi-platform, it can run in Windows, Linux, Mac, your mobile phone&amp;hellip;
+And last, there is a &lt;strong&gt;huge&lt;/strong&gt; community of contributors to lots of open-source projects that complement it.
+This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.&lt;/p&gt;
+
+&lt;p&gt;However, to add all this to your tool-belt, the first step is to familiarize yourself with the Python language itself.
+Today we will quickly review the main notions to get started on it.&lt;/p&gt;
+
+&lt;p&gt;But first, let us install Python!&lt;/p&gt;
+
+&lt;h2 id=&#34;2-python-installation-accompanying-tools&#34;&gt;2. &lt;strong&gt;Python Installation. Accompanying Tools.&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The easiest way to install Python in your system is probably through the Anaconda Python distribution, that you can download &lt;a href=&#34;https://www.continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-introduction-to-the-python-programming-language&#34;&gt;3. &lt;strong&gt;Introduction to the Python Programming Language&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;h3 id=&#34;3-1-data-types&#34;&gt;3.1 - Data Types:&lt;/h3&gt;
+
+&lt;p&gt;The same as in any language, Python also has different types of data.
+The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
+Python determines data type of variables by how they are used.
+For instance, to create an integer (&lt;code&gt;int&lt;/code&gt;) variable you simply type:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# An integer variable a
+a = 5
+print(type(a))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;print&lt;/code&gt; and &lt;code&gt;type&lt;/code&gt; are a built-in Python functions that behave as you would expect.
+More on functions later.
+Note that in Python 2 you would not use parentheses with &lt;code&gt;print&lt;/code&gt;.
+Other basic/common python types are for instance&lt;code&gt;float&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, or &lt;code&gt;boolean&lt;/code&gt;, exemplified below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A float variable f
+f = 5.0
+# A boolean
+b = True
+# A string
+c = &#39;bom dia&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In order to create a collection of data, the most basic python objects are &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A tuple
+t = (0,True)
+# A list l
+l = [0,True]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that there is a relevant difference between tuples and lists: tuples are &lt;strong&gt;immutable&lt;/strong&gt;, while lists aren&amp;rsquo;t.
+This means that you won&amp;rsquo;t be able to modify the content stored at &lt;code&gt;t&lt;/code&gt;. We will see that in a second.
+Note also that both allow you to mix different data types.
+In order to access the elements that a tuple/list holds, you use &lt;strong&gt;square brackets, not parenthesis&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# the first element of the tuple t
+t_first = t[0]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Also note that, the same as e.g. C (and different from e.g. Matlab), &lt;strong&gt;in Python indexing starts at 0&lt;/strong&gt;.
+Be careful with this, because it is a common source of confusion in the beginning.&lt;/p&gt;
+
+&lt;p&gt;Lists and tuples can be accessed by indexing and can be sliced in several ways:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;t = (0,1,&#39;hola&#39;,3,4.0)
+l = [0,1,&#39;hola&#39;,3,4.0]
+print(t[0])
+print(t[-1]) # note the behavior of negative indexes
+print(t[0:2]) # slicing first two elements, third is excluded
+print(l[2:5]) # slicing last three elements
+print(l[2:]) # empty spot after : means up to length-of-list index
+print(l[:2]) # empty spot before : means from first index
+print(l[0:5:2]) # every element, but use a step size of 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;What does mutable/immutable mean?&lt;/p&gt;
+
+&lt;/div&gt;
+
+[&lt;em&gt;Try accessing and modifying the second element of &lt;code&gt;t&lt;/code&gt; and &lt;code&gt;l&lt;/code&gt; to discover this.&lt;/em&gt;]&lt;/p&gt;
+
+&lt;p&gt;Actually, &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt; are examples of &lt;strong&gt;Python containers&lt;/strong&gt;.
+These are data types that can, well, contain other data.
+A list is an example of a container, and it can contain integers, floats, or other containers, such as more lists:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A list of lists
+l = [[0],[1],[2,3]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Which is the type of the first element of &lt;code&gt;l&lt;/code&gt;? And of &lt;code&gt;t&lt;/code&gt;?&lt;/p&gt;
+
+&lt;/div&gt;
+
+[&lt;em&gt;Find out, using &lt;code&gt;type&lt;/code&gt; and &lt;code&gt;print&lt;/code&gt;&lt;/em&gt;]&lt;/p&gt;
+
+&lt;p&gt;Apart from &lt;code&gt;list&lt;/code&gt; and &lt;code&gt;tuple&lt;/code&gt;, a very useful container are dictionaries.
+You can find information on them for instance in &lt;a href=&#34;https://www.tutorialspoint.com/python/python_dictionary.htm&#34; target=&#34;_blank&#34;&gt;this page&lt;/a&gt;.
+You will get to practice with them in the homework.&lt;/p&gt;
+
+&lt;h3 id=&#34;3-2-python-operators&#34;&gt;3.2 - Python Operators:&lt;/h3&gt;
+
+&lt;p&gt;Operators are symbols that allow you to use logic and arithmetic in your computations.
+Python has several operators, the most prominent ones being &lt;strong&gt;arithmetic&lt;/strong&gt;, &lt;strong&gt;comparison&lt;/strong&gt;, and &lt;strong&gt;logical&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h4 id=&#34;arithmetic-operators&#34;&gt;Arithmetic operators:&lt;/h4&gt;
+
+&lt;p&gt;They will take two variables and perform simple mathematical operations on them.
+They are addition &lt;code&gt;+&lt;/code&gt;, subtraction &lt;code&gt;-&lt;/code&gt;, multiplication &lt;code&gt;*&lt;/code&gt;, division &lt;code&gt;/&lt;/code&gt;, modulus &lt;code&gt;%&lt;/code&gt;, floor division &lt;code&gt;//&lt;/code&gt;, and exponentiation &lt;code&gt;**&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;comparison-operators&#34;&gt;Comparison operators:&lt;/h4&gt;
+
+&lt;p&gt;They observe two variables and return a boolean value.
+They are the usual greater than (&lt;code&gt;&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;gt;=&lt;/code&gt;), equal (&lt;code&gt;=&lt;/code&gt;), different (&lt;code&gt;!=&lt;/code&gt;), and lower than (&lt;code&gt;&amp;lt;&lt;/code&gt;,&lt;code&gt;&amp;lt;=&lt;/code&gt;) mathematical operators.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(3&amp;gt;2, 3&amp;lt;2, 3==2, 3!=2, 3&amp;gt;=2, 3&amp;lt;=2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;logical-operators&#34;&gt;Logical operators:&lt;/h4&gt;
+
+&lt;p&gt;These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
+They are &lt;code&gt;and&lt;/code&gt;, &lt;code&gt;or&lt;/code&gt;, &lt;code&gt;not&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(True and True, False or False, not True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;other-operators&#34;&gt;Other operators&lt;/h4&gt;
+
+&lt;p&gt;There are other operators in Python, such as identity (&lt;code&gt;is&lt;/code&gt;, &lt;code&gt;is not&lt;/code&gt;) or membership (&lt;code&gt;in&lt;/code&gt;, &lt;code&gt;not in&lt;/code&gt;).
+I am 100% sure you will be able to guess what is their effect on variables/containers!&lt;/p&gt;
+
+&lt;h3 id=&#34;3-3-flow-control-in-python&#34;&gt;3.3 - Flow Control in Python&lt;/h3&gt;
+
+&lt;p&gt;Typical flow control structures are implemented as usual in Python.
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Be careful with Python code &lt;strong&gt;indentation&lt;/strong&gt;:
+the space you leave to the left of your piece of code implicitly delimits code blocks.&lt;/p&gt;
+
+&lt;/div&gt;
+
+We will learn the behavior of flow control statements in Python by example,
+to reinforce the idea of how intuitive Python is.&lt;/p&gt;
+
+&lt;h4 id=&#34;if-else-statements&#34;&gt;&lt;code&gt;if&lt;/code&gt;-&lt;code&gt;else&lt;/code&gt; statements&lt;/h4&gt;
+
+&lt;p&gt;Observe the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;if 3&amp;gt;2:
+    print(&#39;success&#39;)
+elif 3==2:
+    print(&#39;failure&#39;)
+else:
+    print(&#39;I do not know&#39;)
+print(&#39;do you know?&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;for-loops&#34;&gt;&lt;code&gt;for&lt;/code&gt; loops&lt;/h4&gt;
+
+&lt;p&gt;Observe the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in [0,1,2,3]:
+    print(i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;while-loops&#34;&gt;&lt;code&gt;while&lt;/code&gt; loops&lt;/h4&gt;
+
+&lt;p&gt;Observe the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;i=0
+while i &amp;lt; 4:
+    print(i)
+    i = i+1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Do not forget about the semicolon in the end of control statements!&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h4 id=&#34;break-and-continue&#34;&gt;&lt;code&gt;break&lt;/code&gt; and &lt;code&gt;continue&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Observe the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in [0,1,2,3,4]:
+    if i % 3 == 0:
+        continue
+    print(i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in [0,1,2,3,4]:
+    if i % 3 == 0:
+        break
+    print(i)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;Can you give a definition of both statements?&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3 id=&#34;3-4-python-variables-and-functions&#34;&gt;3.4 - Python Variables and Functions:&lt;/h3&gt;
+
+&lt;p&gt;Variables are simply reserved memory locations to store values.
+The moment you create a variable you reserve some space in memory.
+Depending on the data type of a variable, the interpreter allocates a certain amount of memory..&lt;/p&gt;
+
+&lt;p&gt;As we have seen above, in Python, there is no need of declaring variables before using them.
+This is because actually what you are doing is not creating a spot in memory and filling it with an object.
+Rather, you are creating a pointer (that occupies a first memory spot), and then making that pointer point to an object in a second memory spot.
+For this reason, you can for instance reassign a variable to a different type of object without errors:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [0,1,2]
+a = (-1,3)
+a = True
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a = [0,1,2]
+b = a
+b[2] = 0
+print(a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;What would have happened above, if &lt;code&gt;a&lt;/code&gt; would  have been a tuple instead of a list? Think and then try!&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Being only able to ``interactively&amp;rdquo; play with variables is boring.
+To build more complex code, we need functions.
+A function in Python is defined as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def compute_sum(a,b)
+    c = a+b
+    return c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The function &lt;code&gt;compute_sum&lt;/code&gt; will receive two arguments (of unspecified type), compute its sum, and return the result.
+Note that functions do not necessarily have input and/or output parameters.&lt;/p&gt;
 
 &lt;p&gt;It is simple to specify a default value for some argument:&lt;/p&gt;
 
@@ -360,8 +1190,227 @@ print(type(compute_sum(1.0,2))
 
 &lt;h3 id=&#34;3-6-python-classes&#34;&gt;3.6 - Python Classes&lt;/h3&gt;
 
-&lt;p&gt;How can you go beyond built-in data types and create new types, with their associated methods and attributes defined by you?
-Python allows you to create new classes, and then instantiate new objects of that class and interact with them.&lt;/p&gt;
+&lt;p&gt;How can you go beyond built-in data types and create new types, with their
+associated methods and attributes defined by you?
+Python allows you to create new classes, and then define (&lt;em&gt;instantiate&lt;/em&gt;)
+new objects of that class and interact with them. This way, you can
+group data and functions operating on it in a more abstract way, and
+then instantiate concrete samples and use them.
+Classes allow for a simplified modeling of our problems, and enables the
+creation of cleaner code that can be more easily extended in the future.&lt;/p&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;When dealing with classes, data is usually called &lt;em&gt;attributes&lt;/em&gt;, and functions &lt;em&gt;methods&lt;/em&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;p&gt;Every class needs to have a special method, called &lt;code&gt;constructor&lt;/code&gt;, that initializes its attributes.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You will note the presence of the &lt;code&gt;self&lt;/code&gt; parameter: this is a special inner
+reference to the object state. It may take some time to understand the use
+of &lt;code&gt;self&lt;/code&gt;, but do not be afraid, we will see some examples afterwards.&lt;/p&gt;
+
+&lt;p&gt;As it stands, an object of the &lt;code&gt;Y&lt;/code&gt; class has very limited value, as it contains only data (attributes).
+Let us add some spice by giving our class a function (method):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+    def value(self, t):
+        return self.v0 * t - 0.5*self.g*t**2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The utility of &lt;code&gt;self&lt;/code&gt; starts to become clear now. At this point, you have
+created a useful class, and you can instantiate an object of this new type easily:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;y = Y(3)
+print(type(y))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we call our class as if it was a normal Python function, and Python
+automatically invokes the constructor method. &lt;code&gt;__init__&lt;/code&gt; requires a parameter to be specified
+at instantiation time, in this case &lt;code&gt;3&lt;/code&gt;. If you do not specify it, you will get an error.&lt;/p&gt;
+
+&lt;p&gt;Now, attributes and methods are exposed to the user:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(y.v0)
+print(y.g)
+print(y.value(t=0.1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How can you add new methods to your class? Let us add a &lt;code&gt;formula&lt;/code&gt; method
+that print the mathematical function used to compute &lt;code&gt;value&lt;/code&gt;. This method
+does not need input parameters, and outputs a string:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
+    def __init__(self, v0):
+        self.v0 = v0
+        self.g = 9.81
+    def value(self, t):
+        return self.v0 * t - 0.5*self.g*t**2
+    def print_formula(self):
+        return ’v0*t - 0.5*g*t**2; v0=%g’ % self.v0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note that even if the formula method does not need any arguments, we still
+must add the &lt;code&gt;self&lt;/code&gt; argument so that it can access the &lt;code&gt;v0&lt;/code&gt; attribute.
+This is omitted in the method call.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Homework&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Protect data from the user (i.e. you!).&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Person(object):
+    def __init__(self, name, mobile_phone=None, office_phone=None, private_phone=None, email=None):
+        self.name = name
+        self.mobile = mobile_phone
+        self.office = office_phone
+        self.private = private_phone
+        self.email = email
+
+    def add_mobile_phone(self, number):
+        self.mobile = number
+    def add_office_phone(self, number):
+        self.office = number
+    def add_private_phone(self, number):
+        self.private = number
+    def add_email(self, address):
+        self.email = address
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the use of None as default value for various data attributes: the object None
+is commonly used to indicate that a variable or attribute is defined, but yet not with
+a sensible value.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Class Inheritance:&lt;/em&gt;&lt;/strong&gt;
+Instead of starting from scratch, you can create a class by deriving it
+from a preexisting class by listing the parent class in parentheses after the new class name.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Parent:        # define parent class
+   parentAttr = 100
+   def __init__(self):
+      print &amp;quot;Calling parent constructor&amp;quot;
+
+   def parentMethod(self):
+      print &#39;Calling parent method&#39;
+
+   def setAttr(self, attr):
+      Parent.parentAttr = attr
+
+   def getAttr(self):
+      print &amp;quot;Parent attribute :&amp;quot;, Parent.parentAttr
+
+class Child(Parent): # define child class
+   def __init__(self):
+      print &amp;quot;Calling child constructor&amp;quot;
+
+   def childMethod(self):
+      print &#39;Calling child method&#39;
+
+c = Child()          # instance of child
+c.childMethod()      # child calls its method
+c.parentMethod()     # calls parent&#39;s method
+c.setAttr(200)       # again call parent&#39;s method
+c.getAttr()          # again call parent&#39;s method
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;1&#34;&gt;1&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a=[1,2,3]
+a[1]=4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is a?
+1.- This code contains an error 2.- [1,2,3] 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;2&#34;&gt;2&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;a=(1,2,3)
+a[1]=4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is a?
+1.- This code contains an error 2.- [1,2,3] 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;3&#34;&gt;3&lt;/h3&gt;
+
+&lt;p&gt;Consider the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = &amp;quot;Hello, world!&amp;quot;
+y = x[5:]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is the value of y?
+1.- This code contains an error 2.- &amp;lsquo;Hello&amp;rsquo; 3.- etc.&lt;/p&gt;
+
+&lt;h3 id=&#34;4&#34;&gt;4&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code and output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
+def my_function():
+  x = 2
+  print(x)
+print(x)
+my_function()
+print(x)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What will be printed?
+1.- 1;2;1
+2.- 2;2;2
+3.- 1;2;2&lt;/p&gt;
+
+&lt;p&gt;Explanation: x is first defined globally, with value 1. Then, my_function
+creates a variable x with local scope. Therefore, its value does not extend beyond its use in the function.&lt;/p&gt;
+
+&lt;h3 id=&#34;5&#34;&gt;5&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import math
+print(math.cos(math.pi))
+-1.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What type of object is math.pi? And math.cos?
+int, float, function, string&lt;/p&gt;
+
+&lt;h3 id=&#34;6&#34;&gt;6&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin until you get 10 heads. Should you use
+a for loop or while loop?&lt;/p&gt;
+
+&lt;h3 id=&#34;7&#34;&gt;7&lt;/h3&gt;
+
+&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin 10 times and count the number of heads.
+Should you use a for loop or a while loop?&lt;/p&gt;
+
+&lt;h3 id=&#34;8&#34;&gt;8&lt;/h3&gt;
+
+&lt;p&gt;Consider the following code and output:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
+while x &amp;lt; 5:
+  x *= 2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What is the final value of x?
+8&lt;/p&gt;
+
+&lt;h3 id=&#34;9&#34;&gt;9&lt;/h3&gt;
 
 &lt;h3 id=&#34;3-7-modules-and-packages&#34;&gt;3.7 - Modules and Packages&lt;/h3&gt;
 

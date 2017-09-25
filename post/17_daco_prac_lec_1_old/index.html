@@ -39,7 +39,7 @@
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://agaldran.github.io/post/17_daco_prac_lec_1/">
+  <link rel="canonical" href="https://agaldran.github.io/post/17_daco_prac_lec_1_old/">
 
   
 
@@ -190,35 +190,35 @@
   <ul class="share">
     <li>
       <a class="facebook"
-         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1%2f"
+         href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f"
          target="_blank">
         <i class="fa fa-facebook"></i>
       </a>
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1%2f"
+         href="https://twitter.com/intent/tweet?text=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;body=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1%2f">
+         href="mailto:?subject=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;body=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -281,81 +281,29 @@ Today we will quickly review the main notions to get started on it.</p>
 
 <p>But first, let us install Python!</p>
 
-<h2 id="2-python-installation-accompanying-tools">2. <strong>Python Installation. Accompanying tools</strong></h2>
+<h2 id="2-python-installation-accompanying-tools">2. <strong>Python Installation. Accompanying Tools.</strong></h2>
 
-<h3 id="2-1-anaconda-python-distribution">2.1 Anaconda Python Distribution</h3>
-
-<p>In this course we will use the Python language programming.
-However, as mentioned above, one of the main strengths of Python is the large amount of available scientific libraries.
-This means that, together with the core Python language, we&rsquo;ll be using several Python packages to perform scientific computations.
-But instead of installing all these packages manually one at a time, we will be using a <strong>Python distribution</strong>.
-A distribution consists of the core Python package and several hundred modules, and available through a single download and installation.
-In this course, we will use the Anaconda Python distribution.
-Apart of Python itself and several hundred libraries, Anaconda also includes two very useful development environments: <strong>Jupyter</strong> and <strong>Spyder</strong>.
-More on this below.</p>
-
-<div class="alert alert-note">
-  <p>The Anaconda Python distribution can be found <a href="https://www.continuum.io/downloads" target="_blank">here</a>. Please install the Python 3.</p>
-
-</div>
-
-
-<p>Questions for the slide/quizzes:
-a) Python has two operating modes. Which are they?
-Interactive mode
-Standard mode
-Both of the above - correct
-None of the above</p>
-
-<p>b) Which version of Python will we focus on in this course?
-Python 2
-Python 3 - correct
-Spyder
-Jupyter</p>
-
-<h3 id="2-2-executing-python-code">2.2  Executing Python code</h3>
-
-<p>Python has two different modes: <strong>interactive</strong> and <strong>standard</strong>.
-The interactive mode is meant for experimenting your code one line or one expression at a time.
-The standard mode is useful for running programs from start to finish.
-You will probably find yourself alternating between both modes.</p>
-
-<h4 id="2-2-1-python-interactive-mode">2.2.1 Python Interactive Mode</h4>
-
-<p>For a first example on interactive mode, open a command console, type <code>python</code>, and you will start using Python. Experiment a bit.</p>
-
-<p>A more convenient way of building code interactively is through <strong>iPython notebooks - Jupyter</strong>.
-This also allows us to mix text, code, and maths, which is really cool.
-To start an iPython notebook, open a console, type jupyter notebook, and navigate in your browser to localhost/whatever.
-Explanations on ipython.</p>
-
-<h4 id="2-2-2-python-standard-mode">2.2.2 Python Standard Mode</h4>
-
-<p>In this case, we write a text file with Python instructions, and run it. <code>hello_world.py</code>.</p>
-
-<p>Again, there is a more convenient way for building code in standard mode, which is using an <strong>IDE</strong> (Integrated Development Environment).
-This programming tool will allow you to more easily debug, inspect variables, and quickly modify your code.
-They typically also include an embedded interactive system. An example of an IDE is <strong>Spyder</strong>, already contained in the Anaconda distribution.</p>
-
-<p>Questions for the slide/quizzes:
-For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available here. Open it!</p>
+<p>The easiest way to install Python in your system is probably through the Anaconda Python distribution, that you can download <a href="https://www.continuum.io/downloads" target="_blank">here</a>.
+Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.</p>
 
 <h2 id="3-introduction-to-the-python-programming-language">3. <strong>Introduction to the Python Programming Language</strong></h2>
 
-<h3 id="3-1-fundamental-python-data-types">3.1 - Fundamental Python data types</h3>
+<h3 id="3-1-data-types">3.1 - Data Types:</h3>
 
-<p>Python contains several typical built-in data types as part of the core language.
+<p>The same as in any language, Python also has different types of data.
 The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
-Python determines data type of variables by how they are used.</p>
-
-<p>For instance, to create an integer (<code>int</code>) variable you simply type:</p>
+Python determines data type of variables by how they are used.
+For instance, to create an integer (<code>int</code>) variable you simply type:</p>
 
 <pre><code class="language-python"># An integer variable a
 a = 5
 print(type(a))
 </code></pre>
 
-<p>Other basic/common python types are for instance<code>float</code>, <code>string</code>, or <code>boolean</code>, exemplified below:</p>
+<p><code>print</code> and <code>type</code> are a built-in Python functions that behave as you would expect.
+More on functions later.
+Note that in Python 2 you would not use parentheses with <code>print</code>.
+Other basic/common python types are for instance<code>float</code>, <code>string</code>, or <code>boolean</code>, exemplified below:</p>
 
 <pre><code class="language-python"># A float variable f
 f = 5.0
@@ -365,116 +313,7 @@ b = True
 c = 'bom dia'
 </code></pre>
 
-<h3 id="3-2-everything-is-an-object">3.2 - Everything is an object</h3>
-
-<p>It is important that you start thinking of the above examples <code>a,f,b,c</code> as <strong>objects</strong>.
-Each object in Python has three characteristics: object <strong>type</strong>, object <strong>value</strong>, and object <strong>identity</strong>.
-Object type tells Python what kind of an object it&rsquo;s dealing with.
-A type could be a number, or a string, or a list, or something else.
-Object value is the data value is contained by the object.
-This could be a specific number, for example.
-Finally, you can think of object identity as an identity number for the object.
-Each distinct object in the computer&rsquo;s memory will have its own identity number.</p>
-
-<p>Questions for the slide/quizzes:
-Consider the following line of code:
-x = 4
-In this assignment, what does the number 4 represent?
-The object type.
-The object value. correct
-The object identity.</p>
-
-<p>Most Python objects have either data or functions or both associated with them.
-These are known as attributes.
-The name of the attribute follows the name of the object.
-And these two are separated by a dot in between them.
-The two types of attributes are called either data attributes or methods.
-A data attribute is a value that is attached to a specific object.
-In contrast, a method is a function that is attached to an object.
-And typically a method performs some function
-or some operation on that object.
-Object type always determines the kind of operations that it supports.
-In other words, depending on the type of the object,
-different methods may be available to you as a programmer.
-Finally, an instance is one occurrence of an object.
-For example, you could have two strings.
-They may have different values stored in them,
-but they nevertheless support the same set of methods.</p>
-
-<h3 id="3-3-python-modules">3.3 - Python Modules</h3>
-
-<p>Python contains builtin functions, such as <code>print</code> that can be used by all Python programs.
-However, while the Python library consists of all core elements, such as data types and built-in functions,
-the bulk of the Python library consists of modules.
-In order for you to be able to make use of modules in your own code,
-you first need to import those modules using the import statement.</p>
-
-<p><strong>Example of modules, attributes, methods, in numpy.</strong></p>
-
-<p>The numpy example above made available some specific data types and methods for us.
-This is an example of a <strong>Python module</strong>.
-In general, Python modules are libraries of code that you import and use through <code>import</code> statements.
-Let&rsquo;s go through a simple example. Import the <code>math</code> module.
-This module gives you access to the pi constant. Print its value.
-This module also gives you access to several mathematical operations. Find out (print) the value of the sine of pi.</p>
-
-<div class="alert alert-note">
-  <p>If you only need, e.g., the value of pi from the entire <code>math</code> module, you can import it selectively:</p>
-
-<pre><code class="language-python">from math import pi
-print(pi)
-</code></pre>
-
-</div>
-
-
-<h3 id="3-4-python-basic-operators">3.4 - Python Basic Operators:</h3>
-
-<p>Operators are symbols that allow you to use logic and arithmetic in your computations.
-Python has several operators, the most prominent ones being <strong>arithmetic</strong>, <strong>comparison</strong>, and <strong>logical</strong>.</p>
-
-<h4 id="3-4-1-arithmetic-operators">3.4.1 - Arithmetic operators:</h4>
-
-<p>They will take two variables and perform simple mathematical operations on them.
-They are addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, modulus <code>%</code>, floor division <code>//</code>, and exponentiation <code>**</code></p>
-
-<pre><code class="language-python">print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
-</code></pre>
-
-<h4 id="3-4-2-comparison-operators">3.4.2 - Comparison operators:</h4>
-
-<p>They observe two variables and return a boolean value.
-They are the usual greater than (<code>&gt;</code>,<code>&gt;=</code>), equal (<code>=</code>), different (<code>!=</code>), and lower than (<code>&lt;</code>,<code>&lt;=</code>) mathematical operators.</p>
-
-<pre><code class="language-python">print(3&gt;2, 3&lt;2, 3==2, 3!=2, 3&gt;=2, 3&lt;=2)
-</code></pre>
-
-<h4 id="3-4-3-logical-operators">3.4.3 - Logical operators:</h4>
-
-<p>These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
-They are <code>and</code>, <code>or</code>, <code>not</code>.</p>
-
-<pre><code class="language-python">print(True and True, False or False, not True)
-</code></pre>
-
-<h4 id="3-4-5-other-operators">3.4.5 - Other operators</h4>
-
-<p>There are other operators in Python, such as identity (<code>is</code>, <code>is not</code>) or membership (<code>in</code>, <code>not in</code>).
-I am 100% sure you will be able to guess what is their effect on variables/containers!
-<div class="alert alert-note">
-  <p>Note this subtle difference between <code>==</code> and <code>is</code>: <code>==</code> tests whether objects have the same value, whereas <code>is</code>
-tests whether objects have the same identity. Try it with <code>a=[1,2]</code> and <code>b=[1,2]</code>.</p>
-
-</div>
-</p>
-
-<h3 id="3-5-sequences-and-object-containers">3.5 - Sequences and Object Containers</h3>
-
-<h4 id="3-5-1-python-sequences">3.5.1 - Python Sequences</h4>
-
-<p>A sequence is an <strong>ordered</strong> collection of objects. In Python, you can find three types of sequences: Lists, Tuples, and Range Objects.</p>
-
-<p>Let us focus on the first two of them. Lists and tuples can be accessed by indexing and can be sliced in several ways:</p>
+<p>In order to create a collection of data, the most basic python objects are <code>list</code> and <code>tuple</code>:</p>
 
 <pre><code class="language-python"># A tuple
 t = (0,True)
@@ -482,23 +321,10 @@ t = (0,True)
 l = [0,True]
 </code></pre>
 
-<p>Note that there is a relevant difference between tuples and lists: tuples are <strong>immutable</strong>, while lists are not.
-This means that you won&rsquo;t be able to modify the content stored at <code>t</code>. We will explain this in a second.
-Note also that both lists and tuples allow you to mix different data types.</p>
-
-<h4 id="note-mutable-and-immutable-objects">Note: Mutable and immutable objects</h4>
-
-<p>The value of some objects can change in the course of program execution.
-Objects whose value can change are said to be mutable objects,
-whereas objects whose value is unchangeable after they&rsquo;ve been created
-are called immutable.</p>
-
-<p>Questions for the slide/quizzes:
-What does it mean for an object to be immutable?
-Its contents cannot be modified by the programmer.
-Its contents cannot be modified by the programmer after the object has been created. correct</p>
-
-<p>Continuing with sequences, in order to access the elements that a tuple/list holds, you use <strong>square brackets, not parenthesis</strong>:</p>
+<p>Note that there is a relevant difference between tuples and lists: tuples are <strong>immutable</strong>, while lists aren&rsquo;t.
+This means that you won&rsquo;t be able to modify the content stored at <code>t</code>. We will see that in a second.
+Note also that both allow you to mix different data types.
+In order to access the elements that a tuple/list holds, you use <strong>square brackets, not parenthesis</strong>:</p>
 
 <pre><code class="language-python"># the first element of the tuple t
 t_first = t[0]
@@ -507,14 +333,7 @@ t_first = t[0]
 <p>Also note that, the same as e.g. C (and different from e.g. Matlab), <strong>in Python indexing starts at 0</strong>.
 Be careful with this, because it is a common source of confusion in the beginning.</p>
 
-<p>Questions for the slide/quizzes:
-Consider the following tuple and index (1,2,3)[0]. What will this return?
-0
-1
-3
-This code contains an error.</p>
-
-<p>Sequences can be accessed by indexing, which supports negatives indexes:</p>
+<p>Lists and tuples can be accessed by indexing and can be sliced in several ways:</p>
 
 <pre><code class="language-python">t = (0,1,'hola',3,4.0)
 l = [0,1,'hola',3,4.0]
@@ -527,107 +346,65 @@ print(l[:2]) # empty spot before : means from first index
 print(l[0:5:2]) # every element, but use a step size of 2
 </code></pre>
 
-<p>Questions for the slide/quizzes:
-Consider the following tuple and index (1,2,3)[0:-1]. What will this return?
-(1,2) correct
-(2)
-()
-This code contains an error.
-Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice</p>
+<p><div class="alert alert-note">
+  <p>What does mutable/immutable mean?</p>
 
-<p>Sequences also support a very handy operation called <strong>slicing</strong>, that enables access to multiple objects at the same time:</p>
+</div>
 
-<pre><code class="language-python">print(t[0:2]) # slicing first two elements, third is excluded
-print(l[2:5]) # slicing last three elements
-print(l[2:]) # empty spot after : means up to length-of-list index
-print(l[:2]) # empty spot before : means from first index
-print(l[0:5:2]) # every element, but use a step size of 2
+[<em>Try accessing and modifying the second element of <code>t</code> and <code>l</code> to discover this.</em>]</p>
+
+<p>Actually, <code>list</code> and <code>tuple</code> are examples of <strong>Python containers</strong>.
+These are data types that can, well, contain other data.
+A list is an example of a container, and it can contain integers, floats, or other containers, such as more lists:</p>
+
+<pre><code class="language-python"># A list of lists
+l = [[0],[1],[2,3]]
 </code></pre>
 
-<p>Questions for the slide/quizzes:
-Consider the following tuple and index (1,2,3)[1:1]. What will this return?
-(0)
-(1)
-() correct
-This code contains an error.
-Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice</p>
+<p><div class="alert alert-note">
+  <p>Which is the type of the first element of <code>l</code>? And of <code>t</code>?</p>
 
-<p>Tuples and lists, as every python object, have several methods that you can use with them.
-However, since lists are mutable, they have methods that can modify their content:</p>
+</div>
 
-<pre><code class="language-python">a = [4,3,2,1]
-a.append(5)
-print(a)
-a.sort()
-print(a)
+[<em>Find out, using <code>type</code> and <code>print</code></em>]</p>
+
+<p>Apart from <code>list</code> and <code>tuple</code>, a very useful container are dictionaries.
+You can find information on them for instance in <a href="https://www.tutorialspoint.com/python/python_dictionary.htm" target="_blank">this page</a>.
+You will get to practice with them in the homework.</p>
+
+<h3 id="3-2-python-operators">3.2 - Python Operators:</h3>
+
+<p>Operators are symbols that allow you to use logic and arithmetic in your computations.
+Python has several operators, the most prominent ones being <strong>arithmetic</strong>, <strong>comparison</strong>, and <strong>logical</strong>.</p>
+
+<h4 id="arithmetic-operators">Arithmetic operators:</h4>
+
+<p>They will take two variables and perform simple mathematical operations on them.
+They are addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, modulus <code>%</code>, floor division <code>//</code>, and exponentiation <code>**</code></p>
+
+<pre><code class="language-python">print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
 </code></pre>
 
-<p>Note that list methods are <strong>in-place methods</strong>, they modify the original object that called them and return nothing.
-For a complete list of these, see <a href="http://faculty.salina.k-state.edu/tim/NPstudy_guide/python/containers.html#list-methods" target="_blank">here</a>.</p>
+<h4 id="comparison-operators">Comparison operators:</h4>
 
-<p>There are other generic Python functions that work with sequences and provide useful operations:</p>
+<p>They observe two variables and return a boolean value.
+They are the usual greater than (<code>&gt;</code>,<code>&gt;=</code>), equal (<code>=</code>), different (<code>!=</code>), and lower than (<code>&lt;</code>,<code>&lt;=</code>) mathematical operators.</p>
 
-<pre><code class="language-python">a = [4,3,2,1]
-b = sorted(a)
-n = len(b)
-s = sum(a)
-print(b, n, s)
+<pre><code class="language-python">print(3&gt;2, 3&lt;2, 3==2, 3!=2, 3&gt;=2, 3&lt;=2)
 </code></pre>
 
-<h4 id="3-5-2-object-containers-dictionaries">3.5.2 - Object Containers: Dictionaries</h4>
+<h4 id="logical-operators">Logical operators:</h4>
 
-<p>Sequences are a particularly simple example of Object Containers.
-More generally, Python offers several more advanced object containers. A really useful one are dictionaries.</p>
+<p>These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
+They are <code>and</code>, <code>or</code>, <code>not</code>.</p>
 
-<p>Dictionaries are <strong>unordered sequences</strong> that associate key objects to value objects.
-This means that a dictionary consists of <strong>Key:Value</strong> pairs, and the keys must be immutable while the values can be anything.
-Note that dictionaries themselves are mutable objects.</p>
-
-<p>A dictionary is built with curly braces as follows:</p>
-
-<pre><code class="language-python">ages = {&quot;Me&quot;: 33, &quot;You&quot;: 22, &quot;Him&quot;:24}
+<pre><code class="language-python">print(True and True, False or False, not True)
 </code></pre>
 
-<p>If now I want to know your age, and then increase it, I would type:</p>
+<h4 id="other-operators">Other operators</h4>
 
-<pre><code class="language-python">print(ages[&quot;You&quot;])
-ages[&quot;You&quot;] += 1
-print(ages[&quot;You&quot;])
-</code></pre>
-
-<p>You can add new items to your dictionary as follows:</p>
-
-<pre><code class="language-python">ages[&quot;Her&quot;] = 20
-print(ages)
-</code></pre>
-
-<p>Dictionary objects have also their own methods.
-For instance, you can use <code>keys</code> to find out what are all the keys in the dictionary, or the <code>values</code> method
-to retrieve are all of the values in the dictionary:</p>
-
-<pre><code class="language-python">names = ages.keys()
-years = ages.values()
-</code></pre>
-
-<p>Questions for the slide/quizzes:
-Which of the following data structures may be used as keys in a dict?
-Strings
-Lists
-Tuples</p>
-
-<h3 id="3-6-statements">3.6 Statements</h3>
-
-<h3 id="3-7-flow-control">3.7 Flow Control</h3>
-
-<h3 id="3-7-python-functions">3.7 Python Functions</h3>
-
-<h3 id="classes-and-scope-rules">Classes and Scope Rules</h3>
-
-<h2 id="4-complementary-python-scientific-computing-tools">4. <strong>Complementary Python Scientific Computing Tools</strong></h2>
-
-<p>Numpy, Matplotlib.</p>
-
-<hr />
+<p>There are other operators in Python, such as identity (<code>is</code>, <code>is not</code>) or membership (<code>in</code>, <code>not in</code>).
+I am 100% sure you will be able to guess what is their effect on variables/containers!</p>
 
 <h3 id="3-3-flow-control-in-python">3.3 - Flow Control in Python</h3>
 
@@ -770,6 +547,37 @@ Note that functions do not necessarily have input and/or output parameters.</p>
 </div>
 </p>
 
+<h3 id="3-5-python-objects">3.5- Python Objects</h3>
+
+<p>Python is an Object Oriented programming language.
+In this paradigm, an object is an entity that contains data along with some metadata and/or functionality.
+Objects are the main tool to operate with data, store and reference it.
+In Python everything is an object, which means every entity has some metadata (<strong>attributes</strong>) and associated functionality (<strong>methods</strong>).
+These attributes and methods are accessed via the dot syntax.</p>
+
+<p>For example, lists have several methods that you can use with them:</p>
+
+<pre><code class="language-python">a = [4,3,2,1]
+a.append(5)
+print(a)
+a.sort()
+print(a)
+</code></pre>
+
+<p>For a complete list of these, see <a href="http://faculty.salina.k-state.edu/tim/NPstudy_guide/python/containers.html#list-methods" target="_blank">here</a>.</p>
+
+<p>Note that even basic types have attributes and methods:</p>
+
+<pre><code class="language-python">a = 5.0
+print(a.is_integer())
+</code></pre>
+
+<p>In Python, even methods themselves are objects of a given type:</p>
+
+<pre><code class="language-python">print(type(compute_sum))
+print(type(compute_sum(1.0,2))
+</code></pre>
+
 <h3 id="3-6-python-classes">3.6 - Python Classes</h3>
 
 <p>How can you go beyond built-in data types and create new types, with their
@@ -904,62 +712,6 @@ c.setAttr(200)       # again call parent's method
 c.getAttr()          # again call parent's method
 </code></pre>
 
-<h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
-
-<p>Here is what I want you to do for next week.</p>
-
-<h3 id="review-exercises-mandatory">Review exercises (mandatory)</h3>
-
-<p>Here you can find some exercises to review the concepts explained up to now.</p>
-
-<h3 id="numpy-mandatory">Numpy (mandatory)</h3>
-
-<p>Here you can find some exercises to review the concepts explained up to now.</p>
-
-<h3 id="dictionaries-mandatory">Dictionaries (mandatory)</h3>
-
-<p>Explanation of what a dictionary is.</p>
-
-<p>Here you can find some exercises for dictionaries.</p>
-
-<h3 id="classes-mandatory">Classes (mandatory)</h3>
-
-<p>Explanation of how classes work in Python.</p>
-
-<p>Here you can find some exercises for classes.</p>
-
-<h3 id="debugging-in-python-recommended">Debugging in Python (recommended)</h3>
-
-<p>Explanation of how to handle exceptions. Look into page 45 of JvdP.</p>
-
-<p>Here you can find some exercises for exceptions.</p>
-
-<h3 id="iterators-recommended">Iterators (recommended)</h3>
-
-<p>When we saw the example of a for loop, the looping variable traversed a list:</p>
-
-<pre><code class="language-python">for i in [0,1,2,3]:
-    print(i)
-</code></pre>
-
-<p>Actually, the object to the right of <code>in</code> needs to be an <code>iterator</code>.
-A <code>list</code> is a special type of <code>iterator</code>.
-These can be understood as generalized sequences, and will be important in following lectures.
-See page 52 of VdP.</p>
-
-<p>Here you can find some exercises for iterators.</p>
-
-<h3 id="generators-recommended">Generators (recommended)</h3>
-
-<p>Here you can find some exercises for generators.</p>
-
-<h2 id="6-sources-and-references">6. <strong>Sources and References</strong></h2>
-
-<p>Of course, there are tons of wonderful Python resources in the internet.
-The main sources I used to build this lecture were:</p>
-
-<p>EXERCISES:</p>
-
 <h3 id="1">1</h3>
 
 <p>Consider the following code:</p>
@@ -1048,6 +800,70 @@ while x &lt; 5:
 <p>What is the final value of x?
 8</p>
 
+<h3 id="9">9</h3>
+
+<h3 id="3-7-modules-and-packages">3.7 - Modules and Packages</h3>
+
+<p>In Python, you have modules and packages.</p>
+
+<h2 id="4-complementary-python-scientific-computing-tools">4. <strong>Complementary Python Scientific Computing Tools</strong></h2>
+
+<p>Numpy, Matplotlib. Spyder.</p>
+
+<h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
+
+<p>Here is what I want you to do for next week.</p>
+
+<h3 id="review-exercises-mandatory">Review exercises (mandatory)</h3>
+
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
+
+<h3 id="numpy-mandatory">Numpy (mandatory)</h3>
+
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
+
+<h3 id="dictionaries-mandatory">Dictionaries (mandatory)</h3>
+
+<p>Explanation of what a dictionary is.</p>
+
+<p>Here you can find some exercises for dictionaries.</p>
+
+<h3 id="classes-mandatory">Classes (mandatory)</h3>
+
+<p>Explanation of how classes work in Python.</p>
+
+<p>Here you can find some exercises for classes.</p>
+
+<h3 id="debugging-in-python-recommended">Debugging in Python (recommended)</h3>
+
+<p>Explanation of how to handle exceptions. Look into page 45 of JvdP.</p>
+
+<p>Here you can find some exercises for exceptions.</p>
+
+<h3 id="iterators-recommended">Iterators (recommended)</h3>
+
+<p>When we saw the example of a for loop, the looping variable traversed a list:</p>
+
+<pre><code class="language-python">for i in [0,1,2,3]:
+    print(i)
+</code></pre>
+
+<p>Actually, the object to the right of <code>in</code> needs to be an <code>iterator</code>.
+A <code>list</code> is a special type of <code>iterator</code>.
+These can be understood as generalized sequences, and will be important in following lectures.
+See page 52 of VdP.</p>
+
+<p>Here you can find some exercises for iterators.</p>
+
+<h3 id="generators-recommended">Generators (recommended)</h3>
+
+<p>Here you can find some exercises for generators.</p>
+
+<h2 id="6-sources-and-references">6. <strong>Sources and References</strong></h2>
+
+<p>Of course, there are tons of wonderful Python resources in the internet.
+The main sources I used to build this lecture were:</p>
+
     </div>
   </div>
 
@@ -1057,10 +873,13 @@ while x &lt; 5:
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://agaldran.github.io/post/17_daco_prac_lec_1_old/"><span
-      aria-hidden="true">&larr;</span> DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing</a></li>
+    <li class="previous"><a href="https://agaldran.github.io/post/17_daco_prac_lec_2/"><span
+      aria-hidden="true">&larr;</span> DACO - Practical Lecture 2 - Bayesian Classification and Linear Regression</a></li>
     
 
+    
+    <li class="next"><a href="https://agaldran.github.io/post/17_daco_prac_lec_1/">DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing <span
+      aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>
