@@ -300,7 +300,8 @@ More on this below.</p>
 </div>
 
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 a) Python has two operating modes. Which are they?
 Interactive mode
 Standard mode
@@ -312,6 +313,9 @@ Python 2
 Python 3 - correct
 Spyder
 Jupyter</p>
+
+</div>
+
 
 <h3 id="2-2-executing-python-code">2.2  Executing Python code</h3>
 
@@ -337,8 +341,11 @@ Explanations on ipython.</p>
 This programming tool will allow you to more easily debug, inspect variables, and quickly modify your code.
 They typically also include an embedded interactive system. An example of an IDE is <strong>Spyder</strong>, already contained in the Anaconda distribution.</p>
 
-<p>Questions for the slide/quizzes:
-For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available here. Open it!</p>
+<div class="alert alert-note">
+  <p>For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available <strong>HERE</strong> &ndash; still not. Open it!</p>
+
+</div>
+
 
 <h2 id="3-introduction-to-the-python-programming-language">3. <strong>Introduction to the Python Programming Language</strong></h2>
 
@@ -376,13 +383,17 @@ This could be a specific number, for example.
 Finally, you can think of object identity as an identity number for the object.
 Each distinct object in the computer&rsquo;s memory will have its own identity number.</p>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 Consider the following line of code:
 x = 4
 In this assignment, what does the number 4 represent?
 The object type.
 The object value. correct
 The object identity.</p>
+
+</div>
+
 
 <p>Most Python objects have either data or functions or both associated with them.
 These are known as attributes.
@@ -493,10 +504,14 @@ Objects whose value can change are said to be mutable objects,
 whereas objects whose value is unchangeable after they&rsquo;ve been created
 are called immutable.</p>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 What does it mean for an object to be immutable?
 Its contents cannot be modified by the programmer.
 Its contents cannot be modified by the programmer after the object has been created. correct</p>
+
+</div>
+
 
 <p>Continuing with sequences, in order to access the elements that a tuple/list holds, you use <strong>square brackets, not parenthesis</strong>:</p>
 
@@ -507,12 +522,16 @@ t_first = t[0]
 <p>Also note that, the same as e.g. C (and different from e.g. Matlab), <strong>in Python indexing starts at 0</strong>.
 Be careful with this, because it is a common source of confusion in the beginning.</p>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 Consider the following tuple and index (1,2,3)[0]. What will this return?
 0
 1
 3
 This code contains an error.</p>
+
+</div>
+
 
 <p>Sequences can be accessed by indexing, which supports negatives indexes:</p>
 
@@ -527,13 +546,17 @@ print(l[:2]) # empty spot before : means from first index
 print(l[0:5:2]) # every element, but use a step size of 2
 </code></pre>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 Consider the following tuple and index (1,2,3)[0:-1]. What will this return?
 (1,2) correct
 (2)
 ()
 This code contains an error.
 Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice</p>
+
+</div>
+
 
 <p>Sequences also support a very handy operation called <strong>slicing</strong>, that enables access to multiple objects at the same time:</p>
 
@@ -544,13 +567,17 @@ print(l[:2]) # empty spot before : means from first index
 print(l[0:5:2]) # every element, but use a step size of 2
 </code></pre>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 Consider the following tuple and index (1,2,3)[1:1]. What will this return?
 (0)
 (1)
 () correct
 This code contains an error.
 Python includes all values from the beginning of the first index in the slice up to and not including the second value in the slice</p>
+
+</div>
+
 
 <p>Tuples and lists, as every python object, have several methods that you can use with them.
 However, since lists are mutable, they have methods that can modify their content:</p>
@@ -609,27 +636,53 @@ to retrieve are all of the values in the dictionary:</p>
 years = ages.values()
 </code></pre>
 
-<p>Questions for the slide/quizzes:
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
 Which of the following data structures may be used as keys in a dict?
 Strings
 Lists
 Tuples</p>
 
-<h3 id="3-6-statements">3.6 Statements</h3>
+</div>
+
+
+<h4 id="3-6-python-typing">3.6 - Python typing</h4>
+
+<div class="alert alert-warning">
+  <p>REWRITE THIS BELOW!</p>
+
+</div>
+
+
+<p>Objects in Python are composed by their name, their content, and a reference that points the name to the content.
+When an object is created, Python tells your computer to reserve memory locations to store the corresponding data.
+Depending on the data type of a variable, the interpreter allocates a certain amount of memory.</p>
+
+<p>As we have seen above, in Python, there is no need of declaring objects nor their type before using them.
+This is because actually what you are doing is not creating a spot in memory and filling it with an object.
+Rather, you are creating a pointer (that occupies a first memory spot), and then making that pointer point to an object in a second memory spot.
+For this reason, you can for instance reassign a variable to a different type of object without errors:</p>
+
+<pre><code class="language-python">a = [0,1,2]
+a = (-1,3)
+a = True
+</code></pre>
+
+<p>Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.</p>
+
+<pre><code class="language-python">a = [0,1,2]
+b = a
+b[2] = 0
+print(a)
+</code></pre>
+
+<div class="alert alert-note">
+  <p>What would have happened above, if <code>a</code> would have been a tuple instead of a list? Think and then try!</p>
+
+</div>
+
 
 <h3 id="3-7-flow-control">3.7 Flow Control</h3>
-
-<h3 id="3-7-python-functions">3.7 Python Functions</h3>
-
-<h3 id="classes-and-scope-rules">Classes and Scope Rules</h3>
-
-<h2 id="4-complementary-python-scientific-computing-tools">4. <strong>Complementary Python Scientific Computing Tools</strong></h2>
-
-<p>Numpy, Matplotlib.</p>
-
-<hr />
-
-<h3 id="3-3-flow-control-in-python">3.3 - Flow Control in Python</h3>
 
 <p>Typical flow control structures are implemented as usual in Python.
 <div class="alert alert-note">
@@ -641,7 +694,7 @@ the space you leave to the left of your piece of code implicitly delimits code b
 We will learn the behavior of flow control statements in Python by example,
 to reinforce the idea of how intuitive Python is.</p>
 
-<h4 id="if-else-statements"><code>if</code>-<code>else</code> statements</h4>
+<h4 id="3-7-1-if-else-statements">3.7.1 - <code>if</code>-<code>else</code> statements</h4>
 
 <p>Observe the following code:</p>
 
@@ -651,25 +704,15 @@ elif 3==2:
     print('failure')
 else:
     print('I do not know')
-print('do you know?')
+print('This will be printed either way')
 </code></pre>
 
-<h4 id="for-loops"><code>for</code> loops</h4>
+<h4 id="3-7-2-for-loops">3.7.2 - <code>for</code> loops</h4>
 
-<p>Observe the following code:</p>
+<p>Observe the following code and try to predict its output:</p>
 
 <pre><code class="language-python">for i in [0,1,2,3]:
     print(i)
-</code></pre>
-
-<h4 id="while-loops"><code>while</code> loops</h4>
-
-<p>Observe the following code:</p>
-
-<pre><code class="language-python">i=0
-while i &lt; 4:
-    print(i)
-    i = i+1
 </code></pre>
 
 <div class="alert alert-note">
@@ -678,9 +721,19 @@ while i &lt; 4:
 </div>
 
 
-<h4 id="break-and-continue"><code>break</code> and <code>continue</code></h4>
+<h4 id="3-7-3-while-loops">3.7.3 - <code>while</code> loops</h4>
 
-<p>Observe the following code:</p>
+<p>Observe the following code and try to predict its output:</p>
+
+<pre><code class="language-python">i=0
+while i &lt; 4:
+    print(i)
+    i = i+1
+</code></pre>
+
+<h4 id="3-7-4-other-statements-break-and-continue">3.7.4 - Other statements: <code>break</code> and <code>continue</code></h4>
+
+<p>Observe the following two pieces of code and try to predict their output:</p>
 
 <pre><code class="language-python">for i in [0,1,2,3,4]:
     if i % 3 == 0:
@@ -700,56 +753,79 @@ while i &lt; 4:
 </div>
 
 
-<h3 id="3-4-python-variables-and-functions">3.4 - Python Variables and Functions:</h3>
+<div class="alert alert-warning">
+  <p>Questions for the slide/quizzes:
+Create some simple exercises in which the student predicts outputs. Use for i in X and for i in range(len(X)). Loop over dictionary keys and values.
+<strong>Example:</strong>
+Consider bears = {&ldquo;Grizzly&rdquo;:&ldquo;angry&rdquo;, &ldquo;Brown&rdquo;:&ldquo;friendly&rdquo;, &ldquo;Polar&rdquo;:&ldquo;friendly&rdquo;}.
+Can you replace #blank# so the code will print a greeting only to friendly bears?</p>
 
-<p>Variables are simply reserved memory locations to store values.
-The moment you create a variable you reserve some space in memory.
-Depending on the data type of a variable, the interpreter allocates a certain amount of memory..</p>
+<p>for bear in bears:
+  if #blank#:
+   print(&ldquo;Hello, &ldquo;+bear+&rdquo; bear!&ldquo;)
+else:
+  print(&ldquo;odd&rdquo;)</p>
 
-<p>As we have seen above, in Python, there is no need of declaring variables before using them.
-This is because actually what you are doing is not creating a spot in memory and filling it with an object.
-Rather, you are creating a pointer (that occupies a first memory spot), and then making that pointer point to an object in a second memory spot.
-For this reason, you can for instance reassign a variable to a different type of object without errors:</p>
+<p><strong>Example:</strong>
+is_prime = True
+for i in range(2,n):
+   if n%i == 0:
+     #blank#
+print(is_prime)</p>
 
-<pre><code class="language-python">a = [0,1,2]
-a = (-1,3)
-a = True
-</code></pre>
-
-<p>Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.</p>
-
-<pre><code class="language-python">a = [0,1,2]
-b = a
-b[2] = 0
-print(a)
-</code></pre>
-
-<div class="alert alert-note">
-  <p>What would have happened above, if <code>a</code> would  have been a tuple instead of a list? Think and then try!</p>
+<p>Can you fill in the #blank# line so the code will only print True if n is prime?</p>
 
 </div>
 
 
+<h3 id="3-8-python-functions">3.8 Python Functions</h3>
+
 <p>Being only able to ``interactively&rdquo; play with variables is boring.
 To build more complex code, we need functions.
-A function in Python is defined as follows:</p>
+Functions are tools for grouping statements so that they can be executed more than once in the same program.
+They are useful maximize code reuse and minimize code redundancy, therefore contributing to avoid errors.</p>
 
-<pre><code class="language-python">def compute_sum(a,b)
+<p>Functions are written using the <code>def</code> statement.
+You can send objects created inside your function back to where it was called with the <code>return</code> statement.</p>
+
+<pre><code class="language-python">def compute_sum(a,b):
     c = a+b
     return c
 </code></pre>
 
-<p>The function <code>compute_sum</code> will receive two arguments (of unspecified type), compute its sum, and return the result.
-Note that functions do not necessarily have input and/or output parameters.</p>
+<p>To use this function, we simply call it passing appropriate parameters:</p>
 
-<p>It is simple to specify a default value for some argument:</p>
+<pre><code class="language-python">a = 5
+b = -2
+print(compute_sum(a,b))
+</code></pre>
+
+<p>Arguments to Python functions are matched by position.
+Tuples are typically used to return multiple values.
+Note that functions themselves are objects:</p>
+
+<pre><code class="language-python">print(type(compute_sum))
+</code></pre>
+
+<p>In general, variables created or assigned in a function are local of that function and exist only while the function runs.</p>
+
+<pre><code class="language-python">L = [0,1,2]
+def modify(my_list):
+    c = 3
+    my_list[0] += 20
+modify(L)
+print(L)
+print(c)
+</code></pre>
+
+<p>It is also possible to specify a default value for some argument:</p>
 
 <pre><code class="language-python">def compute_sum(a,b=2)
     c = a+b
     return c
 </code></pre>
 
-<p>You can also have keyword arguments, specified by name:</p>
+<p>Likewise, you can have keyword arguments, specified by name:</p>
 
 <pre><code class="language-python">print(1,2, sep=';')
 </code></pre>
@@ -765,27 +841,81 @@ Note that functions do not necessarily have input and/or output parameters.</p>
 
 <p>This is useful to pass lists and dictionaries to a function. More in the homework.
 <div class="alert alert-warning">
-  <p>Need to explain this</p>
+  <p>Need to explain or remove this</p>
 
 </div>
 </p>
 
-<h3 id="3-6-python-classes">3.6 - Python Classes</h3>
+<div class="alert alert-warning">
+  <p>Exercises:
+1.- Create a function that takes as arguments two lists <code>l1</code> and <code>l2</code>, and returns a new list containing the elements that were both in <code>l1</code> and <code>l2</code>.</p>
 
-<p>How can you go beyond built-in data types and create new types, with their
+<p>Hint: You can do this by looping over the elements of <code>l1</code> (<code>for</code>), checking if they are in <code>l2</code> (<code>if</code>), in which case you would add them to a list you would finally return (<code>append</code>).</p>
+
+<p>2.- Consider the following function</p>
+
+<pre><code class="language-python">def my_cum_sum(n):
+    my_sum = 0
+    for i in range(n):
+        my_sum += i
+        return my_sum
+</code></pre>
+
+<p>What value will <code>my_cum_sum(5)</code> return?</p>
+
+<p>3.- Recall that n! (&ldquo;n factorial&rdquo;) is defined as the product of all integers 1,&hellip;,n. Additionally, by definition, 0! = 1.
+Create a factorial function that has as input an integer, and returns its factorial.</p>
+
+<p>Hint: There are several ways to solve this.
+The simplest one is: check if the input is 0, in which case you return 1. Otherwise, start by N=1, loop from 1 to the input and update the result.</p>
+
+</div>
+
+
+<p>4.- We are going to count the frequency of each letter in a given string.</p>
+
+<p>4.1) import the <code>string</code> library.
+Now create a variable <code>alphabet</code> that consists of the lowercase and uppercase letters in the English alphabet. For this,
+use the <code>ascii_letters</code> attribute of the string library.</p>
+
+<p>4.2) Now, consider the sentence &lsquo;Jim quickly realized that the beautiful gowns are expensive&rsquo;.
+Create a dictionary <code>count_letters</code> with keys consisting of each unique letter in the sentence and values consisting of
+the number of times each letter is used in this sentence.
+Count both upper case and lower case letters separately in the dictionary.</p>
+
+<p>Hint: You can loop (<code>for</code>) over each letter in your sentence, check (<code>if</code>) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
+For that, you can count the number of occurrences with the method <code>count</code>, which you can look up in google.
+Do not forget to omit the blank space in <code>sentence</code>!</p>
+
+<p>4.3) Use the code you built in 4.2) to create a function called <code>counter</code> that takes a string <code>input_string</code> and returns
+a dictionary of letter counts <code>count_letters</code>. Test it with <code>sentence</code>.</p>
+
+<p>4.4) Use the dictionary created by your function to find out and print the most frequent letter in <code>sentence</code>.</p>
+
+<p>5.- The distance between two points <code>x</code> and <code>y</code> is the square root of the sum of squared differences along each dimension of <code>x</code> and <code>y</code>.
+Build a function <code>distance(x, y)</code> that takes two vectors and outputs the distance between them.
+Use your function to find the distance between <code>x=(0,0)</code> and <code>y=(1,1)</code>, and between <code>x=(0,0,0)</code> and <code>y=(1,1,1)</code></p>
+
+<p>Hint: To be able to take the square root, import the <code>math</code> library.</p>
+
+<h3 id="3-9-classes-and-object-oriented-programming">3.9 Classes and Object-Oriented Programming</h3>
+
+<p>How can you go beyond built-in data types and create new object types, with their
 associated methods and attributes defined by you?
 Python allows you to create new classes, and then define (<em>instantiate</em>)
 new objects of that class and interact with them. This way, you can
 group data and functions operating on it in a more abstract way, and
 then instantiate concrete samples and use them.
 Classes allow for a simplified modeling of our problems, and enables the
-creation of cleaner code that can be more easily extended in the future.</p>
+creation of cleaner code that will be more easily extended in the future.</p>
 
 <div class="alert alert-note">
   <p>When dealing with classes, data is usually called <em>attributes</em>, and functions <em>methods</em>.</p>
 
 </div>
 
+
+<h4 id="3-9-2-building-a-new-class-from-scratch">3.9.2 - Building a new Class from scratch</h4>
 
 <p>Every class needs to have a special method, called <code>constructor</code>, that initializes its attributes.</p>
 
@@ -846,6 +976,64 @@ does not need input parameters, and outputs a string:</p>
 must add the <code>self</code> argument so that it can access the <code>v0</code> attribute.
 This is omitted in the method call.</p>
 
+<p>We know an object consists of both internal data and methods that perform operations on the data.
+At some point you may find that existing object types do not fully suit your needs.
+Classes are the tool that allows you to create new types of objects.</p>
+
+<h4 id="3-9-2-class-inheritance">3.9.2 - Class Inheritance</h4>
+
+<p>Sometimes, even if you have the need for a new type, it may happen that this new object type resembles,
+in some way, an existing one.
+Classes have the ability to inherit from other classes, and this is a fundamental aspect of OOP.</p>
+
+<p>Let us see an example of how to build a new class, inheriting from the built-in Python <code>list</code> class.
+We will add more functionality to it.</p>
+
+<pre><code class="language-python">class MyList(list):
+</code></pre>
+
+<p>this definition ensure that our new class, derived from <code>list</code>, will inherit the attributes of the base class.
+However, now we can extend, or redefine those attributes!</p>
+
+<p>For instance, we are going to improve the built-in <code>remove</code> methods, implemented by Python for lists in this way:</p>
+
+<pre><code class="language-python">L = [0,1,2,5,5]
+L.remove(5)
+</code></pre>
+
+<p>We will add new methods to also be able to remove the maximum and minimum element of a list.
+For this, we complete the definition of our extended class as follows:</p>
+
+<pre><code class="language-python">class MyList(list):
+    def remove_min(self):
+        self.remove(min(self))
+    def remove_max(self):
+        self.remove(max(self))
+</code></pre>
+
+<p>Now we can make use of our class:</p>
+
+<pre><code class="language-python">L2 = MyList(L)
+dir(L)
+dir(L2)
+print(L2.remove_min())
+</code></pre>
+
+<h2 id="4-complementary-python-scientific-computing-tools-numpy">4. <strong>Complementary Python Scientific Computing Tools: Numpy</strong></h2>
+
+<p>As mentioned in the introduction, one of the most important strengths of Python is the large ecosystem of tools available.
+One of the most important libraries for scientific computing in general (and for this course in particular) is <strong>NumPy</strong>,
+which is designed to perform matrix computations.
+Here you will learn the fundamental concepts related to Numpy.</p>
+
+<h3 id="4-1-introduction-to-numpy-arrays">4.1 - Introduction to NumPy Arrays</h3>
+
+<h3 id="4-2-slicing-numpy-arrays">4.2 - Slicing NumPy Arrays</h3>
+
+<h3 id="4-3-indexing-numpy-arrays">4.3 - Indexing NumPy Arrays</h3>
+
+<h3 id="4-4-building-and-examining-numpy-arrays">4.4 - Building and Examining NumPy Arrays</h3>
+
 <p><strong>Homework</strong>:</p>
 
 <p><strong><em>Protect data from the user (i.e. you!).</em></strong></p>
@@ -871,38 +1059,6 @@ This is omitted in the method call.</p>
 <p>Note the use of None as default value for various data attributes: the object None
 is commonly used to indicate that a variable or attribute is defined, but yet not with
 a sensible value.</p>
-
-<p><strong><em>Class Inheritance:</em></strong>
-Instead of starting from scratch, you can create a class by deriving it
-from a preexisting class by listing the parent class in parentheses after the new class name.</p>
-
-<pre><code class="language-python">class Parent:        # define parent class
-   parentAttr = 100
-   def __init__(self):
-      print &quot;Calling parent constructor&quot;
-
-   def parentMethod(self):
-      print 'Calling parent method'
-
-   def setAttr(self, attr):
-      Parent.parentAttr = attr
-
-   def getAttr(self):
-      print &quot;Parent attribute :&quot;, Parent.parentAttr
-
-class Child(Parent): # define child class
-   def __init__(self):
-      print &quot;Calling child constructor&quot;
-
-   def childMethod(self):
-      print 'Calling child method'
-
-c = Child()          # instance of child
-c.childMethod()      # child calls its method
-c.parentMethod()     # calls parent's method
-c.setAttr(200)       # again call parent's method
-c.getAttr()          # again call parent's method
-</code></pre>
 
 <h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
 
