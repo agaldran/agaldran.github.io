@@ -43,7 +43,7 @@
 
   
 
-  <title>DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing | Adrian Galdran - Research Site</title>
+  <title> | Adrian Galdran - Research Site</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
@@ -157,31 +157,20 @@
 
 
   <div class="article-container">
-    <h1 itemprop="name">DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing</h1>
+    <h1 itemprop="name"></h1>
     
 
 <div class="article-metadata">
 
   <span class="article-date">
     
-    <time datetime="2017-09-11 00:00:00 &#43;0100 WEST" itemprop="datePublished">
-      Sep 11, 2017
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Jan 1, 0001
     </time>
   </span>
 
   
 
-  
-  
-  
-  <span class="article-tags">
-    <i class="fa fa-tags"></i>
-    
-    <a href="/tags/daco_prac_17">daco_prac_17</a
-    >
-    
-  </span>
-  
   
 
   
@@ -197,28 +186,28 @@
     </li>
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?text=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f"
+         href="https://twitter.com/intent/tweet?text=&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f"
          target="_blank">
         <i class="fa fa-twitter"></i>
       </a>
     </li>
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title="
          target="_blank">
         <i class="fa fa-linkedin"></i>
       </a>
     </li>
     <li>
       <a class="weibo"
-         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing"
+         href="http://service.weibo.com/share/share.php?url=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f&amp;title="
          target="_blank">
         <i class="fa fa-weibo"></i>
       </a>
     </li>
     <li>
       <a class="email"
-         href="mailto:?subject=DACO%20-%20Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing&amp;body=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f">
+         href="mailto:?subject=&amp;body=https%3a%2f%2fagaldran.github.io%2fpost%2f17_daco_prac_lec_1_old%2f">
         <i class="fa fa-envelope"></i>
       </a>
     </li>
@@ -233,428 +222,8 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p><strong>NOTE: This tutorial is under construction</strong></p>
-
-<p>This year we have decided to move from Matlab to Python for the practical sessions.
-Some of you maybe will not have worked with this programming language.
-This first lecture is intended to guide you through your first steps in this programming language,
-and make you aware of the (super-rich) Python ecosystem for scientific computing.</p>
-
-<p>I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
-This is an overview of what you will be learning today:</p>
-
-<ol>
-<li><p><strong>Motivation and Goals. What is Python?</strong></p></li>
-
-<li><p><strong>Python Installation. Accompanying Tools</strong></p></li>
-
-<li><p><strong>A Quick Introduction to the Python Programming Language</strong></p>
-
-<ol>
-<li>Data Types</li>
-<li>Python Operators</li>
-<li>Flow Control in Python</li>
-<li>Python Variables and Functions</li>
-<li>Python Objects and Classes</li>
-<li>Modules and Packages</li>
-</ol></li>
-
-<li><p><strong>Complementary Python Scientific Computing Tools</strong></p></li>
-
-<li><p><strong>Homework 😱</strong></p></li>
-
-<li><p><strong>Sources and References</strong></p></li>
-</ol>
-
-<p>So&hellip; let&rsquo;s move on.</p>
-
-<h2 id="1-motivation-and-goals-what-is-python">1.- <strong>Motivation and Goals. What is Python?</strong></h2>
-
-<p>First thing, Python is <strong>free</strong>. Second, it is <strong>simple</strong>.
-Third, it is increasingly becoming the tool of choice for data science projects.
-Fourth, it&rsquo;s multi-platform, it can run in Windows, Linux, Mac, your mobile phone&hellip;
-And last, there is a <strong>huge</strong> community of contributors to lots of open-source projects that complement it.
-This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.</p>
-
-<p>However, to add all this to your tool-belt, the first step is to familiarize yourself with the Python language itself.
-Today we will quickly review the main notions to get started on it.</p>
-
-<p>But first, let us install Python!</p>
-
-<h2 id="2-python-installation-accompanying-tools">2. <strong>Python Installation. Accompanying Tools.</strong></h2>
-
-<p>The easiest way to install Python in your system is probably through the Anaconda Python distribution, that you can download <a href="https://www.continuum.io/downloads" target="_blank">here</a>.
-Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.</p>
-
-<h2 id="3-introduction-to-the-python-programming-language">3. <strong>Introduction to the Python Programming Language</strong></h2>
-
-<h3 id="3-1-data-types">3.1 - Data Types:</h3>
-
-<p>The same as in any language, Python also has different types of data.
-The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
-Python determines data type of variables by how they are used.
-For instance, to create an integer (<code>int</code>) variable you simply type:</p>
-
-<pre><code class="language-python"># An integer variable a
-a = 5
-print(type(a))
-</code></pre>
-
-<p><code>print</code> and <code>type</code> are a built-in Python functions that behave as you would expect.
-More on functions later.
-Note that in Python 2 you would not use parentheses with <code>print</code>.
-Other basic/common python types are for instance<code>float</code>, <code>string</code>, or <code>boolean</code>, exemplified below:</p>
-
-<pre><code class="language-python"># A float variable f
-f = 5.0
-# A boolean
-b = True
-# A string
-c = 'bom dia'
-</code></pre>
-
-<p>In order to create a collection of data, the most basic python objects are <code>list</code> and <code>tuple</code>:</p>
-
-<pre><code class="language-python"># A tuple
-t = (0,True)
-# A list l
-l = [0,True]
-</code></pre>
-
-<p>Note that there is a relevant difference between tuples and lists: tuples are <strong>immutable</strong>, while lists aren&rsquo;t.
-This means that you won&rsquo;t be able to modify the content stored at <code>t</code>. We will see that in a second.
-Note also that both allow you to mix different data types.
-In order to access the elements that a tuple/list holds, you use <strong>square brackets, not parenthesis</strong>:</p>
-
-<pre><code class="language-python"># the first element of the tuple t
-t_first = t[0]
-</code></pre>
-
-<p>Also note that, the same as e.g. C (and different from e.g. Matlab), <strong>in Python indexing starts at 0</strong>.
-Be careful with this, because it is a common source of confusion in the beginning.</p>
-
-<p>Lists and tuples can be accessed by indexing and can be sliced in several ways:</p>
-
-<pre><code class="language-python">t = (0,1,'hola',3,4.0)
-l = [0,1,'hola',3,4.0]
-print(t[0])
-print(t[-1]) # note the behavior of negative indexes
-print(t[0:2]) # slicing first two elements, third is excluded
-print(l[2:5]) # slicing last three elements
-print(l[2:]) # empty spot after : means up to length-of-list index
-print(l[:2]) # empty spot before : means from first index
-print(l[0:5:2]) # every element, but use a step size of 2
-</code></pre>
-
-<p><div class="alert alert-note">
-  <p>What does mutable/immutable mean?</p>
-
-</div>
-
-[<em>Try accessing and modifying the second element of <code>t</code> and <code>l</code> to discover this.</em>]</p>
-
-<p>Actually, <code>list</code> and <code>tuple</code> are examples of <strong>Python containers</strong>.
-These are data types that can, well, contain other data.
-A list is an example of a container, and it can contain integers, floats, or other containers, such as more lists:</p>
-
-<pre><code class="language-python"># A list of lists
-l = [[0],[1],[2,3]]
-</code></pre>
-
-<p><div class="alert alert-note">
-  <p>Which is the type of the first element of <code>l</code>? And of <code>t</code>?</p>
-
-</div>
-
-[<em>Find out, using <code>type</code> and <code>print</code></em>]</p>
-
-<p>Apart from <code>list</code> and <code>tuple</code>, a very useful container are dictionaries.
-You can find information on them for instance in <a href="https://www.tutorialspoint.com/python/python_dictionary.htm" target="_blank">this page</a>.
-You will get to practice with them in the homework.</p>
-
-<h3 id="3-2-python-operators">3.2 - Python Operators:</h3>
-
-<p>Operators are symbols that allow you to use logic and arithmetic in your computations.
-Python has several operators, the most prominent ones being <strong>arithmetic</strong>, <strong>comparison</strong>, and <strong>logical</strong>.</p>
-
-<h4 id="arithmetic-operators">Arithmetic operators:</h4>
-
-<p>They will take two variables and perform simple mathematical operations on them.
-They are addition <code>+</code>, subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>, modulus <code>%</code>, floor division <code>//</code>, and exponentiation <code>**</code></p>
-
-<pre><code class="language-python">print(3+2, 3-2, 3*2, 3/2, 3%2, 3//2, 3**2)
-</code></pre>
-
-<h4 id="comparison-operators">Comparison operators:</h4>
-
-<p>They observe two variables and return a boolean value.
-They are the usual greater than (<code>&gt;</code>,<code>&gt;=</code>), equal (<code>=</code>), different (<code>!=</code>), and lower than (<code>&lt;</code>,<code>&lt;=</code>) mathematical operators.</p>
-
-<pre><code class="language-python">print(3&gt;2, 3&lt;2, 3==2, 3!=2, 3&gt;=2, 3&lt;=2)
-</code></pre>
-
-<h4 id="logical-operators">Logical operators:</h4>
-
-<p>These operators will interpret their input as boolean values, and return a boolean value depending on the truth value of both inputs.
-They are <code>and</code>, <code>or</code>, <code>not</code>.</p>
-
-<pre><code class="language-python">print(True and True, False or False, not True)
-</code></pre>
-
-<h4 id="other-operators">Other operators</h4>
-
-<p>There are other operators in Python, such as identity (<code>is</code>, <code>is not</code>) or membership (<code>in</code>, <code>not in</code>).
-I am 100% sure you will be able to guess what is their effect on variables/containers!</p>
-
-<h3 id="3-3-flow-control-in-python">3.3 - Flow Control in Python</h3>
-
-<p>Typical flow control structures are implemented as usual in Python.
-<div class="alert alert-note">
-  <p>Be careful with Python code <strong>indentation</strong>:
-the space you leave to the left of your piece of code implicitly delimits code blocks.</p>
-
-</div>
-
-We will learn the behavior of flow control statements in Python by example,
-to reinforce the idea of how intuitive Python is.</p>
-
-<h4 id="if-else-statements"><code>if</code>-<code>else</code> statements</h4>
-
-<p>Observe the following code:</p>
-
-<pre><code class="language-python">if 3&gt;2:
-    print('success')
-elif 3==2:
-    print('failure')
-else:
-    print('I do not know')
-print('do you know?')
-</code></pre>
-
-<h4 id="for-loops"><code>for</code> loops</h4>
-
-<p>Observe the following code:</p>
-
-<pre><code class="language-python">for i in [0,1,2,3]:
-    print(i)
-</code></pre>
-
-<h4 id="while-loops"><code>while</code> loops</h4>
-
-<p>Observe the following code:</p>
-
-<pre><code class="language-python">i=0
-while i &lt; 4:
-    print(i)
-    i = i+1
-</code></pre>
-
-<div class="alert alert-note">
-  <p>Do not forget about the semicolon in the end of control statements!</p>
-
-</div>
-
-
-<h4 id="break-and-continue"><code>break</code> and <code>continue</code></h4>
-
-<p>Observe the following code:</p>
-
-<pre><code class="language-python">for i in [0,1,2,3,4]:
-    if i % 3 == 0:
-        continue
-    print(i)
-</code></pre>
-
-<pre><code class="language-python">for i in [0,1,2,3,4]:
-    if i % 3 == 0:
-        break
-    print(i)
-</code></pre>
-
-<div class="alert alert-note">
-  <p>Can you give a definition of both statements?</p>
-
-</div>
-
-
-<h3 id="3-4-python-variables-and-functions">3.4 - Python Variables and Functions:</h3>
-
-<p>Variables are simply reserved memory locations to store values.
-The moment you create a variable you reserve some space in memory.
-Depending on the data type of a variable, the interpreter allocates a certain amount of memory..</p>
-
-<p>As we have seen above, in Python, there is no need of declaring variables before using them.
-This is because actually what you are doing is not creating a spot in memory and filling it with an object.
-Rather, you are creating a pointer (that occupies a first memory spot), and then making that pointer point to an object in a second memory spot.
-For this reason, you can for instance reassign a variable to a different type of object without errors:</p>
-
-<pre><code class="language-python">a = [0,1,2]
-a = (-1,3)
-a = True
-</code></pre>
-
-<p>Note that when you assign a variable to another, you are just creating a second pointer to that same memory spot.</p>
-
-<pre><code class="language-python">a = [0,1,2]
-b = a
-b[2] = 0
-print(a)
-</code></pre>
-
-<div class="alert alert-note">
-  <p>What would have happened above, if <code>a</code> would  have been a tuple instead of a list? Think and then try!</p>
-
-</div>
-
-
-<p>Being only able to ``interactively&rdquo; play with variables is boring.
-To build more complex code, we need functions.
-A function in Python is defined as follows:</p>
-
-<pre><code class="language-python">def compute_sum(a,b)
-    c = a+b
-    return c
-</code></pre>
-
-<p>The function <code>compute_sum</code> will receive two arguments (of unspecified type), compute its sum, and return the result.
-Note that functions do not necessarily have input and/or output parameters.</p>
-
-<p>It is simple to specify a default value for some argument:</p>
-
-<pre><code class="language-python">def compute_sum(a,b=2)
-    c = a+b
-    return c
-</code></pre>
-
-<p>You can also have keyword arguments, specified by name:</p>
-
-<pre><code class="language-python">print(1,2, sep=';')
-</code></pre>
-
-<p>Keyword arguments must always go behind non-keyword arguments.</p>
-
-<p>When you want to have a function with an undetermined number of arguments, you can use <code>*args</code> and <code>**kwargs</code>.</p>
-
-<pre><code class="language-python">def print_all(*args, **kwargs):
-    print(&quot;arguments = &quot;, args)
-    print(&quot;keyword arguments = &quot;, kwargs)
-</code></pre>
-
-<p>This is useful to pass lists and dictionaries to a function. More in the homework.
-<div class="alert alert-warning">
-  <p>Need to explain this</p>
-
-</div>
-</p>
-
-<h3 id="3-5-python-objects">3.5- Python Objects</h3>
-
-<p>Python is an Object Oriented programming language.
-In this paradigm, an object is an entity that contains data along with some metadata and/or functionality.
-Objects are the main tool to operate with data, store and reference it.
-In Python everything is an object, which means every entity has some metadata (<strong>attributes</strong>) and associated functionality (<strong>methods</strong>).
-These attributes and methods are accessed via the dot syntax.</p>
-
-<p>For example, lists have several methods that you can use with them:</p>
-
-<pre><code class="language-python">a = [4,3,2,1]
-a.append(5)
-print(a)
-a.sort()
-print(a)
-</code></pre>
-
-<p>For a complete list of these, see <a href="http://faculty.salina.k-state.edu/tim/NPstudy_guide/python/containers.html#list-methods" target="_blank">here</a>.</p>
-
-<p>Note that even basic types have attributes and methods:</p>
-
-<pre><code class="language-python">a = 5.0
-print(a.is_integer())
-</code></pre>
-
-<p>In Python, even methods themselves are objects of a given type:</p>
-
-<pre><code class="language-python">print(type(compute_sum))
-print(type(compute_sum(1.0,2))
-</code></pre>
-
-<h3 id="3-6-python-classes">3.6 - Python Classes</h3>
-
-<p>How can you go beyond built-in data types and create new types, with their
-associated methods and attributes defined by you?
-Python allows you to create new classes, and then define (<em>instantiate</em>)
-new objects of that class and interact with them. This way, you can
-group data and functions operating on it in a more abstract way, and
-then instantiate concrete samples and use them.
-Classes allow for a simplified modeling of our problems, and enables the
-creation of cleaner code that can be more easily extended in the future.</p>
-
-<div class="alert alert-note">
-  <p>When dealing with classes, data is usually called <em>attributes</em>, and functions <em>methods</em>.</p>
-
-</div>
-
-
-<p>Every class needs to have a special method, called <code>constructor</code>, that initializes its attributes.</p>
-
-<pre><code class="language-python">class Y:
-    def __init__(self, v0):
-        self.v0 = v0
-        self.g = 9.81
-</code></pre>
-
-<p>You will note the presence of the <code>self</code> parameter: this is a special inner
-reference to the object state. It may take some time to understand the use
-of <code>self</code>, but do not be afraid, we will see some examples afterwards.</p>
-
-<p>As it stands, an object of the <code>Y</code> class has very limited value, as it contains only data (attributes).
-Let us add some spice by giving our class a function (method):</p>
-
-<pre><code class="language-python">class Y:
-    def __init__(self, v0):
-        self.v0 = v0
-        self.g = 9.81
-    def value(self, t):
-        return self.v0 * t - 0.5*self.g*t**2
-</code></pre>
-
-<p>The utility of <code>self</code> starts to become clear now. At this point, you have
-created a useful class, and you can instantiate an object of this new type easily:</p>
-
-<pre><code class="language-python">y = Y(3)
-print(type(y))
-</code></pre>
-
-<p>As you can see, we call our class as if it was a normal Python function, and Python
-automatically invokes the constructor method. <code>__init__</code> requires a parameter to be specified
-at instantiation time, in this case <code>3</code>. If you do not specify it, you will get an error.</p>
-
-<p>Now, attributes and methods are exposed to the user:</p>
-
-<pre><code class="language-python">print(y.v0)
-print(y.g)
-print(y.value(t=0.1)
-</code></pre>
-
-<p>How can you add new methods to your class? Let us add a <code>formula</code> method
-that print the mathematical function used to compute <code>value</code>. This method
-does not need input parameters, and outputs a string:</p>
-
-<pre><code class="language-python">class Y:
-    def __init__(self, v0):
-        self.v0 = v0
-        self.g = 9.81
-    def value(self, t):
-        return self.v0 * t - 0.5*self.g*t**2
-    def print_formula(self):
-        return ’v0*t - 0.5*g*t**2; v0=%g’ % self.v0
-</code></pre>
-
-<p>Note that even if the formula method does not need any arguments, we still
-must add the <code>self</code> argument so that it can access the <code>v0</code> attribute.
-This is omitted in the method call.</p>
-
-<p><strong>Homework</strong>:</p>
+<p>EXERCISES:
+<strong>Homework</strong>:</p>
 
 <p><strong><em>Protect data from the user (i.e. you!).</em></strong></p>
 
@@ -680,54 +249,118 @@ This is omitted in the method call.</p>
 is commonly used to indicate that a variable or attribute is defined, but yet not with
 a sensible value.</p>
 
-<p><strong><em>Class Inheritance:</em></strong>
-Instead of starting from scratch, you can create a class by deriving it
-from a preexisting class by listing the parent class in parentheses after the new class name.</p>
+<h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
 
-<pre><code class="language-python">class Parent:        # define parent class
-   parentAttr = 100
-   def __init__(self):
-      print &quot;Calling parent constructor&quot;
+<p>Here is what I want you to do for next week.</p>
 
-   def parentMethod(self):
-      print 'Calling parent method'
+<h3 id="review-exercises-mandatory">Review exercises (mandatory)</h3>
 
-   def setAttr(self, attr):
-      Parent.parentAttr = attr
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
 
-   def getAttr(self):
-      print &quot;Parent attribute :&quot;, Parent.parentAttr
+<h3 id="numpy-mandatory">Numpy (mandatory)</h3>
 
-class Child(Parent): # define child class
-   def __init__(self):
-      print &quot;Calling child constructor&quot;
+<p>Here you can find some exercises to review the concepts explained up to now.</p>
 
-   def childMethod(self):
-      print 'Calling child method'
+<h3 id="dictionaries-mandatory">Dictionaries (mandatory)</h3>
 
-c = Child()          # instance of child
-c.childMethod()      # child calls its method
-c.parentMethod()     # calls parent's method
-c.setAttr(200)       # again call parent's method
-c.getAttr()          # again call parent's method
+<p>Explanation of what a dictionary is.</p>
+
+<p>Here you can find some exercises for dictionaries.</p>
+
+<h3 id="classes-mandatory">Classes (mandatory)</h3>
+
+<p>Explanation of how classes work in Python.</p>
+
+<p>Here you can find some exercises for classes.</p>
+
+<h3 id="debugging-in-python-recommended">Debugging in Python (recommended)</h3>
+
+<p>Explanation of how to handle exceptions. Look into page 45 of JvdP.</p>
+
+<p>Here you can find some exercises for exceptions.</p>
+
+<h3 id="iterators-recommended">Iterators (recommended)</h3>
+
+<p>When we saw the example of a for loop, the looping variable traversed a list:</p>
+
+<pre><code class="language-python">for i in [0,1,2,3]:
+    print(i)
 </code></pre>
+
+<p>Actually, the object to the right of <code>in</code> needs to be an <code>iterator</code>.
+A <code>list</code> is a special type of <code>iterator</code>.
+These can be understood as generalized sequences, and will be important in following lectures.
+See page 52 of VdP.</p>
+
+<p>Here you can find some exercises for iterators.</p>
+
+<h3 id="generators-recommended">Generators (recommended)</h3>
+
+<p>Here you can find some exercises for generators.</p>
+
+<h3 id="kwargs-and-kwargs-recommended">*kwargs and **kwargs (recommended)</h3>
 
 <h3 id="1">1</h3>
 
-<p>Consider the following code:</p>
+<p>Consider the following code:
+```python4.- We are going to count the frequency of each letter in a given string.</p>
 
-<pre><code class="language-python">a=[1,2,3]
-a[1]=4
-</code></pre>
+<p>4.1) import the <code>string</code> library.
+Now create a variable <code>alphabet</code> that consists of the lowercase and uppercase letters in the English alphabet. For this,
+use the `ascii_lett4.- We are going to count the frequency of each letter in a given string.</p>
 
-<p>What is a?
-1.- This code contains an error 2.- [1,2,3] 3.- etc.</p>
+<p>4.1) import the <code>string</code> library.
+Now create a variable <code>alphabet</code> that consists of the lowercase and uppercase letters in the English alphabet. For this,
+use the <code>ascii_letters</code> attribute of the string library.</p>
 
-<h3 id="2">2</h3>
+<p>4.2) Now, consider the sentence &lsquo;Jim quickly realized that the beautiful gowns are expensive&rsquo;.
+Create a dictionary <code>count_letters</code> with keys consisting of each unique letter in the sentence and values consisting of
+the number of times each letter is used in this sentence.
+Count both upper case and lower case letters separately in the dictionary.</p>
 
-<p>Consider the following code:</p>
+<p>Hint: You can loop (<code>for</code>) over each letter in your sentence, check (<code>if</code>) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
+For that, you can count the number of occurrences with the method <code>count</code>, which you can look up in google.
+Do not forget to omit the blank space in <code>sentence</code>!</p>
 
-<pre><code class="language-python">a=(1,2,3)
+<p>4.3) Use the code you built in 4.2) to create a function called <code>counter</code> that takes a string <code>input_string</code> and returns
+a dictionary of letter counts <code>count_letters</code>. Test it with <code>sentence</code>.</p>
+
+<p>4.4) Use the dictionary created by your function to find out and print the most frequent letter in <code>sentence</code>.</p>
+
+<p>5.- The distance between two points <code>x</code> and <code>y</code> is the square root of the sum of squared differences along each dimension of <code>x</code> and <code>y</code>.
+Build a function <code>distance(x, y)</code> that takes two vectors and outputs the distance between them.
+Use your function to find the distance between <code>x=(0,0)</code> and <code>y=(1,1)</code>, and between <code>x=(0,0,0)</code> and <code>y=(1,1,1)</code></p>
+
+<p>Hint: To be able to take the square root, import the <code>math</code> library. ers` attribute of the string library.</p>
+
+<p>4.2) Now, consider the sentence &lsquo;Jim quickly realized that the beautiful gowns are expensive&rsquo;.
+Create a dictionary <code>count_letters</code> with keys consisting of each unique letter in the sentence and values consisting of
+the number of times each letter is used in this sentence.
+Count both upper case and lower case letters separately in the dictionary.</p>
+
+<p>Hint: You can loop (<code>for</code>) over each letter in your sentence, check (<code>if</code>) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
+For that, you can count the number of occurrences with the method <code>count</code>, which you can look up in google.
+Do not forget to omit the blank space in <code>sentence</code>!</p>
+
+<p>4.3) Use the code you built in 4.2) to create a function called <code>counter</code> that takes a string <code>input_string</code> and returns
+a dictionary of letter counts <code>count_letters</code>. Test it with <code>sentence</code>.</p>
+
+<p>4.4) Use the dictionary created by your function to find out and print the most frequent letter in <code>sentence</code>.</p>
+
+<p>5.- The distance between two points <code>x</code> and <code>y</code> is the square root of the sum of squared differences along each dimension of <code>x</code> and <code>y</code>.
+Build a function <code>distance(x, y)</code> that takes two vectors and outputs the distance between them.
+Use your function to find the distance between <code>x=(0,0)</code> and <code>y=(1,1)</code>, and between <code>x=(0,0,0)</code> and <code>y=(1,1,1)</code></p>
+
+<p>Hint: To be able to take the square root, import the <code>math</code> library.
+a=[1,2,3]
+a[1]=4</p>
+
+<pre><code>What is a?
+1.- This code contains an error 2.- [1,2,3] 3.- etc.
+### 2
+Consider the following code:
+```python
+a=(1,2,3)
 a[1]=4
 </code></pre>
 
@@ -800,69 +433,31 @@ while x &lt; 5:
 <p>What is the final value of x?
 8</p>
 
-<h3 id="9">9</h3>
+<p>4.- We are going to count the frequency of each letter in a given string.</p>
 
-<h3 id="3-7-modules-and-packages">3.7 - Modules and Packages</h3>
+<p>4.1) import the <code>string</code> library.
+Now create a variable <code>alphabet</code> that consists of the lowercase and uppercase letters in the English alphabet. For this,
+use the <code>ascii_letters</code> attribute of the string library.</p>
 
-<p>In Python, you have modules and packages.</p>
+<p>4.2) Now, consider the sentence &lsquo;Jim quickly realized that the beautiful gowns are expensive&rsquo;.
+Create a dictionary <code>count_letters</code> with keys consisting of each unique letter in the sentence and values consisting of
+the number of times each letter is used in this sentence.
+Count both upper case and lower case letters separately in the dictionary.</p>
 
-<h2 id="4-complementary-python-scientific-computing-tools">4. <strong>Complementary Python Scientific Computing Tools</strong></h2>
+<p>Hint: You can loop (<code>for</code>) over each letter in your sentence, check (<code>if</code>) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
+For that, you can count the number of occurrences with the method <code>count</code>, which you can look up in google.
+Do not forget to omit the blank space in <code>sentence</code>!</p>
 
-<p>Numpy, Matplotlib. Spyder.</p>
+<p>4.3) Use the code you built in 4.2) to create a function called <code>counter</code> that takes a string <code>input_string</code> and returns
+a dictionary of letter counts <code>count_letters</code>. Test it with <code>sentence</code>.</p>
 
-<h2 id="5-homework">5. <strong>Homework 😱</strong></h2>
+<p>4.4) Use the dictionary created by your function to find out and print the most frequent letter in <code>sentence</code>.</p>
 
-<p>Here is what I want you to do for next week.</p>
+<p>5.- The distance between two points <code>x</code> and <code>y</code> is the square root of the sum of squared differences along each dimension of <code>x</code> and <code>y</code>.
+Build a function <code>distance(x, y)</code> that takes two vectors and outputs the distance between them.
+Use your function to find the distance between <code>x=(0,0)</code> and <code>y=(1,1)</code>, and between <code>x=(0,0,0)</code> and <code>y=(1,1,1)</code></p>
 
-<h3 id="review-exercises-mandatory">Review exercises (mandatory)</h3>
-
-<p>Here you can find some exercises to review the concepts explained up to now.</p>
-
-<h3 id="numpy-mandatory">Numpy (mandatory)</h3>
-
-<p>Here you can find some exercises to review the concepts explained up to now.</p>
-
-<h3 id="dictionaries-mandatory">Dictionaries (mandatory)</h3>
-
-<p>Explanation of what a dictionary is.</p>
-
-<p>Here you can find some exercises for dictionaries.</p>
-
-<h3 id="classes-mandatory">Classes (mandatory)</h3>
-
-<p>Explanation of how classes work in Python.</p>
-
-<p>Here you can find some exercises for classes.</p>
-
-<h3 id="debugging-in-python-recommended">Debugging in Python (recommended)</h3>
-
-<p>Explanation of how to handle exceptions. Look into page 45 of JvdP.</p>
-
-<p>Here you can find some exercises for exceptions.</p>
-
-<h3 id="iterators-recommended">Iterators (recommended)</h3>
-
-<p>When we saw the example of a for loop, the looping variable traversed a list:</p>
-
-<pre><code class="language-python">for i in [0,1,2,3]:
-    print(i)
-</code></pre>
-
-<p>Actually, the object to the right of <code>in</code> needs to be an <code>iterator</code>.
-A <code>list</code> is a special type of <code>iterator</code>.
-These can be understood as generalized sequences, and will be important in following lectures.
-See page 52 of VdP.</p>
-
-<p>Here you can find some exercises for iterators.</p>
-
-<h3 id="generators-recommended">Generators (recommended)</h3>
-
-<p>Here you can find some exercises for generators.</p>
-
-<h2 id="6-sources-and-references">6. <strong>Sources and References</strong></h2>
-
-<p>Of course, there are tons of wonderful Python resources in the internet.
-The main sources I used to build this lecture were:</p>
+<p>Hint: To be able to take the square root, import the <code>math</code> library.</p>
 
     </div>
   </div>
@@ -873,12 +468,9 @@ The main sources I used to build this lecture were:</p>
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://agaldran.github.io/post/17_daco_prac_lec_2/"><span
-      aria-hidden="true">&larr;</span> DACO - Practical Lecture 2 - Bayesian Classification and Linear Regression</a></li>
-    
 
     
-    <li class="next"><a href="https://agaldran.github.io/post/17_daco_prac_lec_1/">DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing <span
+    <li class="next"><a href="https://agaldran.github.io/post/17_daco_prac_lec_2/">DACO - Practical Lecture 2 - Bayesian Classification and Linear Regression <span
       aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
