@@ -99,8 +99,11 @@ This means that, together with the core Python language, we&amp;rsquo;ll be usin
 But instead of installing all these packages manually one at a time, we will be using a &lt;strong&gt;Python distribution&lt;/strong&gt;.
 A distribution consists of the core Python package and several hundred modules, and available through a single download and installation.
 In this course, we will use the Anaconda Python distribution.
-Apart of Python itself and several hundred libraries, Anaconda also includes two very useful development environments: &lt;strong&gt;Jupyter&lt;/strong&gt; and &lt;strong&gt;Spyder&lt;/strong&gt;.
-More on this below.&lt;/p&gt;
+Apart of Python itself and several hundred libraries, Anaconda also includes two very useful development environments: &lt;strong&gt;Jupyter NB&lt;/strong&gt; and &lt;strong&gt;Spyder&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Spyder&lt;/strong&gt; is a Matlab-like &lt;strong&gt;IDE&lt;/strong&gt; (Integrated Development Environment) that we will be using for complex/long programming assignments.
+On the other hand, &lt;strong&gt;Jupyter NB&lt;/strong&gt; is a functionality that allows you to run sequentially code in your browser.
+I will be giving you instructions in class on how to install and use both tools.&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;p&gt;The Anaconda Python distribution can be found &lt;a href=&#34;https://www.continuum.io/downloads&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. Please install Python 3.
@@ -120,22 +123,24 @@ You will probably find yourself alternating between both modes.&lt;/p&gt;
 
 &lt;p&gt;For a first example on interactive mode, open a command console, type &lt;code&gt;python&lt;/code&gt;, and you will start using Python. Experiment a bit.&lt;/p&gt;
 
-&lt;p&gt;A more convenient way of building code interactively is through &lt;strong&gt;iPython notebooks - Jupyter&lt;/strong&gt;.
+&lt;p&gt;A more convenient way of building code interactively is through &lt;strong&gt;Jupyter iPython notebooks&lt;/strong&gt;.
 This also allows us to mix text, code, and maths, which is really cool.
-To start an iPython notebook, open a console, type jupyter notebook, and navigate in your browser to localhost/whatever.
-Explanations on ipython.&lt;/p&gt;
+To start an iPython notebook, open a console, type jupyter notebook, and navigate in your browser to &lt;code&gt;http://localhost:8888/&lt;/code&gt;.
+In windows, you may need a log-in password, provided automatically after executing jupyter.
+&lt;a href=&#34;https://www.dataquest.io/blog/jupyter-notebook-tips-tricks-shortcuts/&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; you can find a series of useful tricks and shortcuts.&lt;/p&gt;
 
 &lt;h4 id=&#34;2-2-2-python-standard-mode&#34;&gt;2.2.2 Python Standard Mode&lt;/h4&gt;
 
 &lt;p&gt;In this case, we write a text file with Python instructions, and run it. &lt;code&gt;hello_world.py&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Again, there is a more convenient way for building code in standard mode, which is using an &lt;strong&gt;IDE&lt;/strong&gt; (Integrated Development Environment).
+&lt;p&gt;Again, there is a more convenient way for building code in standard mode, which is using an IDE.
 This programming tool will allow you to more easily debug, inspect variables, and quickly modify your code.
 They typically also include an embedded interactive system. An example of an IDE is &lt;strong&gt;Spyder&lt;/strong&gt;, already contained in the Anaconda distribution.&lt;/p&gt;
 
 &lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available &lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_1_python/Practical%20Lecture%201%20-%20Introduction%20to%20Python%20for%20Scientific%20Computing.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
-Download and open it!&lt;/p&gt;
+  &lt;p&gt;For the contents of this lecture, starting from Section 3, a notebook version of this lecture is available in a static
+view &lt;a href=&#34;http://nbviewer.jupyter.org/github/agaldran/daco_2017_practicals/blob/master/lecture_1_python/PL1_introduction2Python.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+Please click the download button in the right top corner, download and open it!&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -540,17 +545,21 @@ creation of cleaner code that will be more easily extended in the future.&lt;/p&
 
 &lt;p&gt;Every class needs to have a special method, called &lt;code&gt;constructor&lt;/code&gt;, that initializes its attributes.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
-    def __init__(self, v0):
-        self.v0 = v0
-        self.g = 9.81
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class UP_student:
+    def __init__(self, name, math_skills, coding_skills, hard_working, theory_mark, practical_mark):
+        self.name = name
+        self.math_skills = math_skills
+        self.coding_skills = coding_skills
+        self.hard_working = hard_working                
+        self.theory_mark = theory_mark
+        self.practical_mark = practical_mark  
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You will note the presence of the &lt;code&gt;self&lt;/code&gt; parameter: this is a special inner
 reference to the object state. It may take some time to understand the use
 of &lt;code&gt;self&lt;/code&gt;, but do not be afraid, we will see some examples afterwards.&lt;/p&gt;
 
-&lt;p&gt;As it stands, an object of the &lt;code&gt;Y&lt;/code&gt; class has very limited value, as it contains only data (attributes).
+&lt;p&gt;As it stands, an object of the &lt;code&gt;UP_student&lt;/code&gt; class has very limited value, as it contains only data (attributes).
 Let us add some spice by giving our class a function (method):&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
@@ -564,38 +573,56 @@ Let us add some spice by giving our class a function (method):&lt;/p&gt;
 &lt;p&gt;The utility of &lt;code&gt;self&lt;/code&gt; starts to become clear now. At this point, you have
 created a useful class, and you can instantiate an object of this new type easily:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;y = Y(3)
-print(type(y))
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;adrian_galdran&#39;
+adrian_math_skills = 0.9
+adrian_coding_skills = 0.8
+adrian_hard_working = True
+adrian_student = UP_student(name, adrian_math_skills, adrian_coding_skills, adrian_hard_working)
+print(type(a_student))
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;As you can see, we call our class as if it was a normal Python function, and Python
-automatically invokes the constructor method. &lt;code&gt;__init__&lt;/code&gt; requires a parameter to be specified
-at instantiation time, in this case &lt;code&gt;3&lt;/code&gt;. If you do not specify it, you will get an error.&lt;/p&gt;
+&lt;p&gt;As you can see, we call our class as if it was a normal Python function, and Python automatically invokes the constructor method.
+&lt;code&gt;__init__&lt;/code&gt; requires several parameters to be specified at instantiation time. If you do not specify them correctly, you will get an error.&lt;/p&gt;
 
 &lt;p&gt;Now, attributes and methods are exposed to the user:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(y.v0)
-print(y.g)
-print(y.value(t=0.1))
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(adrian_student.coding_skills)
+print(adrian_student.hard_working)
+print(&#39;Global Mark: &#39;, adrian_student.compute_global_mark(0.2)) # Let us give more weight to the practical part!
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;How can you add new methods to your class? Let us add a &lt;code&gt;formula&lt;/code&gt; method
-that print the mathematical function used to compute &lt;code&gt;value&lt;/code&gt;. This method
-does not need input parameters, and outputs a string:&lt;/p&gt;
+&lt;p&gt;How can you add new methods to your class? For instance, we can add a &lt;code&gt;print_global_mark&lt;/code&gt; method
+that computes and prints the final mark automatically. This method only needs as input parameter &lt;code&gt;theory_weight&lt;/code&gt;, and outputs a string:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Y:
-    def __init__(self, v0):
-        self.v0 = v0
-        self.g = 9.81
-    def value(self, t):
-        return self.v0 * t - 0.5*self.g*t**2
-    def print_formula(self):
-        return &#39;v0*t - 0.5*g*t**2&#39;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class UP_student:
+    def __init__(self, name, math_skills, coding_skills, hard_working, theory_mark = 5, practical_mark = 4):
+        self.name = name
+        self.math_skills = math_skills
+        self.coding_skills = coding_skills
+        self.hard_working = hard_working                
+        self.theory_mark = theory_mark
+        self.practical_mark = practical_mark 
+    def compute_global_mark(self, theory_weight = 0.6):
+        return theory_weight*self.theory_mark + (1-theory_weight)*self.practical_mark
+    def print_global_mark(self, theory_weight = 0.6):
+        global_mark = self.compute_global_mark(theory_weight)
+        print(&#39;The final mark of &#39;, self.name, &#39; is &#39;, global_mark)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Note that even if the formula method does not need any arguments, we still
-must add the &lt;code&gt;self&lt;/code&gt; argument so that it can access the &lt;code&gt;v0&lt;/code&gt; attribute.
+&lt;p&gt;Note that even if the &lt;code&gt;print_global_mark&lt;/code&gt; method only needs the &lt;code&gt;theory_weight&lt;/code&gt; argument, we still
+must add the &lt;code&gt;self&lt;/code&gt; argument so that it can call &lt;code&gt;self.global_mark&lt;/code&gt;.
 This is omitted in the method call.&lt;/p&gt;
+
+&lt;p&gt;Notice also that inside the class, &lt;code&gt;compute_global_mark&lt;/code&gt; is known to the object and needs no &lt;code&gt;self&lt;/code&gt; parameter.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;name = &#39;adrian_galdran&#39;
+adrian_math_skills = 0.9
+adrian_coding_skills = 0.8
+adrian_hard_working = True
+adrian_student = UP_student(name, adrian_math_skills, adrian_coding_skills, adrian_hard_working)
+
+adrian_student.print_global_mark()
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;We know an object consists of both internal data and methods that perform operations on the data.
 At some point you may find that existing object types do not fully suit your needs.
