@@ -18,7 +18,7 @@
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_1/</guid>
       <description>
 
-&lt;p&gt;&lt;strong&gt;NOTE: This tutorial is under construction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE: pdf slides for the first part of this lecture can be found &lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_1_python/daco17_practical_lec_1.pdf&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;This year we have decided to move from Matlab to Python for the practical sessions.
 Some of you maybe will not have worked with this programming language.
@@ -961,7 +961,11 @@ plt.hist(x, color = &#39;b&#39;);
 
 &lt;p&gt;Note the use of a semicolon after each plot execution, in order to avoid printing the value returned by &lt;code&gt;matplotlib&lt;/code&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;6-sources-and-references&#34;&gt;6. &lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;6-homework&#34;&gt;6. &lt;strong&gt;Homework&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;For now, you can access a notebook with an exercise on Python classes &lt;a href=&#34;http://nbviewer.jupyter.org/github/agaldran/daco_2017_practicals/blob/master/lecture_1_python/DACO17_hw_exercise_1.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. I will be adding another problem in the next days.&lt;/p&gt;
+
+&lt;h2 id=&#34;7-sources-and-references&#34;&gt;7. &lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;Of course, there are tons of wonderful Python resources in the internet.
 The main sources I used to build this lecture were:&lt;/p&gt;
