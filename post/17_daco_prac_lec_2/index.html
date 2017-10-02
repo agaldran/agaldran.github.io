@@ -233,88 +233,117 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>Where we introduce the scikit-learn library for Machine Learning.
-We will code from scratch a Naive Bayes classifier and a Linear Regressor,
-and compare them with sk-learn implementations.</p>
+<p>This practical lecture is again based on Jupyter Notebooks, but for the theory bits you can also find some supporting
+material in the slides mentioned above. Note that we discuss Linear Regression in Theoretical Lecture 6, see [here]().
+For this reason, we will only be using them as a black-box today, to familiarize ourselves with sk-learn for regression tasks.</p>
 
-<p>This year we have decided to move from Matlab to Python for the practical sessions.
-Some of you maybe will not have worked with this programming language.
-This first lecture is intended to make you aware of the (super-rich) Python ecosystem for scientific computing.</p>
-
-<p>I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
-This is an overview of what you will be learning today:</p>
+<p>Here is the plan for today:</p>
 
 <ol>
-<li><p>Motivation and Goals. What is Python?</p></li>
-
-<li><p>Python Installation. Accompanying Tools.</p></li>
-
-<li><p>A Swift Introduction to the Python Programming Language</p></li>
-
-<li><p>Complementary Python Scientific Computing Tools</p></li>
-
-<li><p>Homework 😱</p></li>
-
-<li><p>Sources and References</p></li>
-</ol>
-
-<p>So&hellip; let&rsquo;s move on.</p>
-
-<h2 id="1-motivation-and-goals-what-is-python">1.- <strong>Motivation and Goals. What is Python?</strong></h2>
-
-<p>First thing, Python is <strong>free</strong>. Second, it is <strong>simple</strong>.
-Third, it is increasingly becoming the tool of choice for data science projects.
-And last, there is a <strong>huge</strong> community of contributors to lots of open-source projects that complement it.
-This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.</p>
-
-<p>However, to add all this to your toolbelt, the first step is to familiarize yourself with the Python language itself.
-Today we will quickly traverse the main notions to get started on that.</p>
-
-<p>But first, let us install Python!</p>
-
-<h2 id="2-python-installation-accompanying-tools">2. <strong>Python Installation. Accompanying Tools.</strong></h2>
-
-<p>Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.</p>
-
-<h2 id="3-introduction-to-the-python-programming-language">3. <strong>Introduction to the Python Programming Language</strong></h2>
+<li><p><strong>Motivation and Goals. Machine Learning for Supervised Classification and Regression</strong></p>
 
 <ol>
-<li><p><strong>first</strong>
-The same as in any language, Python also has different types of data.
-The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
-Python determines data type of variables by how they are used.
-For instance, to create an integer (<code>int</code>) variable you simply type:</p>
+<li>Difference between Classification and Regression</li>
+<li>Difference between Generative and Discriminative models</li>
+<li>Quick overview of scikit-learn</li>
+</ol></li>
 
-<pre><code class="language-python"># An integer variable a
-a = 5
-print(type(a))
-</code></pre>
+<li><p><strong>Bayesian Classification: a bit of theory</strong></p></li>
 
-<p><code>print</code> and <code>type</code> are a built-in Python functions that behave as you would expect.
-More on functions later.
-Note that in Python 2 you would not use parentheses with <code>print</code>
-Other basic/common python types are for instance<code>float</code> or <code>boolean</code>, exemplified below:</p>
+<li><p><strong>Naive Bayes Classifier Implementation</strong></p>
 
-<pre><code class="language-python"># A float variable f
-f = 5.0
-# A boolean
-b = True
-</code></pre></li>
+<ol>
+<li>From scratch</li>
+<li>Using scikit-learn</li>
+</ol></li>
 
-<li><p>second</p></li>
+<li><p><strong>Linear Regression: a (tiny) bit of theory</strong></p></li>
 
-<li><p>third</p></li>
+<li><p><strong>Linear Regression Implementation</strong></p>
+
+<ol>
+<li>From scratch</li>
+<li>Using scikit-learn</li>
+</ol></li>
+
+<li><p><strong>Homework 😱</strong></p></li>
+
+<li><p><strong>Sources and References</strong></p></li>
 </ol>
 
-<p>Python has lots of operators, the most prominent ones being <strong>arithmetic</strong>, <strong>comparison</strong>, and <strong>logical</strong>.
-&ndash; Arithmetic operators will take two variables and perform simple mathematical operations on them.
-They are addition, subtraction, multiplication, division, modulus, floor division, and exponentiation.</p>
+<h1 id="1-motivation-and-goals-machine-learning-for-supervised-classification-and-regression">1.- <strong>Motivation and Goals. Machine Learning for Supervised Classification and Regression</strong></h1>
 
-<pre><code class="language-python"># A list of lists
-l = [[0],[1],[2,3]]
-</code></pre>
+<p>As you will know, this course is all about about making predictions out of data and annotations.
+But there are several different kinds of predictions, and hence several tasks that we can solve.
+Among the most fundamental ones are Supervised Classification and Supervised Regression.</p>
 
-<p>&ndash; Comparison operators observe two variables and return a boolean value.</p>
+<p><strong>Note:</strong> The term <strong>supervised</strong> refers to the fact that we assume we have data with annotations.
+A different kind of models exist related to the situation where there is no annotations, and the goal is to extract some
+useful information out of the available (unlabeled) data.
+For instance, we could think of a dataset with customer preferences regarding certain products.
+Could we group a given pool of users into several subgroups that behave similar among them, but differently with respect to the other subgroups?
+This task is known as clustering, and we will be working on it in future lectures.
+But for now, we assume for each example in our dataset, we know the corresponding quantity of interest.</p>
+
+<h2 id="1-1-difference-between-classification-and-regression">1.1 - <strong>Difference between Classification and Regression</strong></h2>
+
+<p>This is better understood by example.</p>
+
+<h2 id="1-2-difference-between-generative-and-discriminative-models">1.2 - <strong>Difference between Generative and Discriminative models</strong></h2>
+
+<p>See <a href="https://www.cs.toronto.edu/~duvenaud/courses/csc2541/index.html" target="_blank">here</a> for a definition of Generative models.</p>
+
+<h2 id="1-3-quick-overview-of-scikit-learn">1.3 - <strong>Quick overview of scikit-learn</strong></h2>
+
+<p>See <a href="scikit-learn.org" target="_blank">here</a> for an introduction to scikit-learn.</p>
+
+<hr />
+
+<h1 id="2-bayesian-classification-a-bit-of-theory">2.- <strong>Bayesian Classification: a bit of theory</strong></h1>
+
+<p>You have already seen this in class.</p>
+
+<hr />
+
+<h1 id="3-naive-bayes-classifier-implementation">3.- <strong>Naive Bayes Classifier Implementation</strong></h1>
+
+<p>How do we implement those ideas?</p>
+
+<h2 id="3-1-from-scratch">3.1 - <strong>From scratch</strong></h2>
+
+<p>Without relying on external libraries, so that you understand what is going on.</p>
+
+<h2 id="3-2-using-scikit-learn">3.2 - <strong>Using scikit-learn</strong></h2>
+
+<p>sk-learn implementation, that you can bet is better than the above.</p>
+
+<hr />
+
+<h1 id="3-linear-regression-a-tiny-bit-of-theory">3.- <strong>Linear Regression: a (tiny) bit of theory</strong></h1>
+
+<p>You have already seen this in class, or will see it. See <a href="google.es" target="_blank">here</a></p>
+
+<hr />
+
+<h1 id="4-linear-regression-implementation">4.- <strong>Linear Regression Implementation</strong></h1>
+
+<p>How do we implement those ideas?</p>
+
+<h2 id="4-1-from-scratch">4.1 - <strong>From scratch</strong></h2>
+
+<p>This is covered in the theory class, see <a href="google.es" target="_blank">here</a>.</p>
+
+<h2 id="4-2-using-scikit-learn">4.2 - <strong>Using scikit-learn</strong></h2>
+
+<p>sk-learn implementation, that you can bet is better than the above.</p>
+
+<hr />
+
+<h1 id="6-homework">6. <strong>Homework</strong></h1>
+
+<p>For now, you can access a notebook with an exercise on Python classes <a href="google.es" target="_blank">here</a>. I will be adding another problem in the next days.</p>
+
+<h1 id="7-sources-and-references">7. <strong>Sources and References</strong></h1>
 
     </div>
   </div>
@@ -325,8 +354,8 @@ l = [[0],[1],[2,3]]
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://agaldran.github.io/post/17_daco_prac_lec_1_old/"><span
-      aria-hidden="true">&larr;</span> </a></li>
+    <li class="previous"><a href="https://agaldran.github.io/post/17_daco_theory_lec_6a/"><span
+      aria-hidden="true">&larr;</span> DACO - Theoretical Lecture 6a - Linear Models</a></li>
     
 
     

@@ -998,335 +998,179 @@ Codeacademy exercises, hosted &lt;a href=&#34;https://www.codecademy.com/learn/l
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_2/</guid>
       <description>
 
-&lt;p&gt;Where we introduce the scikit-learn library for Machine Learning.
-We will code from scratch a Naive Bayes classifier and a Linear Regressor,
-and compare them with sk-learn implementations.&lt;/p&gt;
+&lt;p&gt;This practical lecture is again based on Jupyter Notebooks, but for the theory bits you can also find some supporting
+material in the slides mentioned above. Note that we discuss Linear Regression in Theoretical Lecture 6, see [here]().
+For this reason, we will only be using them as a black-box today, to familiarize ourselves with sk-learn for regression tasks.&lt;/p&gt;
 
-&lt;p&gt;This year we have decided to move from Matlab to Python for the practical sessions.
-Some of you maybe will not have worked with this programming language.
-This first lecture is intended to make you aware of the (super-rich) Python ecosystem for scientific computing.&lt;/p&gt;
-
-&lt;p&gt;I really hope that by the end of this course you will be a Python fan, and consider abandoning Matlab once and forever!
-This is an overview of what you will be learning today:&lt;/p&gt;
+&lt;p&gt;Here is the plan for today:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Motivation and Goals. What is Python?&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Python Installation. Accompanying Tools.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;A Swift Introduction to the Python Programming Language&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Complementary Python Scientific Computing Tools&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Homework 😱&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Sources and References&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;So&amp;hellip; let&amp;rsquo;s move on.&lt;/p&gt;
-
-&lt;h2 id=&#34;1-motivation-and-goals-what-is-python&#34;&gt;1.- &lt;strong&gt;Motivation and Goals. What is Python?&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;First thing, Python is &lt;strong&gt;free&lt;/strong&gt;. Second, it is &lt;strong&gt;simple&lt;/strong&gt;.
-Third, it is increasingly becoming the tool of choice for data science projects.
-And last, there is a &lt;strong&gt;huge&lt;/strong&gt; community of contributors to lots of open-source projects that complement it.
-This manifests in the form of a large ecosystem of scientific computing tools that grow along with the number of users.&lt;/p&gt;
-
-&lt;p&gt;However, to add all this to your toolbelt, the first step is to familiarize yourself with the Python language itself.
-Today we will quickly traverse the main notions to get started on that.&lt;/p&gt;
-
-&lt;p&gt;But first, let us install Python!&lt;/p&gt;
-
-&lt;h2 id=&#34;2-python-installation-accompanying-tools&#34;&gt;2. &lt;strong&gt;Python Installation. Accompanying Tools.&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;Conda/Anaconda. Command Line. Package Manager. IDEs. Ipython Notebooks.&lt;/p&gt;
-
-&lt;h2 id=&#34;3-introduction-to-the-python-programming-language&#34;&gt;3. &lt;strong&gt;Introduction to the Python Programming Language&lt;/strong&gt;&lt;/h2&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Motivation and Goals. Machine Learning for Supervised Classification and Regression&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;first&lt;/strong&gt;
-The same as in any language, Python also has different types of data.
-The same as in e.g Matlab (and different from e.g. C) you do not need to explicitly declare the type of a variable.
-Python determines data type of variables by how they are used.
-For instance, to create an integer (&lt;code&gt;int&lt;/code&gt;) variable you simply type:&lt;/p&gt;
+&lt;li&gt;Difference between Classification and Regression&lt;/li&gt;
+&lt;li&gt;Difference between Generative and Discriminative models&lt;/li&gt;
+&lt;li&gt;Quick overview of scikit-learn&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# An integer variable a
-a = 5
-print(type(a))
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Bayesian Classification: a bit of theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;&lt;code&gt;print&lt;/code&gt; and &lt;code&gt;type&lt;/code&gt; are a built-in Python functions that behave as you would expect.
-More on functions later.
-Note that in Python 2 you would not use parentheses with &lt;code&gt;print&lt;/code&gt;
-Other basic/common python types are for instance&lt;code&gt;float&lt;/code&gt; or &lt;code&gt;boolean&lt;/code&gt;, exemplified below:&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Naive Bayes Classifier Implementation&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A float variable f
-f = 5.0
-# A boolean
-b = True
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;From scratch&lt;/li&gt;
+&lt;li&gt;Using scikit-learn&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;second&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression: a (tiny) bit of theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;third&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression Implementation&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;From scratch&lt;/li&gt;
+&lt;li&gt;Using scikit-learn&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Homework 😱&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;Python has lots of operators, the most prominent ones being &lt;strong&gt;arithmetic&lt;/strong&gt;, &lt;strong&gt;comparison&lt;/strong&gt;, and &lt;strong&gt;logical&lt;/strong&gt;.
-&amp;ndash; Arithmetic operators will take two variables and perform simple mathematical operations on them.
-They are addition, subtraction, multiplication, division, modulus, floor division, and exponentiation.&lt;/p&gt;
+&lt;h1 id=&#34;1-motivation-and-goals-machine-learning-for-supervised-classification-and-regression&#34;&gt;1.- &lt;strong&gt;Motivation and Goals. Machine Learning for Supervised Classification and Regression&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# A list of lists
-l = [[0],[1],[2,3]]
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you will know, this course is all about about making predictions out of data and annotations.
+But there are several different kinds of predictions, and hence several tasks that we can solve.
+Among the most fundamental ones are Supervised Classification and Supervised Regression.&lt;/p&gt;
 
-&lt;p&gt;&amp;ndash; Comparison operators observe two variables and return a boolean value.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The term &lt;strong&gt;supervised&lt;/strong&gt; refers to the fact that we assume we have data with annotations.
+A different kind of models exist related to the situation where there is no annotations, and the goal is to extract some
+useful information out of the available (unlabeled) data.
+For instance, we could think of a dataset with customer preferences regarding certain products.
+Could we group a given pool of users into several subgroups that behave similar among them, but differently with respect to the other subgroups?
+This task is known as clustering, and we will be working on it in future lectures.
+But for now, we assume for each example in our dataset, we know the corresponding quantity of interest.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-1-difference-between-classification-and-regression&#34;&gt;1.1 - &lt;strong&gt;Difference between Classification and Regression&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;This is better understood by example.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-2-difference-between-generative-and-discriminative-models&#34;&gt;1.2 - &lt;strong&gt;Difference between Generative and Discriminative models&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://www.cs.toronto.edu/~duvenaud/courses/csc2541/index.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for a definition of Generative models.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-3-quick-overview-of-scikit-learn&#34;&gt;1.3 - &lt;strong&gt;Quick overview of scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&#34;scikit-learn.org&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for an introduction to scikit-learn.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;2-bayesian-classification-a-bit-of-theory&#34;&gt;2.- &lt;strong&gt;Bayesian Classification: a bit of theory&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;You have already seen this in class.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;3-naive-bayes-classifier-implementation&#34;&gt;3.- &lt;strong&gt;Naive Bayes Classifier Implementation&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;How do we implement those ideas?&lt;/p&gt;
+
+&lt;h2 id=&#34;3-1-from-scratch&#34;&gt;3.1 - &lt;strong&gt;From scratch&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;Without relying on external libraries, so that you understand what is going on.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-2-using-scikit-learn&#34;&gt;3.2 - &lt;strong&gt;Using scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;sk-learn implementation, that you can bet is better than the above.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;3-linear-regression-a-tiny-bit-of-theory&#34;&gt;3.- &lt;strong&gt;Linear Regression: a (tiny) bit of theory&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;You have already seen this in class, or will see it. See &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;4-linear-regression-implementation&#34;&gt;4.- &lt;strong&gt;Linear Regression Implementation&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;How do we implement those ideas?&lt;/p&gt;
+
+&lt;h2 id=&#34;4-1-from-scratch&#34;&gt;4.1 - &lt;strong&gt;From scratch&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;This is covered in the theory class, see &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;4-2-using-scikit-learn&#34;&gt;4.2 - &lt;strong&gt;Using scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;sk-learn implementation, that you can bet is better than the above.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&#34;6-homework&#34;&gt;6. &lt;strong&gt;Homework&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;For now, you can access a notebook with an exercise on Python classes &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. I will be adding another problem in the next days.&lt;/p&gt;
+
+&lt;h1 id=&#34;7-sources-and-references&#34;&gt;7. &lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/h1&gt;
 </description>
     </item>
     
     <item>
-      <title></title>
-      <link>https://agaldran.github.io/post/17_daco_prac_lec_1_old/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>DACO - Theoretical Lecture 6a - Linear Models</title>
+      <link>https://agaldran.github.io/post/17_daco_theory_lec_6a/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
       
-      <guid>https://agaldran.github.io/post/17_daco_prac_lec_1_old/</guid>
-      <description>
-
-&lt;p&gt;EXERCISES:
-&lt;strong&gt;Homework&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Protect data from the user (i.e. you!).&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;class Person(object):
-    def __init__(self, name, mobile_phone=None, office_phone=None, private_phone=None, email=None):
-        self.name = name
-        self.mobile = mobile_phone
-        self.office = office_phone
-        self.private = private_phone
-        self.email = email
-
-    def add_mobile_phone(self, number):
-        self.mobile = number
-    def add_office_phone(self, number):
-        self.office = number
-    def add_private_phone(self, number):
-        self.private = number
-    def add_email(self, address):
-        self.email = address
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note the use of None as default value for various data attributes: the object None
-is commonly used to indicate that a variable or attribute is defined, but yet not with
-a sensible value.&lt;/p&gt;
-
-&lt;h2 id=&#34;5-homework&#34;&gt;5. &lt;strong&gt;Homework 😱&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;p&gt;Here is what I want you to do for next week.&lt;/p&gt;
-
-&lt;h3 id=&#34;review-exercises-mandatory&#34;&gt;Review exercises (mandatory)&lt;/h3&gt;
-
-&lt;p&gt;Here you can find some exercises to review the concepts explained up to now.&lt;/p&gt;
-
-&lt;h3 id=&#34;numpy-mandatory&#34;&gt;Numpy (mandatory)&lt;/h3&gt;
-
-&lt;p&gt;Here you can find some exercises to review the concepts explained up to now.&lt;/p&gt;
-
-&lt;h3 id=&#34;dictionaries-mandatory&#34;&gt;Dictionaries (mandatory)&lt;/h3&gt;
-
-&lt;p&gt;Explanation of what a dictionary is.&lt;/p&gt;
-
-&lt;p&gt;Here you can find some exercises for dictionaries.&lt;/p&gt;
-
-&lt;h3 id=&#34;classes-mandatory&#34;&gt;Classes (mandatory)&lt;/h3&gt;
-
-&lt;p&gt;Explanation of how classes work in Python.&lt;/p&gt;
-
-&lt;p&gt;Here you can find some exercises for classes.&lt;/p&gt;
-
-&lt;h3 id=&#34;debugging-in-python-recommended&#34;&gt;Debugging in Python (recommended)&lt;/h3&gt;
-
-&lt;p&gt;Explanation of how to handle exceptions. Look into page 45 of JvdP.&lt;/p&gt;
-
-&lt;p&gt;Here you can find some exercises for exceptions.&lt;/p&gt;
-
-&lt;h3 id=&#34;iterators-recommended&#34;&gt;Iterators (recommended)&lt;/h3&gt;
-
-&lt;p&gt;When we saw the example of a for loop, the looping variable traversed a list:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;for i in [0,1,2,3]:
-    print(i)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Actually, the object to the right of &lt;code&gt;in&lt;/code&gt; needs to be an &lt;code&gt;iterator&lt;/code&gt;.
-A &lt;code&gt;list&lt;/code&gt; is a special type of &lt;code&gt;iterator&lt;/code&gt;.
-These can be understood as generalized sequences, and will be important in following lectures.
-See page 52 of VdP.&lt;/p&gt;
-
-&lt;p&gt;Here you can find some exercises for iterators.&lt;/p&gt;
-
-&lt;h3 id=&#34;generators-recommended&#34;&gt;Generators (recommended)&lt;/h3&gt;
-
-&lt;p&gt;Here you can find some exercises for generators.&lt;/p&gt;
-
-&lt;h3 id=&#34;kwargs-and-kwargs-recommended&#34;&gt;*kwargs and **kwargs (recommended)&lt;/h3&gt;
-
-&lt;h3 id=&#34;1&#34;&gt;1&lt;/h3&gt;
-
-&lt;p&gt;Consider the following code:
-```python4.- We are going to count the frequency of each letter in a given string.&lt;/p&gt;
-
-&lt;p&gt;4.1) import the &lt;code&gt;string&lt;/code&gt; library.
-Now create a variable &lt;code&gt;alphabet&lt;/code&gt; that consists of the lowercase and uppercase letters in the English alphabet. For this,
-use the `ascii_lett4.- We are going to count the frequency of each letter in a given string.&lt;/p&gt;
-
-&lt;p&gt;4.1) import the &lt;code&gt;string&lt;/code&gt; library.
-Now create a variable &lt;code&gt;alphabet&lt;/code&gt; that consists of the lowercase and uppercase letters in the English alphabet. For this,
-use the &lt;code&gt;ascii_letters&lt;/code&gt; attribute of the string library.&lt;/p&gt;
-
-&lt;p&gt;4.2) Now, consider the sentence &amp;lsquo;Jim quickly realized that the beautiful gowns are expensive&amp;rsquo;.
-Create a dictionary &lt;code&gt;count_letters&lt;/code&gt; with keys consisting of each unique letter in the sentence and values consisting of
-the number of times each letter is used in this sentence.
-Count both upper case and lower case letters separately in the dictionary.&lt;/p&gt;
-
-&lt;p&gt;Hint: You can loop (&lt;code&gt;for&lt;/code&gt;) over each letter in your sentence, check (&lt;code&gt;if&lt;/code&gt;) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
-For that, you can count the number of occurrences with the method &lt;code&gt;count&lt;/code&gt;, which you can look up in google.
-Do not forget to omit the blank space in &lt;code&gt;sentence&lt;/code&gt;!&lt;/p&gt;
-
-&lt;p&gt;4.3) Use the code you built in 4.2) to create a function called &lt;code&gt;counter&lt;/code&gt; that takes a string &lt;code&gt;input_string&lt;/code&gt; and returns
-a dictionary of letter counts &lt;code&gt;count_letters&lt;/code&gt;. Test it with &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;4.4) Use the dictionary created by your function to find out and print the most frequent letter in &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;5.- The distance between two points &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; is the square root of the sum of squared differences along each dimension of &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
-Build a function &lt;code&gt;distance(x, y)&lt;/code&gt; that takes two vectors and outputs the distance between them.
-Use your function to find the distance between &lt;code&gt;x=(0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1)&lt;/code&gt;, and between &lt;code&gt;x=(0,0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1,1)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Hint: To be able to take the square root, import the &lt;code&gt;math&lt;/code&gt; library. ers` attribute of the string library.&lt;/p&gt;
-
-&lt;p&gt;4.2) Now, consider the sentence &amp;lsquo;Jim quickly realized that the beautiful gowns are expensive&amp;rsquo;.
-Create a dictionary &lt;code&gt;count_letters&lt;/code&gt; with keys consisting of each unique letter in the sentence and values consisting of
-the number of times each letter is used in this sentence.
-Count both upper case and lower case letters separately in the dictionary.&lt;/p&gt;
-
-&lt;p&gt;Hint: You can loop (&lt;code&gt;for&lt;/code&gt;) over each letter in your sentence, check (&lt;code&gt;if&lt;/code&gt;) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
-For that, you can count the number of occurrences with the method &lt;code&gt;count&lt;/code&gt;, which you can look up in google.
-Do not forget to omit the blank space in &lt;code&gt;sentence&lt;/code&gt;!&lt;/p&gt;
-
-&lt;p&gt;4.3) Use the code you built in 4.2) to create a function called &lt;code&gt;counter&lt;/code&gt; that takes a string &lt;code&gt;input_string&lt;/code&gt; and returns
-a dictionary of letter counts &lt;code&gt;count_letters&lt;/code&gt;. Test it with &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;4.4) Use the dictionary created by your function to find out and print the most frequent letter in &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;5.- The distance between two points &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; is the square root of the sum of squared differences along each dimension of &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
-Build a function &lt;code&gt;distance(x, y)&lt;/code&gt; that takes two vectors and outputs the distance between them.
-Use your function to find the distance between &lt;code&gt;x=(0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1)&lt;/code&gt;, and between &lt;code&gt;x=(0,0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1,1)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Hint: To be able to take the square root, import the &lt;code&gt;math&lt;/code&gt; library.
-a=[1,2,3]
-a[1]=4&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;What is a?
-1.- This code contains an error 2.- [1,2,3] 3.- etc.
-### 2
-Consider the following code:
-```python
-a=(1,2,3)
-a[1]=4
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What is a?
-1.- This code contains an error 2.- [1,2,3] 3.- etc.&lt;/p&gt;
-
-&lt;h3 id=&#34;3&#34;&gt;3&lt;/h3&gt;
-
-&lt;p&gt;Consider the code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = &amp;quot;Hello, world!&amp;quot;
-y = x[5:]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What is the value of y?
-1.- This code contains an error 2.- &amp;lsquo;Hello&amp;rsquo; 3.- etc.&lt;/p&gt;
-
-&lt;h3 id=&#34;4&#34;&gt;4&lt;/h3&gt;
-
-&lt;p&gt;Consider the following code and output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
-def my_function():
-  x = 2
-  print(x)
-print(x)
-my_function()
-print(x)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What will be printed?
-1.- 1;2;1
-2.- 2;2;2
-3.- 1;2;2&lt;/p&gt;
-
-&lt;p&gt;Explanation: x is first defined globally, with value 1. Then, my_function
-creates a variable x with local scope. Therefore, its value does not extend beyond its use in the function.&lt;/p&gt;
-
-&lt;h3 id=&#34;5&#34;&gt;5&lt;/h3&gt;
-
-&lt;p&gt;Consider the following code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import math
-print(math.cos(math.pi))
--1.0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What type of object is math.pi? And math.cos?
-int, float, function, string&lt;/p&gt;
-
-&lt;h3 id=&#34;6&#34;&gt;6&lt;/h3&gt;
-
-&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin until you get 10 heads. Should you use
-a for loop or while loop?&lt;/p&gt;
-
-&lt;h3 id=&#34;7&#34;&gt;7&lt;/h3&gt;
-
-&lt;p&gt;Let&amp;rsquo;s say you want to flip a coin 10 times and count the number of heads.
-Should you use a for loop or a while loop?&lt;/p&gt;
-
-&lt;h3 id=&#34;8&#34;&gt;8&lt;/h3&gt;
-
-&lt;p&gt;Consider the following code and output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1
-while x &amp;lt; 5:
-  x *= 2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What is the final value of x?
-8&lt;/p&gt;
-
-&lt;p&gt;4.- We are going to count the frequency of each letter in a given string.&lt;/p&gt;
-
-&lt;p&gt;4.1) import the &lt;code&gt;string&lt;/code&gt; library.
-Now create a variable &lt;code&gt;alphabet&lt;/code&gt; that consists of the lowercase and uppercase letters in the English alphabet. For this,
-use the &lt;code&gt;ascii_letters&lt;/code&gt; attribute of the string library.&lt;/p&gt;
-
-&lt;p&gt;4.2) Now, consider the sentence &amp;lsquo;Jim quickly realized that the beautiful gowns are expensive&amp;rsquo;.
-Create a dictionary &lt;code&gt;count_letters&lt;/code&gt; with keys consisting of each unique letter in the sentence and values consisting of
-the number of times each letter is used in this sentence.
-Count both upper case and lower case letters separately in the dictionary.&lt;/p&gt;
-
-&lt;p&gt;Hint: You can loop (&lt;code&gt;for&lt;/code&gt;) over each letter in your sentence, check (&lt;code&gt;if&lt;/code&gt;) if the letter is already among your dictionary keys, and otherwise, update your dictionary with a new key.
-For that, you can count the number of occurrences with the method &lt;code&gt;count&lt;/code&gt;, which you can look up in google.
-Do not forget to omit the blank space in &lt;code&gt;sentence&lt;/code&gt;!&lt;/p&gt;
-
-&lt;p&gt;4.3) Use the code you built in 4.2) to create a function called &lt;code&gt;counter&lt;/code&gt; that takes a string &lt;code&gt;input_string&lt;/code&gt; and returns
-a dictionary of letter counts &lt;code&gt;count_letters&lt;/code&gt;. Test it with &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;4.4) Use the dictionary created by your function to find out and print the most frequent letter in &lt;code&gt;sentence&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;5.- The distance between two points &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt; is the square root of the sum of squared differences along each dimension of &lt;code&gt;x&lt;/code&gt; and &lt;code&gt;y&lt;/code&gt;.
-Build a function &lt;code&gt;distance(x, y)&lt;/code&gt; that takes two vectors and outputs the distance between them.
-Use your function to find the distance between &lt;code&gt;x=(0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1)&lt;/code&gt;, and between &lt;code&gt;x=(0,0,0)&lt;/code&gt; and &lt;code&gt;y=(1,1,1)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Hint: To be able to take the square root, import the &lt;code&gt;math&lt;/code&gt; library.&lt;/p&gt;
+      <guid>https://agaldran.github.io/post/17_daco_theory_lec_6a/</guid>
+      <description>&lt;p&gt;Today&amp;rsquo;s lecture is split in two parts.&lt;/p&gt;
+
+&lt;p&gt;In the first part, you will be introduced to a simple, but fundamental kind of machine learning models, Linear models.
+We will understand how are they formulated, and how can they be solved numerically.
+We will also see how can they be used for both regression and classification.&lt;/p&gt;
+
+&lt;p&gt;The second part comprises an introduction to non-linear models, specifically to neural networks.
+We will continue studying neural networks in the next lecture, but this week you will already understand what are they and how can they be used for classification tasks.
+The material related to this second part is located &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is an overview of what we will be learning in this first hour:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Motivation and Goals. Linear Models for Supervised Classification and Regression&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression Models&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Linear Regression for one variable&lt;/li&gt;
+&lt;li&gt;Gradient descent for Linear Regression&lt;/li&gt;
+&lt;li&gt;Linear Regression - A real-world example&lt;/li&gt;
+&lt;li&gt;Linear Regression for more than one variable
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Logistic Regression Models (for classification!)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;First part&lt;/li&gt;
+&lt;li&gt;Second part&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;p&gt;The same as in the practical lectures, I have also built a Jupyter notebook that contains all the information you will find below.
+In addition, it will allow you to experiment with short pieces of code. You can access it &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>DACO - Theoretical Lecture 6b - Introduction to Neural Networks</title>
+      <link>https://agaldran.github.io/post/17_daco_theory_lec_6b/</link>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      
+      <guid>https://agaldran.github.io/post/17_daco_theory_lec_6b/</guid>
+      <description>&lt;p&gt;Under construction.&lt;/p&gt;
+
+&lt;p&gt;See &lt;a href=&#34;https://metacademy.org/graphs/concepts/backpropagation&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for backpropagation.&lt;/p&gt;
 </description>
     </item>
     
