@@ -998,9 +998,16 @@ Codeacademy exercises, hosted &lt;a href=&#34;https://www.codecademy.com/learn/l
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_2/</guid>
       <description>
 
-&lt;p&gt;This practical lecture is again based on Jupyter Notebooks, but for the theory bits you can also find some supporting
-material in the slides mentioned above. Note that we discuss Linear Regression in Theoretical Lecture 6, see [here]().
-For this reason, we will only be using them as a black-box today, to familiarize ourselves with sk-learn for regression tasks.&lt;/p&gt;
+&lt;p&gt;This practical lecture is again based on Jupyter Notebooks.
+You can see and download the notebook corresponding to today &lt;a href=&#34;http://nbviewer.jupyter.org/github/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/PL2_bayesian_classification_LR.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+For completeness, please also download the following set of Python files, which will illustrate the use of Jupyter notebooks in combination with Spyder:
+&lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/main.py&#34; target=&#34;_blank&#34;&gt;[1]&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/daco_create_data.py&#34; target=&#34;_blank&#34;&gt;[2]&lt;/a&gt;,
+&lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/daco_visualizations.py&#34; target=&#34;_blank&#34;&gt;[3]&lt;/a&gt;.
+Please store them in the same folder as where you put the notebook.&lt;/p&gt;
+
+&lt;p&gt;Note that we discuss Linear Regression in Theoretical Lecture 6.
+For this reason, we will only be using them alsmot as a black-box today, to familiarize ourselves with sk-learn for regression tasks.&lt;/p&gt;
 
 &lt;p&gt;Here is the plan for today:&lt;/p&gt;
 
@@ -1010,10 +1017,11 @@ For this reason, we will only be using them as a black-box today, to familiarize
 &lt;ol&gt;
 &lt;li&gt;Difference between Classification and Regression&lt;/li&gt;
 &lt;li&gt;Difference between Generative and Discriminative models&lt;/li&gt;
+&lt;li&gt;Aside: Working from Spyder&lt;/li&gt;
 &lt;li&gt;Quick overview of scikit-learn&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Bayesian Classification: a bit of theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Bayesian Classification: a Bit of Theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Naive Bayes Classifier Implementation&lt;/strong&gt;&lt;/p&gt;
 
@@ -1022,14 +1030,9 @@ For this reason, we will only be using them as a black-box today, to familiarize
 &lt;li&gt;Using scikit-learn&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression: a (tiny) bit of theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression: a (tiny) Bit of Theory&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression Implementation&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;From scratch&lt;/li&gt;
-&lt;li&gt;Using scikit-learn&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression Using scikit-learn&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;Homework 😱&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
 
@@ -1043,72 +1046,786 @@ But there are several different kinds of predictions, and hence several tasks th
 Among the most fundamental ones are Supervised Classification and Supervised Regression.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The term &lt;strong&gt;supervised&lt;/strong&gt; refers to the fact that we assume we have data with annotations.
-A different kind of models exist related to the situation where there is no annotations, and the goal is to extract some
-useful information out of the available (unlabeled) data.
-For instance, we could think of a dataset with customer preferences regarding certain products.
+A different kind of models exist related to the situation where there is no annotations, and the goal is to extract some useful information out of the available (unlabeled) data. This is called &lt;strong&gt;unsupervised&lt;/strong&gt; learning.&lt;/p&gt;
+
+&lt;p&gt;For instance, we could think of a dataset with customer preferences regarding certain products.
 Could we group a given pool of users into several subgroups that behave similar among them, but differently with respect to the other subgroups?
 This task is known as clustering, and we will be working on it in future lectures.
 But for now, we assume for each example in our dataset, we know the corresponding quantity of interest.&lt;/p&gt;
 
 &lt;h2 id=&#34;1-1-difference-between-classification-and-regression&#34;&gt;1.1 - &lt;strong&gt;Difference between Classification and Regression&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;This is better understood by example.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Classification&lt;/strong&gt;: in your data every examples is associated to two or more classes. You want to learn from this labeled data how to predict the class of new unlabeled data.&lt;/p&gt;
+
+&lt;p&gt;Example: Given a set of lung CT scans, a doctor has annotated each of them after examination, specifying whether they show or not signs of lung cancer.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Regression&lt;/strong&gt;: In this case, the output of your model is is not a discrete label, but a real number.&lt;/p&gt;
+
+&lt;p&gt;Example: given a training set in which you have examples of red and white globule concentration, predict the amount of blood pressure. In this case, the output (blood pressure) is not a single label, but a number.&lt;/p&gt;
+
+&lt;p&gt;Both classification and regressoin are supervised learning problems, since there is labeled data available. However, the discrete nature of classification, as opposed to continuous for regression, require different types of learning models.&lt;/p&gt;
 
 &lt;h2 id=&#34;1-2-difference-between-generative-and-discriminative-models&#34;&gt;1.2 - &lt;strong&gt;Difference between Generative and Discriminative models&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;See &lt;a href=&#34;https://www.cs.toronto.edu/~duvenaud/courses/csc2541/index.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for a definition of Generative models.&lt;/p&gt;
+&lt;p&gt;In (supervised) learning we always have a dataset of examples with associated labels.
+However, we do not usually feed our models with the raw data (with a super-relevant exception that we will see later in this course).&lt;/p&gt;
 
-&lt;h2 id=&#34;1-3-quick-overview-of-scikit-learn&#34;&gt;1.3 - &lt;strong&gt;Quick overview of scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;For instance, imagine I have a dataset of all the movies I watched in 2016 and 2017, and each movie is tagged with a label indicating whether I liked it or not.
+If I want to build a model that takes a new movie and predicts if I will like it or not, I am not going to give to my classifier every frame of the movie and let it process it. Rather I am going to extract some key information summarizing the movie, such as genre, actors and actresses, duration, soundtrack, etc.
+We call these key informative traits of our data &lt;strong&gt;features&lt;/strong&gt;, and their selection is&lt;/p&gt;
 
-&lt;p&gt;See &lt;a href=&#34;scikit-learn.org&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for an introduction to scikit-learn.&lt;/p&gt;
+&lt;p&gt;Imagine now that I decided that with the duration and rating of the movie in IMDB, I can already describe the movie in such a way that I can build a classifier for my problem.
+We can build the following plot:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_blobs
+%matplotlib inline
+
+# create some synthetic data
+n_samples = 100
+n_features = 2
+movies_mean = [[1.5, 7], [2, 8]] # [mean_movie_duration, mean_IMDB_score]
+movies_std = (0.25, 0.25) # [std_movie_duration, std_IMDB_score]
+movies, like_it_or_not = make_blobs(n_samples, n_features, movies_mean, movies_std)
+
+
+movies_I_liked = movies[like_it_or_not==1]
+movies_I_disliked = movies[like_it_or_not==0]
+
+# plot data points
+plt.scatter(movies_I_liked[:,0],movies_I_liked[:,1], marker = &#39;o&#39;, color = &#39;g&#39;, label = &#39;Liked&#39;);
+plt.scatter(movies_I_disliked[:,0],movies_I_disliked[:,1], marker = &#39;o&#39;, color = &#39;r&#39;, label = &#39;Disliked&#39;);
+plt.xlabel(&#39;duration&#39;);
+plt.ylabel(&#39;IMDB rating&#39;);
+plt.legend();
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig1.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Roughly speaking, what a discriminative model will do in this case is trying to find something called &lt;em&gt;decision boundary&lt;/em&gt; that allows us to tell apart movies I liked from movies I did not like.&lt;/p&gt;
+
+&lt;p&gt;For instance, it could be a simple linear decision boundary, a predictive model stating that if the movie has a duration of less than 1,75 hours, I will like it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;x = 1.75*np.ones(100)
+y = np.linspace(6.0,8.7,100)
+plt.scatter(movies_I_liked[:,0],movies_I_liked[:,1], marker = &#39;o&#39;, color = &#39;g&#39;, label = &#39;Liked&#39;);
+plt.scatter(movies_I_disliked[:,0],movies_I_disliked[:,1], marker = &#39;o&#39;, color = &#39;r&#39;, label = &#39;Disliked&#39;);
+plt.xlabel(&#39;duration&#39;);
+plt.ylabel(&#39;IMDB rating&#39;);
+plt.legend();
+plt.plot(x,y, lw = 2)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig2.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In contrast, a generative model would try to find a model that &lt;strong&gt;explains&lt;/strong&gt; the way the data was generated for both classes (liked/disliked). After these models have been built, given a new example, we can inspect which of the two models was more likely to have generated that example.&lt;/p&gt;
+
+&lt;p&gt;For instance, we could model both distributions (liked/disliked) as being generated by a Gaussian distribution. Since I created the above synthetic data, I already know that it comes from two different distributions, parametrized by $(\mu_1, \sigma_1) = (1.5, 7)$ and $(\mu_2, \sigma_2) = (2, 8),$ and I can for instance draw a nice contour plot:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from scipy.stats import multivariate_normal
+
+rv = multivariate_normal([1.5, 7], [[0.25, 0], [0, 0.25]]) # normal distribution around (1.5, 7)
+rv_2 = multivariate_normal([2, 8], [[0.25, 0], [0, 0.25]]) # normal distribution around (2, 8)
+
+x_grid, y_grid = np.mgrid[0.25 : 3.25: 0.1, 6 : 9: 0.1]
+pos = np.empty(x_grid.shape + (2,))
+pos[:, :, 0] = x_grid; pos[:, :, 1] = y_grid
+
+plt.contour(x_grid, y_grid, rv.pdf(pos), linewidths=0.5, colors = &#39;r&#39;)
+plt.contour(x_grid, y_grid,rv_2.pdf(pos), linewidths=0.5, colors = &#39;g&#39;)
+
+plt.scatter(movies_I_liked[:,0],movies_I_liked[:,1], marker = &#39;o&#39;, color = &#39;g&#39;, label = &#39;Liked&#39;);
+plt.scatter(movies_I_disliked[:,0],movies_I_disliked[:,1], marker = &#39;o&#39;, color = &#39;r&#39;, label = &#39;Disliked&#39;);
+plt.xlabel(&#39;duration&#39;);
+plt.ylabel(&#39;IMDB rating&#39;);
+plt.legend(loc = &#39;upper left&#39;);
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig3.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The fact that we know the model that the data distribution follows has several advantages. We can for instance sample, i.e. generate, new data points for each of the two classes. This is the origin of the term &lt;em&gt;generative&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Quoting &lt;a href=&#34;https://www.cs.toronto.edu/~duvenaud/courses/csc2541/index.html&#34; target=&#34;_blank&#34;&gt;David Duvenaud&lt;/a&gt;:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Generative modeling loosely refers to building a model of data, for instance p(image), that we can sample from. This is in contrast to discriminative modeling, such as regression or classification, which tries to estimate conditional distributions such as p(class | image).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Generative models have several advantages and disadvantages with respect to discriminative ones. In a quick and dirty summary, they allow us to better understand if/how we are capturing the real-world distribution through our dataset, but they are harder to understand, implement, and scale-up to large quantities of data.&lt;/p&gt;
+
+&lt;p&gt;However, it is important to be aware of their existence. Today we will be discussing probably the simplest instance of a generative model for classification, namely &lt;strong&gt;Naive Bayes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-3-aside-working-from-spyder&#34;&gt;1.3 - &lt;strong&gt;Aside: Working from Spyder&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;At some point you may feel uncomfortable with the room that notebooks leave for playing with your code or organizing it. For instance, you will have noticed that there is lots of redundant code above.&lt;/p&gt;
+
+&lt;p&gt;At this link, I am attaching a series of files meant to reproduce the above example in Spyder. Please download them to your working folder, open them, and observe how the different &lt;code&gt;import&lt;/code&gt; statements interact among them. You do not need to understand all this code does, but it is important that you understand the way it flows.&lt;/p&gt;
+
+&lt;p&gt;By the way, you can also write code in a separate &lt;code&gt;.py&lt;/code&gt; file, import it, and use it from your notebook, as long as they both are in the same folder. See the example below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import daco_visualizations as dv
+dv.plot_vertical_line(1,2,4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig4.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;1-4-quick-overview-of-scikit-learn&#34;&gt;1.4 - &lt;strong&gt;Quick overview of scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;The main Python library for machine learning is called &lt;strong&gt;scikit-learn&lt;/strong&gt;, often abbreviated sklearn. We have already used a function belonging to sklearn above, namely &lt;code&gt;make_blobs()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sklearn exposes to the user useful objects and functionalities to solve machine learning problems, such as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Classification&lt;/li&gt;
+&lt;li&gt;Regression&lt;/li&gt;
+&lt;li&gt;Clustering&lt;/li&gt;
+&lt;li&gt;Dimensionality Reduction&lt;/li&gt;
+&lt;li&gt;Model Selection&lt;/li&gt;
+&lt;li&gt;Preprocessing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sklearn even brings a module with some datasets with it that can be used to illustrate machine learning problems. There are specific functions to load those datasets available. Let us load the famous Iris flower dataset, consisting of $50$ observations of three species of Iris, namely Iris setosa, Iris virginica and Iris versicolor. In this case, four features are measured from each sample: length and the width of the sepals and petals. The label in this case is the kind of iris flower, and it consists of a 3-class classification problem.&lt;/p&gt;
+
+&lt;p&gt;Let us load the dataset, keeping only the first two classes for demonstration purposes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import datasets
+import numpy as np
+iris = datasets.load_iris()
+
+subset = np.logical_or(iris.target == 0, iris.target == 1)
+
+X = iris.data[subset]
+y = iris.target[subset]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;(X,y)&lt;/code&gt; subdataset has now two classes and 50 elements on each one. Each example is described by 50 features.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;print(X[y==0].shape)
+print(X[y==2].shape)
+print(X[0,:], y[0])
+print(X[60,:], y[60])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;How does sklearn exposes its tools? Through interfaces with the user. The main ones are:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Model&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;score = obj.score(data)    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Estimator&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;estimator = obj.fit(data, targets) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Predictor&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;prediction = obj.predict(data) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Transformer&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;new_data = obj.transform(data) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For instance, given the above dataset, you can instantiate a model.
+The following is an example of a linear classifier, that we will discuss in class next week, but for the moment focus only on the &amp;ldquo;computational&amp;rdquo; side of this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+
+print(type(model))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can now use the &lt;code&gt;Estimator&lt;/code&gt; interface to learn the parameters that best fit a model to your data and labels:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model.fit(X, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With a fitted model, you can for instance check if it is performing adequately (in this case the solution was perfect):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model.score(X, y)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Once the model has been fitted, you can also use it to predict labels on new data.
+You can even do this for a batch of new examples in one single line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model.predict([[5,4,2,1], [5,2,4,1]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We will be covering most of the other functionalities that sklearn gives you in the remaining lectures.
+For those who are curious, the documentation (which is &lt;strong&gt;really&lt;/strong&gt; nice and full of examples) can be found &lt;a href=&#34;http://scikit-learn.org/stable/documentation.htmls&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;2-bayesian-classification-a-bit-of-theory&#34;&gt;2.- &lt;strong&gt;Bayesian Classification: a Bit of Theory&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;You have already seen in the theoretical lectures Bayes&amp;rsquo; formula:&lt;/p&gt;
+
+&lt;p&gt;$$\mathcal{P}(A \ | \ B) = \frac{\mathcal{P}(B \ | \ A) \cdot \mathcal{P}(A)}{\mathcal{P}(B)} \ \ \ \ \ (1)$$&lt;/p&gt;
+
+&lt;p&gt;Which you should interpret as the posterior probability of $A$ given $B$ being proportional to the posterior probability of $B$ given $A$ multiplied by the probability of the prior $A$.
+Or in plain English, that your knowledge on a given event $\mathcal{P}(A)$ is updated after performing an experiment $B$ with a multiplier $\mathcal{P}(B \ | \ A)$, becoming $\mathcal{P}(A \ | \ B)$.&lt;/p&gt;
+
+&lt;p&gt;But, how do we use Bayes&amp;rsquo; rule in practice to design a Bayesian classifier?&lt;/p&gt;
+
+&lt;p&gt;Consider  a classification problem with $K$ possible classes, in which the data has been represented by $\mathbf{x} = (x_1,x_2, \ldots, x_N)$, and we denote the classes as $\omega_k$, $1\leq k\leq K$. In the absence of training data, the simplest decision rule for classifying a new sample would be to pick the class $\hat{\omega}$ for which the prior probability (which you have from the beginning and states your opinion of the world before you see the training data):&lt;/p&gt;
+
+&lt;p&gt;$$\hat{\omega} (\mathbf{x}) = \underset{k}{\operatorname{argmax}} \left[\mathcal{P}(\omega_k) \right]_{k=1}^K$$&lt;/p&gt;
+
+&lt;p&gt;For instance, if you know that a particular type of cancer has an incidence of $0,1\%$ in the population, when a new patient arrives, you could tell her that she has cancer with probability $p=0.001$. This is a quite poor diagnosing strategy.&lt;/p&gt;
+
+&lt;p&gt;However, our training data gives us a way to model $\mathcal{P}(\mathbf{x} \ | \ \omega_k)$, since we know the labels associated to each example. We will see below the way we build that model from the available data.&lt;/p&gt;
+
+&lt;p&gt;But for now, consider in this context Bayes&amp;rsquo; rule: it gives us a way of updating our knowledge. Formula (1) is re-written now as:&lt;/p&gt;
+
+&lt;p&gt;$$\mathcal{P}(\omega_k | \mathbf{x}) = \frac{\mathcal{P}(\mathbf{x} | \omega_k) \times \mathcal{P}(\omega_k)}{\mathcal{P(\mathbf{x})}} \ \ \ \ \ (2)$$&lt;/p&gt;
+
+&lt;p&gt;It is the left-hand side of this formula, i.e. the &lt;strong&gt;Posterior probability&lt;/strong&gt;, that we need in order to classify new data into one of our classes. What do we have to build this?&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;Likelihood&lt;/strong&gt; $\mathcal{P}(\mathbf{x} | \omega_k)$, that we will extract from the training data.&lt;/li&gt;
+&lt;li&gt;Our &lt;strong&gt;Prior&lt;/strong&gt; $\mathcal{P}(\mathbf{\omega_k})$ of how is data actually distributed into our classes in our experience.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;Evidence&lt;/strong&gt; $\mathcal{P(\mathbf{x})}$, a term that you can consider just a simple scaling factor to ensure that the posterior probability adds up to $1$ and thus it is a correct probability distribution.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In this context, there is a simple decision rule, called MAP (&lt;strong&gt;Maximum A Posteriori probability&lt;/strong&gt;), that allows us to classify new data: assign to $\mathbf{x}$ the class $\hat{\omega}_{MAP}$ that receives the greatest amount of posterior probability $\mathcal{P}(\omega_k | \mathbf{x})$ according to $(2)$. Mathematically, this is formulated as:&lt;/p&gt;
+
+&lt;p&gt;$$\hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}}  \left[\mathcal{P}(\omega_k|\mathbf{x})\right]_{k=1}^K = \underset{k}{\operatorname{argmax}} \left[\mathcal{P}(\mathbf{x}|\omega_k) \cdot  \mathcal{P}(\omega_k)\right]_{k=1}^K,$$&lt;/p&gt;
+
+&lt;p&gt;where we have already dropped the evidence in the denominator, since we are interested in finding the a-posteriori maximizing class, and $\mathcal{P}(\mathbf{x})$ will be a factor affecting equally all classes (it does not depend on $k$).&lt;/p&gt;
+
+&lt;p&gt;Since it is easier to maximize a sum than to maximize a product, we prefer to split the above MAP solution into:&lt;/p&gt;
+
+&lt;p&gt;$$\hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}} \left[\log(\mathcal{P}(\mathbf{x}|\omega_k)) + \log(\mathcal{P}(\omega_k))\right]_{k=1}^K \ \ \ \ \ (3)$$&lt;/p&gt;
+
+&lt;p&gt;And now it comes the magic: we are going to assume that the distribution of each class $k$ can be modeled through a Gaussian distribution parametrized by a mean and a standard deviation given by $(\mu_k, \Sigma_k)$:&lt;/p&gt;
+
+&lt;p&gt;$$
+\begin{align}
+\mathcal{P}(\mathbf{x} | \omega_k) &amp;amp;\sim \mathcal{N}(\mathbf{x} \ | \ \mu_k, \Sigma_k)
+= \frac{\displaystyle 1}{\displaystyle (2\pi)^{N/2}} \cdot \frac{\displaystyle 1}{\displaystyle |\Sigma_k|^{N/2}} \cdot  \mathrm{exp}\left(\displaystyle \frac{-1}{2} \cdot (\mathbf{x} - \mu_k)^T \cdot \Sigma_k^{-1} \cdot (\mathbf{x}-\mu_k)\right), \ \ \ 1\leq k \leq K,
+\end{align} \ \ \ \ \ (4)
+$$&lt;/p&gt;
+
+&lt;p&gt;where $|\cdot|$ represents the determinant of a matrix. Please note that $N$ is the dimension of our problem, in terms of the number of features that describe the data, i.e. $\mathbf{x} = (x_1,\ldots,x_N)$.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Aside: Normal Distribution&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;If you are familiar with the general formulation of a Gaussian (normal) distribution in many dimensions, you can skip the following paragraphs.&lt;/p&gt;
+
+&lt;p&gt;The above multi-dimensional distribution has an easy interpretation, as usual in maths, once you look at particular cases in low dimensions.
+This allows you to map the new ideas to your previous knowledge (Bayes rule attacks again?).
+Recall that a Normal distribution in 1D is defined as:&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathcal{N}(x \ | \ \mu, \sigma) = \frac{\displaystyle 1}{\displaystyle \sqrt{2\pi\sigma}} \cdot  \mathrm{exp} \left(\displaystyle -\frac{(x-\mu)^2}{2\sigma^2}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;Which can be rewritten as:
+$$
+\mathcal{N}(x \ | \ \mu, \sigma) = \frac{1}{(2\pi)^{1 / 2}} \frac{1}{\sigma^{1 / 2}} \cdot
+\mathrm{exp} \left(\displaystyle \frac{-1}{2} \cdot (x-\mu) \cdot \frac{1}{\sigma^2}\cdot (x-\mu)\right) \ \ \ \ \ (5)
+$$
+And here, $x, \mu, \sigma$ are simply real numbers.&lt;/p&gt;
+
+&lt;p&gt;But what if you want to model random variables that depend on two numbers, i.e., how can we define a bivariate normal distribution?
+In this case, we would have $\mathbf{x} = (x_1, x_2)$, $\mu = (\mu_1, \mu_2)$ and the standard deviations $(\sigma_1, \sigma_2)$ are represented into the covariance matrix, that captures the correlation between both variables:&lt;/p&gt;
+
+&lt;p&gt;$$\Sigma=\begin{pmatrix}
+\sigma_{1}^2 &amp;amp; \sigma_1\sigma_2 \\
+\sigma_1\sigma_2 &amp;amp; \sigma_{2}^2
+\end{pmatrix},$$&lt;/p&gt;
+
+&lt;p&gt;with $|\Sigma|$ representing its determinant, which is another real number.&lt;/p&gt;
+
+&lt;p&gt;If you stare a while to formula (5), comparing it with (4), you should now see how and why one generalizes the other. If you still cannot see it clearly, I encourage you to replace $\mathbf{x}, \mu, \Sigma$ by actual values and do some paper and pen algebra.&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;2-bayesian-classification-a-bit-of-theory&#34;&gt;2.- &lt;strong&gt;Bayesian Classification: a bit of theory&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Let us move forward in our goal to build a model that can classify new data.
+Remember the simple logarithmic rules:&lt;/p&gt;
 
-&lt;p&gt;You have already seen this in class.&lt;/p&gt;
+&lt;p&gt;$$\log(a\cdot b) = \log(a) + \log(b), \ \ \log(a^b) = b\cdot\log(a), \ \ \log(\exp(a))=a.$$&lt;/p&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;Inserting (4) into (3), we obtain:&lt;/p&gt;
+
+&lt;p&gt;$$ \hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}}\left(\frac{-1}{2} (\mathbf{x}-\mu_k)\Sigma_k^{-1}(\mathbf{x}-\mu_k) - \frac{N}{2}\log(2\pi) - \frac{1}{2} \log(|\Sigma_k|) + \log(\mathcal{P}(\omega_k))\right) \ \ \ \ \ (6)$$&lt;/p&gt;
+
+&lt;p&gt;The MAP decision rule tells us to select the class $k$ maximizing the above equation. This means that we can safely ignore the term in (6) that does not depend on $k$, since it is simply an added constant that won&amp;rsquo;t affect who is the &amp;ldquo;maximizating&amp;rdquo; class:&lt;/p&gt;
+
+&lt;p&gt;$$ \hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}}\left(\frac{-1}{2} (\mathbf{x}-\mu_k)\Sigma_k^{-1}(\mathbf{x}-\mu_k) - \frac{1}{2} \log(|\Sigma_k|) + \log(\mathcal{P}(\omega_k))\right) \ \ \ \ \ (7)$$&lt;/p&gt;
+
+&lt;p&gt;This formula already gives us a classifier. We would estimate $\mu_k$ and $\Sigma$ by computing the different mean and standard deviations of each class &lt;strong&gt;on our training data&lt;/strong&gt;, and then insert them into (7).&lt;/p&gt;
+
+&lt;p&gt;There are however further simplifying assumptions that we can make. We can assume that all the different classes are spread in the same away around their mean values, i.e. $\Sigma_k = \Sigma \ \forall k$. Then, the MAP Bayesian classifier is simplifed as:&lt;/p&gt;
+
+&lt;p&gt;$$ \hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}}\left(\frac{-1}{2} (\mathbf{x}-\mu_k)\Sigma^{-1}(\mathbf{x}-\mu_k) + \log(\mathcal{P}(\omega_k))\right)$$&lt;/p&gt;
+
+&lt;p&gt;Yet a more restrictive assumption is to suppose that there is independence between the different features describing the data $\mathbf{x}$. In this case the covariance matrix is diagonal, $\Sigma_k = \sigma^2 \mathrm{Id}$, hence $|\Sigma_k| = \sigma^2$, and the classifier is even more simple:&lt;/p&gt;
+
+&lt;p&gt;$$ \hat{\omega}_{MAP} (\mathbf{x}) = \underset{k}{\operatorname{argmax}}\left(\frac{-1}{2\sigma^2} (\mathbf{x}-\mu_k)(\mathbf{x}-\mu_k) + \log(\mathcal{P}(\omega_k))\right) \ \ \ \ \ (8)$$&lt;/p&gt;
+
+&lt;p&gt;The term appearing in the right part of equation (X) is a particularly relevant mathematical entity called &lt;strong&gt;Mahalanobis distance&lt;/strong&gt;. Let us analyze it.&lt;/p&gt;
+
+&lt;p&gt;Consider two $N$-dimensional points $\mathbf{x} = (x_1, \ldots, x_N)^T$ $\mathbf{y} = (y_1, \ldots, y_N)^T$. The standard Euclidean distance between them is given by:&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathrm{dist}(\mathbf{x}, \mathbf{y}) = | \mathbf{x} - \mathbf{y} |_2 = \sqrt{ (x_1 - y_1)^2 + \ldots + (x_N - y_N)^2}
+$$&lt;/p&gt;
+
+&lt;p&gt;Notice that this expression can be related to the usual vector product operation as follows:&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathrm{dist}(\mathbf{x}, \mathbf{y})^2 = \left(\mathbf{x}-\mathbf{y}\right)^T \cdot \left(\mathbf{x}-\mathbf{y}\right)
+$$&lt;/p&gt;
+
+&lt;p&gt;The Mahalanobis distance between those to vectors is a generalization of the squared Euclidean distance:&lt;/p&gt;
+
+&lt;p&gt;$$
+\mathrm{dist}_{Mahalanobis}(\mathbf{x}, \mathbf{y}) = \left(\mathbf{x}-\mathbf{y}\right)^T \cdot A \cdot\left(\mathbf{x}-\mathbf{y}\right),
+$$&lt;/p&gt;
+
+&lt;p&gt;where we have introduced an $N\times N$ matrix in between both products. Note that if $A$ is the identity, both distances measure the same. However, if $A$ is a different matrix, interesting things can happen!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Let us define two bivariate normal distributions with means $\mu_1=(0,0)^T$ and $\mu_2=(1,1)^T$. Consider also that the covariance matrixes for each distribution are given by:&lt;/p&gt;
+
+&lt;p&gt;$$\Sigma_1 = \Sigma_2 =
+\begin{pmatrix}
+\sigma_1^2 &amp;amp; 0 \\
+0 &amp;amp; \sigma_2^2
+\end{pmatrix}=
+\begin{pmatrix}
+0.5 &amp;amp; 0 \\
+0 &amp;amp; 2
+\end{pmatrix}.$$&lt;/p&gt;
+
+&lt;p&gt;We can plot their contours with a code similar to the one we used in the introduction:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;mu_1 = np.array([0,0])
+mu_2 = np.array([1,1])
+
+sigma_1 = 0.5
+sigma_2 = 2
+
+sigma = np.array([[sigma_1,0],[0,sigma_2]])
+
+rv = multivariate_normal(mu_1, sigma) # normal distribution around (mu_1)
+rv_2 = multivariate_normal(mu_2, sigma) # normal distribution around (mu_2)
+
+x_grid, y_grid = np.mgrid[-3 : 3: 0.1, -3 : 4: 0.1]
+pos = np.empty(x_grid.shape + (2,))
+pos[:, :, 0] = x_grid; pos[:, :, 1] = y_grid
+
+plt.contour(x_grid, y_grid, rv.pdf(pos), linewidths=0.5, colors = &#39;red&#39;);
+plt.contour(x_grid, y_grid,rv_2.pdf(pos), linewidths=0.5, colors = &#39;green&#39;);
+plt.plot(mu_1[0], mu_1[1], marker=&#39;o&#39;, markersize=10, color=&#39;red&#39;);
+plt.plot(mu_2[0], mu_2[1], marker=&#39;o&#39;, markersize=10, color=&#39;green&#39;);
+plt.plot(1, 0, marker=&#39;o&#39;, markersize=10, color=&#39;blue&#39;);
+plt.axes().set_aspect(&#39;equal&#39;, &#39;datalim&#39;) # This line here guarantees 1:1 aspect-ratio
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig5.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let us compute the Euclidean distance between each of the two distribution centers and the point $(0,1)^T$, plotted in blue in the previous snippet.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def squared_dist(x,y):
+    return np.sqrt((x-y).dot(x-y))
+
+new_point = np.array([0,1])
+print(squared_dist(mu_1,new_point))
+print(squared_dist(mu_2,new_point))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, implement and compute the Mahalanobis distance.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def mahalanobis_dist(x,y,A):
+    return (x-y).dot(A).dot(x-y)
+
+print(mahalanobis_dist(mu_1, new_point, sigma))
+print(mahalanobis_dist(mu_2, new_point, sigma))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The idea is that according to the Euclidean distance, both mean distributions are equally far away from the blue point, while the Mahalanobis formulation weighs that distance by considering the &amp;ldquo;shape&amp;rdquo; of the distributions, enconded in the covariance matrix: the second (green) distribution is closer to the point. This implies that the second distribution is more likely to have generated the blue sample.&lt;/p&gt;
+
+&lt;p&gt;This simple idea is actually what a Naive Bayes classifier implements in the case of the last simplification above:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Given training data, we model each class distribution via a normal distribution.&lt;/li&gt;
+&lt;li&gt;Given a new point, we compare its distance with regard to each distributions with the Mahalanobis distance&lt;/li&gt;
+&lt;li&gt;The closest distribution is the one most likely to have generated the new point, and we assign that class to it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note however that the Bayesian formulation also allows us to introduce our prior experience in the model via the term $\log(\mathcal{P}(\omega_k))$ from eq. (8).&lt;/p&gt;
 
 &lt;h1 id=&#34;3-naive-bayes-classifier-implementation&#34;&gt;3.- &lt;strong&gt;Naive Bayes Classifier Implementation&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;p&gt;How do we implement those ideas?&lt;/p&gt;
+&lt;p&gt;Let us see how can we implement the above ideas for classification tasks.&lt;/p&gt;
 
 &lt;h2 id=&#34;3-1-from-scratch&#34;&gt;3.1 - &lt;strong&gt;From scratch&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;Without relying on external libraries, so that you understand what is going on.&lt;/p&gt;
+&lt;p&gt;To experiment with real data, we are going to use the Pima Indian dataset, provided by the UCI Machine Learning repository, and described &lt;a href=&#34;https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.names&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. The dataset contains $768$ observations (from indian patients) of $8$ different features, and the task is to try to predict if the patient will suffer from diabets. This means we face a binary classification problem. The observed features are all real or integer variables:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Number of times pregnant&lt;/li&gt;
+&lt;li&gt;Plasma glucose concentration a 2 hours in an oral glucose tolerance test&lt;/li&gt;
+&lt;li&gt;Diastolic blood pressure (mm Hg)&lt;/li&gt;
+&lt;li&gt;Triceps skin fold thickness (mm)&lt;/li&gt;
+&lt;li&gt;2-Hour serum insulin (mu U/ml)&lt;/li&gt;
+&lt;li&gt;Body mass index (weight in kg/(height in m)^2)&lt;/li&gt;
+&lt;li&gt;Diabetes pedigree function&lt;/li&gt;
+&lt;li&gt;Age (years)&lt;/li&gt;
+&lt;li&gt;Class variable (0 or 1)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We are going to use &lt;code&gt;pandas&lt;/code&gt; for importing the data directly from the internet. &lt;code&gt;pandas&lt;/code&gt; is another Python library, useful for data analysis, but you do not need to worry about it right now, we will immediately store the data into a &lt;code&gt;numpy&lt;/code&gt; array.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df = pd.read_csv(&#39;https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data&#39;,
+                 header=None)
+df.columns = [&#39;#pregnant&#39;, &#39;glucose&#39;, &#39;blood_pressure&#39;, &#39;thickness&#39;, &#39;insulin&#39;, &#39;body_mass_idx&#39;, 
+              &#39;pedigree&#39;, &#39;age&#39;, &#39;label&#39;]
+df.head()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Notice that &lt;code&gt;pandas&lt;/code&gt; contains useful functions to explore your data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+
+df.describe()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let us store the features and the labels in separate &lt;code&gt;numpy&lt;/code&gt; arrays:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;dataset = np.array(df)
+print(df.shape)
+
+features = dataset[:, :8]
+labels = dataset[:, -1]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We are going to use a simplified set of features to illustrate more easily how to implement a Naive Bayes classifier.
+Let us select for instance age and body mass index:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_reduced = df[[&#39;body_mass_idx&#39;,&#39;age&#39;]]
+features_reduced = np.array(df_reduced)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To model each class, we rely on their mean and standard deviation, and make the assumption that variables are independent. This is in fact why this algorithm is called &amp;ldquo;Naive&amp;rdquo;. If features are correlated, this assumption may harm the performance.
+An example of potentially correlated features is, for instance, age and number of times pregnant.&lt;/p&gt;
+
+&lt;p&gt;First we need to separate the dataset into each of the classes we want to model.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;features_healthy = features_reduced[labels==0]
+features_diabetes = features_reduced[labels==1]
+mean_healthy = np.mean(features_healthy, axis=0)
+mean_diabetes = np.mean(features_diabetes, axis=0)
+
+std_healthy = np.std(features_healthy, axis=0)
+std_diabetes = np.std(features_diabetes, axis=0)
+
+std_both = (std_healthy + std_diabetes)/2
+
+sigma = np.array([[std_both[0], 0], [0, std_both[0]]])
+sigma_diabetes = np.array([[std_both[0], 0], [0, std_both[1]]])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Time to build (and plot) our two Gaussian models:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;healthy_model = multivariate_normal(mean_healthy, std_both) 
+diabetes_model = multivariate_normal(mean_diabetes, std_both)
+
+x_grid, y_grid = np.mgrid[23 : 42: 0.1, 23 : 45: 0.1]
+pos = np.empty(x_grid.shape + (2,))
+pos[:, :, 0] = x_grid; pos[:, :, 1] = y_grid
+
+plt.contour(x_grid, y_grid, healthy_model.pdf(pos), linewidths=0.5, colors = &#39;green&#39;);
+plt.contour(x_grid, y_grid, diabetes_model.pdf(pos), linewidths=0.5, colors = &#39;red&#39;,);
+plt.plot(mean_healthy[0], mean_healthy[1], marker=&#39;o&#39;, markersize=10, color=&#39;green&#39;, label = &#39;Healthy&#39;);
+plt.plot(mean_diabetes[0], mean_diabetes[1], marker=&#39;o&#39;, markersize=10, color=&#39;red&#39;, label = &#39;Diabetes&#39;);
+plt.axes().set_aspect(&#39;equal&#39;, &#39;datalim&#39;) # This line here guarantees a 1:1 aspect-ratio
+plt.legend()
+plt.xlabel(&#39;Body Mass Index&#39;);
+plt.ylabel(&#39;Age&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig6.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, if I am a patient with a body mass index of 40, and 33 years old, which decision will make this classifier?
+And if I am 25 years old? Think first, or try to predict the result.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def print_diagnosis(body_mass, age):
+    distance_diabetes = mahalanobis_dist(mean_diabetes, [body_mass, age], sigma)
+    distance_healthy = mahalanobis_dist(mean_healthy, [body_mass, age], sigma)
+    if distance_diabetes &amp;gt; distance_healthy:
+        print(&#39;Diagnostic for body mass&#39;, body_mass, &#39;and age&#39;, age, &#39;is: healthy&#39;)
+    else:
+        print(&#39;Diagnostic for body mass&#39;, body_mass, &#39;and age&#39;, age, &#39;is: diabetes&#39;)
+        
+print_diagnosis(40,33)
+print_diagnosis(40,25)
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h2 id=&#34;3-2-using-scikit-learn&#34;&gt;3.2 - &lt;strong&gt;Using scikit-learn&lt;/strong&gt;&lt;/h2&gt;
 
-&lt;p&gt;sk-learn implementation, that you can bet is better than the above.&lt;/p&gt;
+&lt;p&gt;The documentation for Naive Bayes in sklearn can be reached &lt;a href=&#34;http://scikit-learn.org/stable/modules/naive_bayes.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for the Gaussian case.&lt;/p&gt;
+
+&lt;p&gt;The simplicity with which we can apply the Naive Bayes classifier to our data with sk-learn speaks by itself:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.naive_bayes import GaussianNB
+clf = GaussianNB()
+clf.fit(features_reduced, labels)
+
+print(clf.predict([40, 33]))
+print(clf.predict([40, 25]))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Read (and fix)the warning!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.naive_bayes import GaussianNB
+data= np.array([40, 33]).reshape(1,-1)
+print(clf.predict(data))
+
+data= np.array([40, 25]).reshape(1,-1)
+print(clf.predict(data))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Observe also how easily we can generalize to dealing with all the features with little effort:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;clf_all = GaussianNB()
+clf_all.fit(features, labels)
+
+print(clf.predict(np.array([40, 33]).reshape(1,-1)))
+print(clf.predict(np.array([40, 25]).reshape(1,-1)))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;4-linear-regression-a-tiny-bit-of-theory&#34;&gt;4.- &lt;strong&gt;Linear Regression: a (tiny) bit of theory&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;In order to give an example of a problem different than classification, we are going to use Linear Regression.
+The idea of Linear Regression is simply to find the linear function that best explains our labeled data.
+Hence, in the one-dimensional case, we will be finding simply a line; in case we have two features, this will be a plane, etc.&lt;/p&gt;
+
+&lt;p&gt;Regardless of the dimension, every linear space can be described as:&lt;/p&gt;
+
+&lt;p&gt;$$L(\mathbf{x},\theta) = \theta_0 + \theta_1 \cdot x_1 + \ldots +\theta_N x_N$$&lt;/p&gt;
+
+&lt;p&gt;and the set of parameters $\theta=(\theta_0, \theta_1, \ldots, \theta_N)$ are the numbers that specify the subspace. For instance, in the one-dimensional case, we would have:&lt;/p&gt;
+
+&lt;p&gt;$$L(\mathbf{x},\theta) = \theta_0 + \theta_1 \cdot x_1$$&lt;/p&gt;
+
+&lt;p&gt;which is the equation of a straight line.&lt;/p&gt;
+
+&lt;p&gt;We could then have a dataset for linear regression that has the following appearance:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;features = np.array([1.7, 2.4, 3.5, 4.2, 5.7, 6.9, 8.2, 9.5])
+targets = np.array([20.2, 35.3, 50.4, 51.2, 75.2, 62.7, 87.3, 90.1])
+
+import matplotlib.pyplot as plt
+plt.scatter(features, targets, s=100);
+plt.xlabel(&#39;Globules Concentration&#39;)
+plt.ylabel(&#39;Blood Pressure&#39;)
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig7.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Finding a linear model that solves this problem would imply specifying $\theta_0, \theta_1$ in the above equation.
+For instance we can specify $\theta_0 = 20$, $\theta_1 = 1$ and see if it fits our data properly:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;theta_0 = 20
+theta_1 = 9
+x = np.linspace(0, 10, 100)
+y = theta_0 + theta_1*x
+plt.plot(x,y, &#39;r--&#39;, lw = 2, label = &#39;linear regression fit&#39;)
+plt.scatter(features, targets, s=100);
+plt.xlabel(&#39;Globules Concentration&#39;)
+plt.ylabel(&#39;Blood Pressure&#39;)
+plt.legend()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig8.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you trust in your model, you can now use it to predict blood pressure out of, for instance, a patient with globules concentration of $x=5$:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;new_patient_concentration = 5.0
+predicted_blood_pressure = theta_0 + theta_1*new_patient_concentration
+print(predicted_blood_pressure)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As mentioned above, we are going to discuss deeply this kind of models both for classification and regression in the theoretical lectures.
+However, it is useful for you to see how does sk-learn handle this kind of problems, which we do below.&lt;/p&gt;
+
+&lt;h1 id=&#34;5-linear-regression-using-scikit-learn&#34;&gt;5.- &lt;strong&gt;Linear Regression Using scikit-learn&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;As you may be expecting, you can easily accomplish this task with sk-learn:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.linear_model import LinearRegression
+
+# Create Model
+model = LinearRegression()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After instantiating a linear regressor, we can fit it in the same way as we fit a classifier:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit Model
+model.fit(features.reshape(-1, 1), targets)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And we are now ready for making new predictions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit Model
+model.predict(5)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We can compare the fit computed by sk-learn with the one we manually computed above:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Fit Model
+predicted_by_sklearn = model.predict(x.reshape(-1,1))
+plt.plot(x,y, &#39;r--&#39;, lw = 2, label = &#39;Manual LR&#39;)
+plt.plot(x,predicted_by_sklearn, &#39;g--&#39;, lw = 2, label = &#39;sklearn LR&#39;)
+plt.scatter(features, targets, s=100);
+plt.xlabel(&#39;Globules Concentration&#39;)
+plt.ylabel(&#39;Blood Pressure&#39;)
+plt.legend()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://agaldran.github.io/img/daco17/pl2_fig9.png&#34; alt=&#34;alt text&#34; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;6-homework&#34;&gt;6.- &lt;strong&gt;Homework&lt;/strong&gt;&lt;/h1&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&#34;3-linear-regression-a-tiny-bit-of-theory&#34;&gt;3.- &lt;strong&gt;Linear Regression: a (tiny) bit of theory&lt;/strong&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;6-homework-1&#34;&gt;6. &lt;strong&gt;Homework&lt;/strong&gt;&lt;/h1&gt;
 
-&lt;p&gt;You have already seen this in class, or will see it. See &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;6-1-graded-homework-training-and-testing-data&#34;&gt;6.1 - Graded Homework: Training and Testing data.&lt;/h2&gt;
 
-&lt;hr /&gt;
+&lt;h3 id=&#34;first-part&#34;&gt;First part&lt;/h3&gt;
 
-&lt;h1 id=&#34;4-linear-regression-implementation&#34;&gt;4.- &lt;strong&gt;Linear Regression Implementation&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;It is important to test your trained models on new data that has not been used for training. Otherwise you could be overly optimistic on its performance. For that, we typically save some training data and use them in the end only. In the same way as we refer to the data used to learn a model as &lt;strong&gt;training set&lt;/strong&gt;, we refer to the independent data you hold apart from the begining as &lt;strong&gt;test set&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;How do we implement those ideas?&lt;/p&gt;
+&lt;p&gt;Sk-learn provides functionality for easily doing this operation. Look up in google or wherever for this sk-learn method, and apply it to split the full Pima Indian dataset from section 3.1 into a training set ($75\%$ of the data) and a test set. Train a Naive Bayes classifier on the training set, and then predict the appearence of diabetes on every element of the test set. Store your predictions in a &lt;code&gt;numpy&lt;/code&gt; array with two columns, allocating in the first one the predictions.&lt;/p&gt;
 
-&lt;h2 id=&#34;4-1-from-scratch&#34;&gt;4.1 - &lt;strong&gt;From scratch&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Print your predictions on the test set together with the correct labels using the function provided below.&lt;/p&gt;
 
-&lt;p&gt;This is covered in the theory class, see &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def print_predictions_and_labels(array_preds_labels):
+    for predicted_pair in array_preds_labels:
+        prediction = predicted_pair[0]
+        label = predicted_pair[1]
+        print(&#39;Prediction&#39;, prediction, &#39;Label&#39;, label)
 
-&lt;h2 id=&#34;4-2-using-scikit-learn&#34;&gt;4.2 - &lt;strong&gt;Using scikit-learn&lt;/strong&gt;&lt;/h2&gt;
+preds_and_labels = np.array([[1,1],[0,1],[1,0]])
+print_predictions_and_labels (preds_and_labels)       
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;sk-learn implementation, that you can bet is better than the above.&lt;/p&gt;
+&lt;h3 id=&#34;second-part&#34;&gt;Second part&lt;/h3&gt;
 
-&lt;hr /&gt;
+&lt;p&gt;The simplest way you can evaluate a binary classifier is by means of accuracy, which is defined as the number of data points (in your test set!) that were correctly classified over number of total data points.&lt;/p&gt;
 
-&lt;h1 id=&#34;6-homework&#34;&gt;6. &lt;strong&gt;Homework&lt;/strong&gt;&lt;/h1&gt;
+&lt;p&gt;Again, sklearn comes to help you. Look for a function (contained in &lt;code&gt;sklearn.metrics&lt;/code&gt;) that can give you the accuracy score your classifier achieves. Read the documentation, undestand how is that function used, and use it to print the accuracy.&lt;/p&gt;
 
-&lt;p&gt;For now, you can access a notebook with an exercise on Python classes &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. I will be adding another problem in the next days.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: There is an alternative to that function. Every fitted classifier in &lt;code&gt;sklearn&lt;/code&gt; has a method of its own that you can use to output accuracy on a separate test set.
+This method is named &lt;code&gt;score&lt;/code&gt;. Use it to find out your accuracy in the test set, and verify that it is the same as in the above case.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-2-graded-homework-simple-linear-regression&#34;&gt;6.2 - Graded Homework: Simple Linear Regression&lt;/h2&gt;
+
+&lt;h3 id=&#34;first-part-1&#34;&gt;First part&lt;/h3&gt;
+
+&lt;p&gt;We now consider a different dataset, but related also to diabetes. In this case we want to do linear regression. The dataset is described &lt;a href=&#34;https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/datasets/descr/diabetes.rst&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;, and contains ten variables (features): age, sex, body mass index, average blood pressure, and six blood serum measurements. These were extracted from a set of $442$ diabetes patients, and the target prediction is given by certain (unspecified) quantitative measure of disease progression one year after baseline.&lt;/p&gt;
+
+&lt;p&gt;This dataset comes already with sklearn, so you can load it from the &lt;code&gt;sklearn.datasets&lt;/code&gt; module. We can load the dataset into a tuple containing two numpy arrays as follows:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;diabetes_dataset = datasets.load_diabetes(return_X_y=True)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following two lines will fit a linear regressor to this dataset:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;model = LinearRegression()
+model.fit(diabetes_dataset[0], diabetes_dataset[1])
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your goal now is to fit again the regressor, but this time split first the dataset into a training and a test set, and train the model &lt;strong&gt;only&lt;/strong&gt; on the training data, reserving $30\%$ of your test set apart.&lt;/p&gt;
+
+&lt;h3 id=&#34;second-part-1&#34;&gt;Second part&lt;/h3&gt;
+
+&lt;p&gt;Evaluating regression models requires different error measures than accuracy, since we do not have now an idea of well/wrong classified. In this case, you can observe the mean square error in your test set, defined as you may have expected:&lt;/p&gt;
+
+&lt;p&gt;$$MSE = \sum_{i=1}^N(\mathrm{target}_i - \mathrm{prediction}_i)^2$$&lt;/p&gt;
+
+&lt;p&gt;But to begin with, you need to compute the predictions of your model on the test data:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;diabetes_test_predictions = model2.predict(X_test)
+type(diabetes_test_predictions)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you can use the MSE error provided for you by the &lt;code&gt;sklearn.metrics&lt;/code&gt; module under the name &lt;code&gt;mean_squared_error&lt;/code&gt;.
+Import it and use it to compute the error. Note that you will need to feed it the predictions and the actual values.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.metrics import mean_squared_error
+
+mean_squared_error(y_test, diabetes_test_predictions)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this case, the precise error value does not help too much on itself, since we do not have a reference value to compare with.
+However, notice that it can be useful to compare with other regression models.&lt;/p&gt;
+
+&lt;h2 id=&#34;6-3-ungraded-homework-k-nearest-neighbor-classification&#34;&gt;6.3 - Ungraded Homework: k-nearest neighbor classification&lt;/h2&gt;
+
+&lt;p&gt;k-nearest neighbor is a very intuitive classifier that works as follows: Suppose you have a dataset with examples given by:&lt;/p&gt;
+
+&lt;p&gt;$${\mathbf{x}^i, y_i} \ \ \mathrm{for} \ \ 1\leq i \leq m,$$&lt;/p&gt;
+
+&lt;p&gt;described by $n$ features $\mathbf{x}^i = (x^i_0,x^i_1, \ldots, x^i_n)$, with labels $y_i$.&lt;/p&gt;
+
+&lt;p&gt;Given a new example $\mathbf{x}^{new} = (x^{new}_0,x^{new}_1, \ldots, x^{new}_n)$, your model will assign to it a label by comparing the distance between $\mathbf{x}^{new}$ and all your training examples, and the decision is made depending on the label of the closest $k$ neighbors.&lt;/p&gt;
+
+&lt;p&gt;In this case, we are going to fix $k=3$. So, if the lowest distances were given by, e.g., $\mathbf{x}^{12}$, $\mathbf{x}^{57}$, and $\mathbf{x}^{62}$, and you have that $y^{12} = 0, y^{57} = 1,  y^{62} = 1$, then the new sample receives a prediction of $y^{new}=1$.&lt;/p&gt;
+
+&lt;p&gt;In order to implement k-nearest neighbors, you need a definition of &amp;ldquo;closest&amp;rdquo;, which means that you need a definition of distance between to $n$-dimensional points. We will be using the standard Euclidean distance, defined as the norm of the difference between the two points:&lt;/p&gt;
+
+&lt;p&gt;$$\mathrm{dist}(\mathrm{p}, \mathrm{q})  = |\mathrm{p} - \mathrm{q}|_2 = \sqrt{(p_1-q_1)^2 + (p_2-q_2)^2 + \ldots (p_n-q_n)^2 + }$$&lt;/p&gt;
+
+&lt;p&gt;This distance can be easily implemented, or you can use the &lt;code&gt;norm&lt;/code&gt; function from &lt;code&gt;numpy.linalg&lt;/code&gt; library:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def distance(x,y):
+    return np.linalg.norm(x-y)
+
+p = np.array([0,0])
+q = np.array([2,0])
+
+print(&#39;Distance between (0,0) and (2,0) is&#39;, distance(p,q))
+
+p = np.array([0,0,0,0])
+q = np.array([2,2,0,0])
+print(&#39;Distance between (0,0) and (2,0) is&#39;, distance(p,q))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;first-part-implementation-from-scratch&#34;&gt;First part: Implementation from scratch&lt;/h3&gt;
+
+&lt;p&gt;I am completely aware that this could be challenging if you are not too familiar with &lt;code&gt;numpy&lt;/code&gt;. However, one of the best ways to learn both coding and the inner mechanisms of machine learning models is to &lt;strong&gt;try&lt;/strong&gt; to implement them from scratch. No matter if your implementation is the most inefficient in the world, no matter if it is not even free of Python errors, I just want you to try implementing the idea described above. Submit &lt;strong&gt;whatever&lt;/strong&gt; your attempt to solve this is, I don&amp;rsquo;t mind if you feel what you do is not the best implementation in the world or even if you think you are ashamed of it. Please submit!&lt;/p&gt;
+
+&lt;p&gt;We are going to use the same reduced version of the Iris dataset as in section 1.d. This is loaded for you again in the next code snippet. Try to implement code for classifying a new example given by $\mathbf{x}^{new} = (3.5,2.5,2.5,0.75)$.&lt;/p&gt;
+
+&lt;p&gt;If you succeed implementing this, then split the training and test set (30$\%$ for the test set) and compute the accuracy error from all the examples in the test set.&lt;/p&gt;
+
+&lt;h3 id=&#34;second-part-knn-with-sk-learn&#34;&gt;Second part: KNN with &lt;code&gt;sk-learn&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Now investigate how can you replicate the above, but this time with the sklearn library.&lt;/p&gt;
 
 &lt;h1 id=&#34;7-sources-and-references&#34;&gt;7. &lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;p&gt;[1] Theoretical lessons for DACO, in your moodle.&lt;/p&gt;
+
+&lt;p&gt;[2] It could be useful to watch &lt;a href=&#34;https://www.youtube.com/watch?v=z5UQyCESW64&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; short video on generative models.&lt;/p&gt;
+
+&lt;p&gt;[3] The second lecture of the Udacity&amp;rsquo;s online course Intro to Machine Learning, accessible &lt;a href=&#34;https://www.udacity.com/course/intro-to-machine-learning--ud120&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[4] You can find a nice overview and implementation of k-NN in &lt;a href=&#34;https://kevinzakka.github.io/2016/07/13/k-nearest-neighbor/&#34; target=&#34;_blank&#34;&gt;Kevin Zakka&amp;rsquo;s blog&lt;/a&gt;. Be aware that he is making more us of the &lt;code&gt;pandas&lt;/code&gt; library than we do.&lt;/p&gt;
 </description>
     </item>
     
