@@ -999,7 +999,7 @@ Codeacademy exercises, hosted &lt;a href=&#34;https://www.codecademy.com/learn/l
       <description>
 
 &lt;p&gt;This practical lecture is again based on Jupyter Notebooks.
-You can see and download the notebook corresponding to today &lt;a href=&#34;http://nbviewer.jupyter.org/github/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/PL2_bayesian_classification_LR.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+You can see and download the notebook corresponding to today &lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/PL2_bayesian_classification_LR_new.ipynb&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
 For completeness, please also download the following set of Python files, which will illustrate the use of Jupyter notebooks in combination with Spyder:
 &lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/main.py&#34; target=&#34;_blank&#34;&gt;[1]&lt;/a&gt;,
 &lt;a href=&#34;https://github.com/agaldran/daco_2017_practicals/blob/master/lecture_2_bayes_regression/daco_create_data.py&#34; target=&#34;_blank&#34;&gt;[2]&lt;/a&gt;,
