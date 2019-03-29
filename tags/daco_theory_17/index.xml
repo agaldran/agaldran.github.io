@@ -8,68 +8,38 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adrian Galdran</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/daco_theory_17/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://agaldran.github.io/tags/daco_theory_17/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DACO 2017 Theoretical Lecs.</title>
+      <link>https://agaldran.github.io/home/17_daco_theory/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/17_daco_theory/</guid>
+      <description>This will host material for the theoretical lessons I will be teaching.</description>
+    </item>
     
     <item>
       <title>DACO - Theoretical Lecture 6a - Linear Models</title>
       <link>https://agaldran.github.io/post/17_daco_theory_lec_6a/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_theory_lec_6a/</guid>
-      <description>&lt;p&gt;Today&amp;rsquo;s lecture is split in two parts.&lt;/p&gt;
-
-&lt;p&gt;In the first part, you will be introduced to a simple, but fundamental kind of machine learning models, Linear models.
-We will understand how are they formulated, and how can they be solved numerically.
-We will also see how can they be used for both regression and classification.&lt;/p&gt;
-
-&lt;p&gt;The second part comprises an introduction to non-linear models, specifically to neural networks.
-We will continue studying neural networks in the next lecture, but this week you will already understand what are they and how can they be used for classification tasks.
-The material related to this second part is located &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This is an overview of what we will be learning in this first hour:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Motivation and Goals. Linear Models for Supervised Classification and Regression&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Linear Regression Models&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Linear Regression for one variable&lt;/li&gt;
-&lt;li&gt;Gradient descent for Linear Regression&lt;/li&gt;
-&lt;li&gt;Linear Regression - A real-world example&lt;/li&gt;
-&lt;li&gt;Linear Regression for more than one variable
-&lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Logistic Regression Models (for classification!)&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;First part&lt;/li&gt;
-&lt;li&gt;Second part&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Sources and References&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;The same as in the practical lectures, I have also built a Jupyter notebook that contains all the information you will find below.
-In addition, it will allow you to experiment with short pieces of code. You can access it &lt;a href=&#34;google.es&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
-</description>
+      <description>Today&amp;rsquo;s lecture is split in two parts.
+In the first part, you will be introduced to a simple, but fundamental kind of machine learning models, Linear models. We will understand how are they formulated, and how can they be solved numerically. We will also see how can they be used for both regression and classification.
+The second part comprises an introduction to non-linear models, specifically to neural networks. We will continue studying neural networks in the next lecture, but this week you will already understand what are they and how can they be used for classification tasks.</description>
     </item>
     
     <item>
       <title>DACO - Theoretical Lecture 6b - Introduction to Neural Networks</title>
       <link>https://agaldran.github.io/post/17_daco_theory_lec_6b/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_theory_lec_6b/</guid>
-      <description>&lt;p&gt;Under construction.&lt;/p&gt;
-
-&lt;p&gt;See &lt;a href=&#34;https://metacademy.org/graphs/concepts/backpropagation&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for backpropagation.&lt;/p&gt;
-</description>
+      <description>Under construction.
+See here for backpropagation.</description>
     </item>
     
   </channel>

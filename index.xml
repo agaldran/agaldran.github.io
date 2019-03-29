@@ -13,7 +13,7 @@
     <item>
       <title>DACO - Practical Lecture 1 - Introduction to Python for Scientific Computing</title>
       <link>https://agaldran.github.io/post/17_daco_prac_lec_1/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_1/</guid>
       <description>
@@ -993,7 +993,7 @@ Codeacademy exercises, hosted &lt;a href=&#34;https://www.codecademy.com/learn/l
     <item>
       <title>DACO - Practical Lecture 2 - Bayesian Classification and Linear Regression</title>
       <link>https://agaldran.github.io/post/17_daco_prac_lec_2/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_prac_lec_2/</guid>
       <description>
@@ -1832,7 +1832,7 @@ print(&#39;Distance between (0,0) and (2,0) is&#39;, distance(p,q))
     <item>
       <title>DACO - Theoretical Lecture 6a - Linear Models</title>
       <link>https://agaldran.github.io/post/17_daco_theory_lec_6a/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_theory_lec_6a/</guid>
       <description>&lt;p&gt;Today&amp;rsquo;s lecture is split in two parts.&lt;/p&gt;
@@ -1882,7 +1882,7 @@ In addition, it will allow you to experiment with short pieces of code. You can 
     <item>
       <title>DACO - Theoretical Lecture 6b - Introduction to Neural Networks</title>
       <link>https://agaldran.github.io/post/17_daco_theory_lec_6b/</link>
-      <pubDate>Mon, 11 Sep 2017 00:00:00 +0100</pubDate>
+      <pubDate>Mon, 11 Sep 2017 00:00:00 -0400</pubDate>
       
       <guid>https://agaldran.github.io/post/17_daco_theory_lec_6b/</guid>
       <description>&lt;p&gt;Under construction.&lt;/p&gt;

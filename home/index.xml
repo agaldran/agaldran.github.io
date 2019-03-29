@@ -8,7 +8,68 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adrian Galdran</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://agaldran.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://agaldran.github.io/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/about/</guid>
+      <description>Biography I am a Post-Doctoral Fellow at INESC-TEC, INstituto de Engenharia de Sistemas e Computadores, in Porto (Portugal). I am based at the BioImaging Lab, within the C-BER research center, and conduct my research under the supervision of Prof. Aurélio Campilho.
+My current work is focused on retinal image understanding, within the SCREEN-DR project. This is a joint INESC-CMU initiative to provide an end-to-end eye health-care system, based on retinal fundus image analysis.</description>
+    </item>
+    
+    <item>
+      <title>Publications</title>
+      <link>https://agaldran.github.io/home/publications_all/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/publications_all/</guid>
+      <description>2018 Journal Publications (4) CATARACTS: Challenge on Automatic Tool Annotation for cataRACT Surgery, H. Al Hajj, &amp;hellip;, A. Galdran, &amp;hellip;, G. Quellec, Medical Image Analysis (Q1), Nov/2018, [DOI], [PDF].
+Image Dehazing by Artificial Multi-Exposure Image Fusion, A. Galdran, Signal Processing (Q1), Aug/2018, [DOI], [PDF], [Code].
+A fast image dehazing method that does not introduce color artifacts, J. Vazquez-Corral, A. Galdran, Praveen Cyriac, Marcelo Bertalmío, Journal of Real-Time Image Processing (Q3), Aug/2018, [DOI], [PDF].</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://agaldran.github.io/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/teaching/</guid>
+      <description>I am/have been a teaching instructor for the following courses:
+ 2017: Computer-Aided Diagnosis (DACO). Theoretical/Practical Sessions. Biomedical Engineering Degree (FEUP - Porto University, Faculty of Engineering, Portugal) 2017: Lectures on Advanced Color Image Processing. Invited Lecturer. MAIA - Medical Image Whatever - Erasmus Mundus, Cassino (Italy) 2017: Image Analysis and Recognition (IAR). Seminars on Medical Image Analysis. Biomedical Engineering Degree (FEUP - Porto University, Faculty of Engineering, Portugal) 2016: Computer-Aided Diagnosis (DACO).</description>
+    </item>
+    
+    <item>
+      <title>DACO 2017 Theoretical Lecs.</title>
+      <link>https://agaldran.github.io/home/17_daco_theory/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/17_daco_theory/</guid>
+      <description>This will host material for the theoretical lessons I will be teaching.</description>
+    </item>
+    
+    <item>
+      <title>DACO 2017 Practical Lecs.</title>
+      <link>https://agaldran.github.io/home/17_daco_practicals/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/17_daco_practicals/</guid>
+      <description>Here you can find practical material for the Computer-Aided Diagnosis (DACO) course, taught at the Faculty of Engineering/University of Porto, in its 2017&amp;frasl;18 edition.
+This year, I am the teaching instructor for the practical sessions, and I also teach some theory. Below you will find content associated to the practical lectures. I will probably be updating this each week.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://agaldran.github.io/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://agaldran.github.io/home/contact/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
