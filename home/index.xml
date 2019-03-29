@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Adrian Galdran</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://agaldran.github.io/home/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,11 +15,10 @@
     <item>
       <title></title>
       <link>https://agaldran.github.io/home/about/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://agaldran.github.io/home/about/</guid>
-      <description>Biography I am a Post-Doctoral Fellow at INESC-TEC, INstituto de Engenharia de Sistemas e Computadores, in Porto (Portugal). I am based at the BioImaging Lab, within the C-BER research center, and conduct my research under the supervision of Prof. Aurélio Campilho.
-My current work is focused on retinal image understanding, within the SCREEN-DR project. This is a joint INESC-CMU initiative to provide an end-to-end eye health-care system, based on retinal fundus image analysis.</description>
+      <description>Biography I am a Post-Doctoral Fellow at the École de Tecnologie Superieure, Montréal. I work at the Laboratoire d&amp;rsquo;imagerie, de vision et d&amp;rsquo;intelligence artificielle (LIVIA), under the supervision of Prof. Ismail ben Ayed and Prof. Hervé Lombaert. My current research is focused on Computer Vision for Medical Imaging applications, and Deep Learning methods that can be trained on scarce labeled data, with a focus on Weakly-Supervised and Self-Supervised approaches. The main areas of application are Retinal and Histopathological Image Analysis.</description>
     </item>
     
     <item>
@@ -28,9 +27,9 @@ My current work is focused on retinal image understanding, within the SCREEN-DR 
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://agaldran.github.io/home/publications_all/</guid>
-      <description>2018 Journal Publications (4) CATARACTS: Challenge on Automatic Tool Annotation for cataRACT Surgery, H. Al Hajj, &amp;hellip;, A. Galdran, &amp;hellip;, G. Quellec, Medical Image Analysis (Q1), Nov/2018, [DOI], [PDF].
-Image Dehazing by Artificial Multi-Exposure Image Fusion, A. Galdran, Signal Processing (Q1), Aug/2018, [DOI], [PDF], [Code].
-A fast image dehazing method that does not introduce color artifacts, J. Vazquez-Corral, A. Galdran, Praveen Cyriac, Marcelo Bertalmío, Journal of Real-Time Image Processing (Q3), Aug/2018, [DOI], [PDF].</description>
+      <description>2019 Journal Publications (1) CATARACTS: Challenge on Automatic Tool Annotation for cataRACT Surgery, H. Al Hajj, &amp;hellip;, A. Galdran, &amp;hellip;, G. Quellec, Medical Image Analysis (Q1), Feb/2019, [DOI], [PDF].
+Conference Publications (3) Uncertainty-Aware Artery/vein Classification on Retinal Images, A. Galdran, M. I. Meyer, P. Costa, A. M. Mendonça, A. Campilho, IEEE International Symposium on Biomedical Imaging (ISBI), Venice (Italy), Apr/2019, [PDF], [Code].
+Real-Time Informative Laryngoscopic Frame Classification with Pre-Trained Convolutional Neural Networks, A.</description>
     </item>
     
     <item>
